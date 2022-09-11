@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class camaraper : MonoBehaviour
+public class PlayerCamera : MonoBehaviour
 {
     private new Transform camera;
-    public Vector2 sensibilidad;
+    [SerializeField] Vector2 sensibilidad;
+    [SerializeField] GameObject player;
     void Start()
     {
-        camera = transform.Find("Camara");
-       Cursor.visible = false;
+        camera = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
@@ -18,12 +20,11 @@ public class camaraper : MonoBehaviour
         float ver = Input.GetAxis("Mouse Y");
         if (hor != 0 && Time.timeScale != 0f)
         {
-            transform.Rotate(Vector3.up * hor*sensibilidad.x);
-           Cursor.visible = false;
+            player.transform.Rotate(Vector3.up * hor*sensibilidad.x);
+            Cursor.visible = false;
         }
         if (ver !=0 && Time.timeScale != 0f)
         {
-          //  camera.Rotate(Vector3.left * ver *sensibilidad.y);
             float angulo = (camera.localEulerAngles.x - ver * sensibilidad.y + 360) % 360;
             if(angulo>180)
             {
@@ -32,7 +33,6 @@ public class camaraper : MonoBehaviour
             angulo = Mathf.Clamp(angulo, -80,80);
             camera.localEulerAngles = Vector3.right * angulo;
             Cursor.visible = false;
-        }
-        
+        }        
     }
 }

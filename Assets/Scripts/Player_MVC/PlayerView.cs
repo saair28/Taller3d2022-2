@@ -7,12 +7,12 @@ using UnityEngine.SceneManagement;
 public class PlayerView : MonoBehaviour
 {
     PlayerModel playerModel;
-    PlayerControler playerControl;
+    PlayerController playerControl;
     public Text Health_text;
     // Start is called before the first frame update
     void Start()
     {
-        playerControl = GetComponent<PlayerControler>();
+        playerControl = GetComponent<PlayerController>();
         playerModel = GetComponent<PlayerModel>();
     }
 

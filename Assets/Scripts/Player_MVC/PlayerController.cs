@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class PlayerControler : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     PlayerView View;
     PlayerModel playerModel;
     Vector3 moveInput = Vector3.zero;
     CharacterController characterController;
-    // Start is called before the first frame update
     void Start()
     {
         playerModel = GetComponent<PlayerModel>();
