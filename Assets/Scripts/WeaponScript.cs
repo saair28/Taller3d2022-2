@@ -10,4 +10,5 @@ public class WeaponScript : MonoBehaviour
     [SerializeField] public float fireRate;
     [SerializeField] public float damage;
     [SerializeField] public int key;
+    [SerializeField] public GameObject prefab;
 }

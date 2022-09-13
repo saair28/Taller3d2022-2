@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] Camera cam;
-    [SerializeField] GameObject bulletPrefab;
+    //[SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform bulletOrigin;
     [SerializeField] public float bulletSpeed;
     bool canShoot => (Input.GetMouseButton(0) && !shotBullet && GetComponent<PlayerWeapons>().weaponList.Count > 0);
@@ -40,9 +40,10 @@ public class PlayerShoot : MonoBehaviour
         {
             destination = ray.GetPoint(1000);
         }
-
+        //Para cambiar las balas en caso se necesite
+        GameObject sgPrefab = GetComponent<PlayerWeapons>().currentWeapon.GetComponent<WeaponScript>().prefab;
         // Un solo disparo -> Pistola normal
-        var bullet = Instantiate(bulletPrefab, bulletOrigin.position, bulletOrigin.rotation);
+        var bullet = Instantiate(sgPrefab, bulletOrigin.position, bulletOrigin.rotation);
         //bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
         // Con esta línea de abajo, haces que las balas vayan directas al centro de la pantalla, en lugar de solo ir hacia delante.
         bullet.GetComponent<Rigidbody>().velocity = (destination - bulletOrigin.position).normalized * bulletSpeed;
@@ -65,5 +66,7 @@ public class PlayerShoot : MonoBehaviour
         {
             fireRateCount = fireRate;
         }
+        
     }
+    
 }
