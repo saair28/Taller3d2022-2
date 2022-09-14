@@ -9,10 +9,14 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] Transform bulletOrigin;
     [SerializeField] public float bulletSpeed;
     bool canShoot => (Input.GetMouseButton(0) && !shotBullet && GetComponent<PlayerWeapons>().weaponList.Count > 0);
-    bool shotBullet = false;
+    public bool shotBullet = false;
     [SerializeField] public float fireRate;
-    [SerializeField] float fireRateCount;
+    [HideInInspector] public float fireRateCount;
+    [HideInInspector] public int bulletsPerShot;
+    [HideInInspector] public float bulletRotation;
+    [HideInInspector] public float bulletReach;
     Vector3 destination;
+    public GameObject bulletPrefab;
 
     void Start()
     {
@@ -40,14 +44,34 @@ public class PlayerShoot : MonoBehaviour
         {
             destination = ray.GetPoint(1000);
         }
+
         //Para cambiar las balas en caso se necesite
-        GameObject sgPrefab = GetComponent<PlayerWeapons>().currentWeapon.GetComponent<WeaponScript>().prefab;
+        //GameObject sgPrefab = GetComponent<PlayerWeapons>().currentWeapon.GetComponent<WeaponScript>().bulletPrefab;
+
         // Un solo disparo -> Pistola normal
-        var bullet = Instantiate(sgPrefab, bulletOrigin.position, bulletOrigin.rotation);
+        //var bullet = Instantiate(bulletPrefab, bulletOrigin.position, bulletOrigin.rotation);
         //bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
-        // Con esta línea de abajo, haces que las balas vayan directas al centro de la pantalla, en lugar de solo ir hacia delante.
-        bullet.GetComponent<Rigidbody>().velocity = (destination - bulletOrigin.position).normalized * bulletSpeed;
-        Destroy(bullet, 3f);
+   
+        //bullet.GetComponent<Rigidbody>().velocity = (destination - bulletOrigin.position).normalized * bulletSpeed;
+        //Destroy(bullet, 3f);
+
+        for(int i = 0; i < bulletsPerShot; i++)
+        {
+            float randomRotationX = Random.Range(-bulletRotation, bulletRotation);
+            float randomRotationY = Random.Range(-bulletRotation, bulletRotation);
+            float randomRotationZ = Random.Range(-bulletRotation, bulletRotation);
+
+            Vector3 _bulletRotation = new Vector3(randomRotationX, randomRotationY, randomRotationZ) /100;
+            Vector3 finalRotation = (destination - bulletOrigin.position).normalized;
+
+            var bullet = Instantiate(bulletPrefab, bulletOrigin.position, Quaternion.LookRotation(bulletOrigin.transform.forward));
+            bullet.transform.Rotate(_bulletRotation);
+            // Con esta línea de abajo, haces que las balas vayan directas al centro de la pantalla, en lugar de solo ir hacia delante.
+            bullet.GetComponent<Rigidbody>().velocity = (finalRotation + _bulletRotation).normalized * bulletSpeed;
+            Destroy(bullet, bulletReach);
+        }
+
+
         shotBullet = true;
     }
 
