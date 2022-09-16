@@ -6,6 +6,9 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     public Transform target;
+
+    
+
     NavMeshAgent agent; 
     // Start is called before the first frame update
     void Start()
@@ -19,10 +22,6 @@ public class Enemy : MonoBehaviour
     {
         float distance = Vector3.Distance(target.position, transform.position);
         agent.SetDestination(target.position);
-        if (distance <= agent.stoppingDistance)
-        {
-
-        }
     }
 
     void FaceTarget()
