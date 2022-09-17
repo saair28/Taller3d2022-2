@@ -3,19 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour
+public class FlyingEnemy : MonoBehaviour
 {
     public Transform target;
-
-    
-
-    NavMeshAgent agent; 
+    NavMeshAgent agent;
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-         
-        
     }
 
     // Update is called once per frame
@@ -25,7 +20,6 @@ public class Enemy : MonoBehaviour
         //agent.SetDestination(target.position);
         agent.destination = target.position;
     }
-
     void FaceTarget()
     {
         Vector3 direction = (target.position - transform.position).normalized;
