@@ -9,6 +9,8 @@ TagManager:
   - Danger
   - Weapon
   - PistolBullet
+  - enemigo1
+  - enemi
   layers:
   - Default
   - TransparentFX
