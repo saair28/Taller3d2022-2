@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public int totalLife;
@@ -58,7 +58,7 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-
+            SceneManager.LoadScene(1);
             Debug.Log("MORISTE");
         }
         yield return new WaitForSeconds(invulnerabilityTime);
