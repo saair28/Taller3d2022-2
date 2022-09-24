@@ -13,7 +13,7 @@ public class activecollicions : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "PistolBullet")
+        if (other.tag == "enemigo1")
         {
             veri.a = veri.a - 1;
           //  prueba.nenemigos = prueba.nenemigos-1;

@@ -20,6 +20,8 @@ public class Spawner : MonoBehaviour
     void SpawnRandom()
     {
         randomInt = Random.Range(0, spawner.Length);
-        Instantiate(spawner[randomInt], spawnPos.position, spawnPos.rotation);
+       GameObject holis =  Instantiate(spawner[randomInt], spawnPos.position, spawnPos.rotation);
+        //   FindObjectOfType<veri>().enemies.Add(holis);
+        FindObjectOfType<veri>().a++;
     }
 }

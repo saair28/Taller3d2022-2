@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCamera : MonoBehaviour
+public class MouseLook : MonoBehaviour
 {
     private new Transform camera;
     [SerializeField] Vector2 sensibilidad;
@@ -20,19 +20,19 @@ public class PlayerCamera : MonoBehaviour
         float ver = Input.GetAxis("Mouse Y");
         if (hor != 0 && Time.timeScale != 0f)
         {
-            player.transform.Rotate(Vector3.up * hor*sensibilidad.x);
+            player.transform.Rotate(Vector3.up * hor * sensibilidad.x);
             Cursor.visible = false;
         }
-        if (ver !=0 && Time.timeScale != 0f)
+        if (ver != 0 && Time.timeScale != 0f)
         {
             float angulo = (camera.localEulerAngles.x - ver * sensibilidad.y + 360) % 360;
-            if(angulo>180)
+            if (angulo > 180)
             {
                 angulo -= 360;
             }
-            angulo = Mathf.Clamp(angulo, -80,80);
+            angulo = Mathf.Clamp(angulo, -80, 80);
             camera.localEulerAngles = Vector3.right * angulo;
             Cursor.visible = false;
-        }        
+        }
     }
 }

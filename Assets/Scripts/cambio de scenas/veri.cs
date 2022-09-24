@@ -7,20 +7,21 @@ public class veri : MonoBehaviour
     public bool enemi = true;
     public GameObject puerta;
     public int a;
+
+    public List<GameObject> enemies = new List<GameObject>();
+
     void Start()
     {      
     }
     void Update()
     {
+        //a = enemies.Count;
         abrirz();
     }
     public void abrirz()
     {
         if (a == 0)
-        {
-            //  puerta.gameObject.SetActive(false);
-            //   Destroy(this.gameObject);
-            //  rend.enabled  = false;   
+        {  
             if (enemi == false & a == 0)
             {
                 puerta.gameObject.SetActive(false);
@@ -29,11 +30,11 @@ public class veri : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("enemigo1"))   
-        {
-            enemi = false;
-            a = a + 1;
-          
-        }
+
+        //if(other.gameObject.CompareTag("enemigo1"))   
+        //{
+        //    enemi = false;
+        //    a = a + 1;
+        //}
     }
 }
