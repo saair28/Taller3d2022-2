@@ -4,35 +4,39 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
-    private new Transform camera;
-    [SerializeField] Vector2 sensibilidad;
-    [SerializeField] GameObject player;
+    public static MouseLook instance;
+    float mouseX, mouseY;
+    public Transform playerBody;
+    float xRotation = 0f;
+    public bool TRYNGTHINGS = true; // BORRAR O PONER EN FALSE CUANDO EXPORTEMOS EL FINAL!!!
+    public int sens;
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
-        camera = GameObject.FindGameObjectWithTag("MainCamera").transform;
-        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     void Update()
     {
-        float hor = Input.GetAxis("Mouse X");
-        float ver = Input.GetAxis("Mouse Y");
-        if (hor != 0 && Time.timeScale != 0f)
+        if (TRYNGTHINGS)
         {
-            player.transform.Rotate(Vector3.up * hor * sensibilidad.x);
-            Cursor.visible = false;
+            mouseX = Input.GetAxis("Mouse X") * sens * 10.2f * Time.deltaTime;
+            mouseY = Input.GetAxis("Mouse Y") * sens * 10.2f * Time.deltaTime;
         }
-        if (ver != 0 && Time.timeScale != 0f)
+        else
         {
-            float angulo = (camera.localEulerAngles.x - ver * sensibilidad.y + 360) % 360;
-            if (angulo > 180)
-            {
-                angulo -= 360;
-            }
-            angulo = Mathf.Clamp(angulo, -80, 80);
-            camera.localEulerAngles = Vector3.right * angulo;
-            Cursor.visible = false;
+            mouseX = Input.GetAxis("Mouse X") * sens * Time.deltaTime;
+            mouseY = Input.GetAxis("Mouse Y") * sens * Time.deltaTime;
         }
+
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+        playerBody.Rotate(Vector3.up * mouseX);
+        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
     }
 }
