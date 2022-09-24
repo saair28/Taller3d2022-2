@@ -983,7 +983,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26564
+  m_Name: pb_Mesh24164
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -9920,7 +9920,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1817215887}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: d9a32608057c4bc49850db33b20f2236, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -10060,7 +10060,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1911989496}
   - component: {fileID: 1911989498}
-  - component: {fileID: 1911989497}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -10084,14 +10083,6 @@ Transform:
   m_Father: {fileID: 1122348107}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &1911989497
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1911989495}
-  m_Enabled: 1
 --- !u!20 &1911989498
 Camera:
   m_ObjectHideFlags: 0
@@ -10108,14 +10099,14 @@ Camera:
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 20.742788
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.45
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -10577,7 +10568,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 2
   m_Constraints: 112
   m_CollisionDetection: 2
 --- !u!4 &2113549149
