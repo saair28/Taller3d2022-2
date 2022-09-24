@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class FlyingEnemy : MonoBehaviour
 {
     public Transform target;
-    public int life;
+    //public int life;
     NavMeshAgent agent;
     // Start is called before the first frame update
     void Start()
@@ -27,6 +27,7 @@ public class FlyingEnemy : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
+    /*
     private void OnTriggerEnter(Collider col)
     {
         if (col.CompareTag("Bullet"))
@@ -43,5 +44,5 @@ public class FlyingEnemy : MonoBehaviour
 
         }
 
-    }
+    }*/
 }

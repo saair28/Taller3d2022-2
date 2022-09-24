@@ -7,23 +7,25 @@ public class Enemy : MonoBehaviour
 {
     public Transform target;
 
-    public int life;
+    public Vector3 playerPosition;
+
+    //public int life;
 
     NavMeshAgent agent; 
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-
-        life = 10;
+        
+        //life = 10;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        Vector3 position = target.position;
-        agent.destination = position;
+        playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+        //Vector3 position = target.position;
+        agent.destination = playerPosition;
     }
 
     void FaceTarget()
@@ -32,7 +34,7 @@ public class Enemy : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
-
+    /*
     private void OnTriggerEnter(Collider col)
     {
         if (col.CompareTag("Bullet"))
@@ -49,5 +51,5 @@ public class Enemy : MonoBehaviour
             
         }
        
-    }
+    }*/
 }

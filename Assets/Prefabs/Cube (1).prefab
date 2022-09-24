@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 9207014304874841368}
   - component: {fileID: 3602077393488737489}
   - component: {fileID: -5617044287571519085}
+  - component: {fileID: 1062231991495564141}
+  - component: {fileID: -3021456332331746787}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -128,3 +130,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LifeEnemy: 100
+--- !u!114 &1062231991495564141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6196869968844167345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da5544a373b3314792330f8e862c6d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 2719147486464002297, guid: 4bc6c93799d1ba847afd3baf69bca0cc, type: 3}
+--- !u!195 &-3021456332331746787
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6196869968844167345}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 6.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
