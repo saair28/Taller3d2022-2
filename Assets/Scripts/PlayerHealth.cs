@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     public bool startRecoveryTimer = false;
     public float timeToRecover;
     public float timeToRecoverCount;
+    public int lifeRecovery;
     public float invulnerabilityTime;
     public Image lifeHearth;
 
@@ -44,13 +45,18 @@ public class PlayerHealth : MonoBehaviour
             
             if (timeToRecoverCount <= 0)
             {
-                actualLife++;
+                RecoverLife(lifeRecovery);
                 timeToRecoverCount = timeToRecover/2;
             }
         }
 
-        lifeHearth.fillAmount = actualLife / totalLife;
+        //lifeHearth.fillAmount = actualLife / totalLife;
         
+    }
+
+    public void RecoverLife(int amount)
+    {
+        actualLife += amount;
     }
 
     public IEnumerator GotHit(int damage)
@@ -78,7 +84,7 @@ public class PlayerHealth : MonoBehaviour
         {
             // Aquí, en lugar de poner un valor como "1", habría que usar una variable que indique el daño del enemigo.
             // Eso se haría jalando la variable "damage" (o como se llame) del script del enemigo que colisiona contra el Player.
-            StartCoroutine(GotHit(1));
+            StartCoroutine(GotHit(25));
         }
     }
 }

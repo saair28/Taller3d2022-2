@@ -14,4 +14,5 @@ public class WeaponScript : MonoBehaviour
     [SerializeField] public float bulletRotation;
     [SerializeField] public float bulletReach;
     [SerializeField] public GameObject bulletPrefab;
+    [SerializeField] public int bulletColor;
 }

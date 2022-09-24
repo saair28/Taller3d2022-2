@@ -10,6 +10,7 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] public float bulletSpeed;
     bool canShoot => (Input.GetMouseButton(0) && !shotBullet && GetComponent<PlayerWeapons>().weaponList.Count > 0);
     public bool shotBullet = false;
+    [SerializeField] public float damage;
     [SerializeField] public float fireRate;
     [HideInInspector] public float fireRateCount;
     [HideInInspector] public int bulletsPerShot;
@@ -68,6 +69,7 @@ public class PlayerShoot : MonoBehaviour
             bullet.transform.Rotate(_bulletRotation);
             // Con esta línea de abajo, haces que las balas vayan directas al centro de la pantalla, en lugar de solo ir hacia delante.
             bullet.GetComponent<Rigidbody>().velocity = (finalRotation + _bulletRotation).normalized * bulletSpeed;
+            //bullet.GetComponent<BulletScript>().bulletDamage = GetComponent<PlayerWeapons>().currentWeapon.GetComponent<PlayerWeapons>
             Destroy(bullet, bulletReach);
         }
 

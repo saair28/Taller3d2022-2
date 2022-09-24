@@ -8,29 +8,29 @@ public class RedPrototype : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Bullet1"))
-        {
-            LifeEnemy -= 5f;
-            if (LifeEnemy <= 0)
-            {
-                Destroy(gameObject);
-            }
-        }
-        if (other.gameObject.CompareTag("PistolBullet"))
-        {
-            LifeEnemy -= 5f;
-            if (LifeEnemy <= 0)
-            {
-                Destroy(gameObject);
-            }
-        }
-        if (other.gameObject.CompareTag("SgBullet"))
-        {
-            LifeEnemy -= 30f;
-            if (LifeEnemy <= 0)
-            {
-                Destroy(gameObject);
-            }
-        }
+        //if (other.gameObject.CompareTag("Bullet1"))
+        //{
+        //    LifeEnemy -= 5f;
+        //    if (LifeEnemy <= 0)
+        //    {
+        //        Destroy(gameObject);
+        //    }
+        //}
+        //if (other.gameObject.CompareTag("PistolBullet"))
+        //{
+        //    LifeEnemy -= 5f;
+        //    if (LifeEnemy <= 0)
+        //    {
+        //        Destroy(gameObject);
+        //    }
+        //}
+        //if (other.gameObject.CompareTag("SgBullet"))
+        //{
+        //    LifeEnemy -= 30f;
+        //    if (LifeEnemy <= 0)
+        //    {
+        //        Destroy(gameObject);
+        //    }
+        //}
     }
 }

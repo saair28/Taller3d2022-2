@@ -49,7 +49,7 @@ public class PlayerWeapons : MonoBehaviour
                 {
                     hasWeapon = true;
 
-                    Debug.Log("YA TIENES ESTA ARMA");
+                    //Debug.Log("YA TIENES ESTA ARMA");
                     currentWeapon = weaponList[i];
                     //weaponList[i].bulletsInMagazineActual = weapon.bulletsInMagazineActual;
                     //weaponList[i].bulletsInTotal = weapon.bulletsInTotal;
@@ -59,7 +59,7 @@ public class PlayerWeapons : MonoBehaviour
 
             if (!hasWeapon)
             {
-                Debug.Log("NO TIENES ESTA ARMA");
+                //Debug.Log("NO TIENES ESTA ARMA");
                 weaponList.Add(weaponPickedUp);
                 weaponIndex++;
                 currentWeapon = weaponPickedUp;
@@ -157,13 +157,14 @@ public class PlayerWeapons : MonoBehaviour
     void UpdateWeaponStats()
     {
         pShoot.shotBullet = false;
+        pShoot.damage = currentWeapon.GetComponent<WeaponScript>().damage;
         pShoot.bulletSpeed = currentWeapon.GetComponent<WeaponScript>().bulletSpeed;
         pShoot.fireRate = currentWeapon.GetComponent<WeaponScript>().fireRate;
         pShoot.bulletPrefab = currentWeapon.GetComponent<WeaponScript>().bulletPrefab;
         pShoot.bulletsPerShot = currentWeapon.GetComponent<WeaponScript>().bulletsPerShot;
         pShoot.bulletRotation = currentWeapon.GetComponent<WeaponScript>().bulletRotation;
         pShoot.bulletReach = currentWeapon.GetComponent<WeaponScript>().bulletReach;
-        Debug.Log(currentWeapon.GetComponent<WeaponScript>().weaponName);
+        //Debug.Log(currentWeapon.GetComponent<WeaponScript>().weaponName);
         isChangingWeapon = false;
     }
 }

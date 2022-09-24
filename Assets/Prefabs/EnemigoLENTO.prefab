@@ -17,8 +17,9 @@ GameObject:
   - component: {fileID: -1799052641808111705}
   - component: {fileID: 8806065889572799064}
   - component: {fileID: -8018929203622934110}
+  - component: {fileID: -7891140492007006778}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: EnemigoLENTO
   m_TagString: enemigo1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 4970653128200672383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.54312, y: 0.93, z: 0.19388008}
-  m_LocalScale: {x: 0.67296, y: 0.67296, z: 0.67296}
+  m_LocalScale: {x: 1.333201, y: 1.333201, z: 1.333201}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1418501781382009326}
@@ -68,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 46206e68fa2b19e439251bb5cd4daa54, type: 2}
+  - {fileID: 2100000, guid: e3b27799cecbc1f4faad55da31603bcc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -180,6 +181,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81022518a8287a0449c4a4fc73e34b76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-7891140492007006778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4970653128200672383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f369b6f90ae22cf44b5b8684368ac955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 120
+  currentHealth: 0
+  enemyColor: 0
+  normalDamage: 0
+  criticalDamage: 0
+  invulTime: 0.05
+  invulTimeCounter: 0
 --- !u!1001 &639135135475022613
 PrefabInstance:
   m_ObjectHideFlags: 0

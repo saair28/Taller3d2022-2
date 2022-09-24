@@ -11,6 +11,12 @@ TagManager:
   - PistolBullet
   - enemigo1
   - enemi
+  - Puerta
+  - SpawnTrigger
+  - BalaAZUL
+  - BalaROJA
+  - BalaVERDE
+  - CriticoText
   layers:
   - Default
   - TransparentFX

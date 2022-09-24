@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 7570405013456092635}
   - component: {fileID: 3688283162048049690}
   - component: {fileID: -3065582794561448789}
+  - component: {fileID: 8444218357723765405}
   m_Layer: 0
-  m_Name: Bullet
-  m_TagString: PistolBullet
+  m_Name: BalaAZUL
+  m_TagString: BalaAZUL
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 6332320722821652308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.123354144, y: 0.123354144, z: 0.123354144}
+  m_LocalScale: {x: 0.18, y: 0.18, z: 0.18}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -63,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6d9b495e715611b4fb4f2d51da311852, type: 2}
+  - {fileID: 2100000, guid: e10e8603be147d04d81f4651ec59a861, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -114,3 +115,17 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &8444218357723765405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6332320722821652308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 398b5d6af6a07464989b42e78ea8bee3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletDamage: 0
+  bulletColor: 0
