@@ -21,9 +21,17 @@ public class pauseMenu : MonoBehaviour
             if(GameIsPaused)
             {
                 Resume();
-            }else
+            }
+            else
             {
                 Pause();
+            }
+        }
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            if (GameIsPaused)
+            {
+                Application.Quit();
             }
         }
     }

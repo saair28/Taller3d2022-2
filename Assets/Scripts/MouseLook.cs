@@ -22,21 +22,13 @@ public class MouseLook : MonoBehaviour
 
     void Update()
     {
-        if (TRYNGTHINGS)
-        {
-            mouseX = Input.GetAxis("Mouse X") * sens * 10.2f * Time.deltaTime;
-            mouseY = Input.GetAxis("Mouse Y") * sens * 10.2f * Time.deltaTime;
-        }
-        else
-        {
-            mouseX = Input.GetAxis("Mouse X") * sens * Time.deltaTime;
-            mouseY = Input.GetAxis("Mouse Y") * sens * Time.deltaTime;
-        }
+        mouseX = Input.GetAxis("Mouse X") * sens * Time.deltaTime;
+        mouseY = Input.GetAxis("Mouse Y") * sens * Time.deltaTime;
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        playerBody.Rotate(Vector3.up * mouseX);
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        playerBody.Rotate(Vector3.up * mouseX);
     }
 }
