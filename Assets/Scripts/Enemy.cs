@@ -1,31 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
     public Transform target;
-
     public Vector3 playerPosition;
+    NavMeshAgent agent;
 
-    //public int life;
-
-    NavMeshAgent agent; 
-    // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        
-        //life = 10;
     }
 
-    // Update is called once per frame
     void Update()
     {
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
-        //Vector3 position = target.position;
-        agent.destination = playerPosition;
+        agent.SetDestination(playerPosition);
     }
 
     void FaceTarget()
@@ -34,22 +24,5 @@ public class Enemy : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
-    /*
-    private void OnTriggerEnter(Collider col)
-    {
-        if (col.CompareTag("Bullet"))
-        {
-            // Aquí, en lugar de poner un valor como "1", habría que usar una variable que indique el daño del enemigo.
-            // Eso se haría jalando la variable "damage" (o como se llame) del script del enemigo que colisiona contra el Player.
 
-            life = life - 1;
-
-            if (life == 0)
-            {
-                Destroy(gameObject);
-            }
-            
-        }
-       
-    }*/
 }

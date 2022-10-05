@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7726777054017172466}
   - component: {fileID: 8123874403313431307}
   - component: {fileID: 8817170363908917153}
-  - component: {fileID: 2109312556354985674}
   - component: {fileID: -1799052641808111705}
   - component: {fileID: 8806065889572799064}
   - component: {fileID: -8018929203622934110}
@@ -120,19 +119,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2109312556354985674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4970653128200672383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a07247116405e7549a307d0da4d285cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LifeEnemy: 100
 --- !u!114 &-1799052641808111705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +181,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 120
   currentHealth: 0
+  damage: 0
+  points: 50
   enemyColor: 0
   normalDamage: 0
   criticalDamage: 0

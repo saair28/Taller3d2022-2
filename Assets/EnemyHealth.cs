@@ -9,8 +9,16 @@ public class EnemyHealth : MonoBehaviour
     public float currentHealth;
 
     public float damage;
+    public int points;
 
-    public int enemyColor;
+    public enum EnemyColor
+    {
+        azul,
+        rojo,
+        verde
+    }
+    public EnemyColor enemyColor;
+    //public int enemyColor;
     //0 = AZUL
     //1 = ROJO
     //2 = VERDE
@@ -28,7 +36,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = maxHealth;
         invulTimeCounter = invulTime;
 
-        criticoText = GameObject.FindGameObjectWithTag("CriticoText").GetComponent<TextMeshProUGUI>();
+        //criticoText = GameObject.FindGameObjectWithTag("CriticoText").GetComponent<TextMeshProUGUI>();
     }
 
     void Update()
@@ -53,14 +61,15 @@ public class EnemyHealth : MonoBehaviour
         }
         currentHealth -= amount;
         isInvulnerable = true;
-        Debug.Log(amount);
-        criticoText.text = amount.ToString();
+        //Debug.Log(amount);
+        //criticoText.text = amount.ToString();
     }
 
     public void Death()
     {
         FindObjectOfType<SpawnEnemies>().enemiesLeft--;
         FindObjectOfType<SpawnEnemies>().UpdateEnemyCounter();
+        FindObjectOfType<GameManager>().AddPoints(points);
         Destroy(gameObject);
     }
 
@@ -74,15 +83,15 @@ public class EnemyHealth : MonoBehaviour
                 criticalDamage = (FindObjectOfType<PlayerShoot>().damage * 2.5f);
                 switch (enemyColor)
                 {
-                    case 0: //ESTE ES CRITICO
+                    case EnemyColor.azul: //ESTE ES CRITICO
                         LoseHealth(criticalDamage);
                         Debug.Log("CRITICO");
                         break;
-                    case 1:
+                    case EnemyColor.rojo:
                         LoseHealth(normalDamage);
                         Debug.Log("NORMAL");
                         break;
-                    case 2:
+                    case EnemyColor.verde:
                         LoseHealth(normalDamage);
                         Debug.Log("NORMAL");
                         break;
@@ -99,15 +108,15 @@ public class EnemyHealth : MonoBehaviour
                 criticalDamage = (FindObjectOfType<PlayerShoot>().damage * 2.5f);
                 switch (enemyColor)
                 {
-                    case 0:
+                    case EnemyColor.azul:
                         LoseHealth(normalDamage);
                         Debug.Log("NORMAL");
                         break;
-                    case 1: //ESTE ES CRITICO
+                    case EnemyColor.rojo: //ESTE ES CRITICO
                         LoseHealth(criticalDamage);
                         Debug.Log("CRITICO");
                         break;
-                    case 2:
+                    case EnemyColor.verde:
                         LoseHealth(normalDamage);
                         Debug.Log("NORMAL");
                         break;
@@ -124,15 +133,15 @@ public class EnemyHealth : MonoBehaviour
                 criticalDamage = (FindObjectOfType<PlayerShoot>().damage * 2.5f);
                 switch (enemyColor)
                 {
-                    case 0:
+                    case EnemyColor.azul:
                         LoseHealth(normalDamage);
                         Debug.Log("NORMAL");
                         break;
-                    case 1:
+                    case EnemyColor.rojo:
                         LoseHealth(normalDamage);
                         Debug.Log("NORMAL");
                         break;
-                    case 2: //ESTE ES CRITICO
+                    case EnemyColor.verde: //ESTE ES CRITICO
                         LoseHealth(criticalDamage);
                         Debug.Log("CRITICO");
                         break;

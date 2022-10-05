@@ -17,13 +17,13 @@ public class StartSpawn : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
-        {
-            if(roomSpawn.GetComponent<SpawnEnemies>().enemiesLeft <= 0)
-                roomSpawn.GetComponent<SpawnEnemies>().Spawn();
-            //if (!roomSpawn.GetComponent<SpawnEnemies>().startSpawning)
-            //    roomSpawn.GetComponent<SpawnEnemies>().startSpawning = true;
-            //else roomSpawn.GetComponent<SpawnEnemies>().startSpawning = false;
-        }
+        //if(other.CompareTag("Player"))
+        //{
+        //    if(roomSpawn.GetComponent<SpawnEnemies>().enemiesLeft <= 0)
+        //        roomSpawn.GetComponent<SpawnEnemies>().Spawn();
+        //    //if (!roomSpawn.GetComponent<SpawnEnemies>().startSpawning)
+        //    //    roomSpawn.GetComponent<SpawnEnemies>().startSpawning = true;
+        //    //else roomSpawn.GetComponent<SpawnEnemies>().startSpawning = false;
+        //}
     }
 }

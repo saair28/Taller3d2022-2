@@ -85,6 +85,8 @@ public class PlayerWeapons : MonoBehaviour
         {
             weaponIndex--;
         }
+        if (currentWeapon != null)
+            currentWeapon = weaponList[weaponIndex - 1];
     }
 
     void ChangeWeaponDown()
@@ -97,6 +99,8 @@ public class PlayerWeapons : MonoBehaviour
         {
             weaponIndex++;
         }
+        if (currentWeapon != null)
+            currentWeapon = weaponList[weaponIndex - 1];
     }
 
     void ScrollToSwitchWeapon()
@@ -115,8 +119,8 @@ public class PlayerWeapons : MonoBehaviour
             }
         }
 
-        if (currentWeapon != null)
-            currentWeapon = weaponList[weaponIndex - 1];
+        //if (currentWeapon != null)
+        //    currentWeapon = weaponList[weaponIndex - 1];
     }
 
     void NumbersToSwitchWeapon()
@@ -134,16 +138,16 @@ public class PlayerWeapons : MonoBehaviour
             weaponNumberSearchIndex = 3;
         }
 
-        if(weaponNumberSearchIndex != 0)
+        if (weaponNumberSearchIndex != 0)
         {
             for (int i = 0; i < weaponList.Count; i++)
             {
                 if (weaponList[i].GetComponent<WeaponScript>().key == weaponNumberSearchIndex)
                 {
-                    if(currentWeapon != weaponList[i])
+                    if (currentWeapon != weaponList[i])
                     {
-                        currentWeapon = weaponList[i];
                         isChangingWeapon = true;
+                        currentWeapon = weaponList[i];
                     }
                     break;
 
@@ -151,7 +155,6 @@ public class PlayerWeapons : MonoBehaviour
             }
             weaponNumberSearchIndex = 0;
         }
-        
     }
 
     void UpdateWeaponStats()

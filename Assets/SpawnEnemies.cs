@@ -5,54 +5,98 @@ using TMPro;
 
 public class SpawnEnemies : MonoBehaviour
 {
-    public int enemyNumber;
+    //public int enemyNumber;
     public GameObject[] enemyPrefabs;
     public Transform[] spawnPositions;
     public Material[] materials;
-    //
-    //
-    //
-    public bool roundStarted = false;
+
+    public float spawnTime;
+    public bool isSpawning = false;
 
     public int enemiesLeft = 0;
     public TextMeshProUGUI enemyCounterText;
-
-    public GameObject door;
+    public TextMeshProUGUI roundCounterText;
+    public TextMeshProUGUI betweenRoundsCounterText;
 
     void Start()
     {
-        spawnPositions = GetComponentsInChildren<Transform>();
+        spawnPositions = GetComponent<ScenarioManager>().rooms[0].GetComponent<RoomScript>().spawnPositions;
     }
 
     void Update()
     {
-        if(enemiesLeft <= 0 && roundStarted)
-        {
-            door.SetActive(false);
-        }
+        // SOLO PARA EL PROTOTIPO
+        //if(enemiesLeft <= 0 && roundStarted)
+        //{
+        //    door.SetActive(false);
+        //}
     }
 
-    public void Spawn()
+    public IEnumerator SpawnE()
     {
-        roundStarted = true;
-        for (int i = 0; i < enemyNumber; i++)
-        {
-            int randomNumberEnemy = Random.Range(0, enemyPrefabs.Length);
-            int randomNumberPosition = Random.Range(0, spawnPositions.Length);
-            int randomNumberColor = Random.Range(0, materials.Length);
-            //0 = AZUL
-            //1 = ROJO
-            //2 = VERDE
-            GameObject go = Instantiate(enemyPrefabs[randomNumberEnemy], spawnPositions[randomNumberPosition].position, Quaternion.identity);
-            go.GetComponent<MeshRenderer>().material = materials[randomNumberColor];
-            go.GetComponent<EnemyHealth>().enemyColor = randomNumberColor;
-            enemiesLeft++;
-            UpdateEnemyCounter();
-        }
+        isSpawning = true;
+        //for (int i = 0; i < numberOfEnemies; i++)
+        //{
+        //    int randomNumberEnemy = Random.Range(0, enemyPrefabs.Length);
+        //    int randomNumberPosition = Random.Range(0, spawnPositions.Length);
+        //    int randomNumberColor = Random.Range(0, materials.Length);
+        //    //0 = AZUL
+        //    //1 = ROJO
+        //    //2 = VERDE
+        //    GameObject go = Instantiate(enemyPrefabs[randomNumberEnemy], spawnPositions[randomNumberPosition].position, Quaternion.identity);
+        //    go.GetComponent<MeshRenderer>().material = materials[randomNumberColor];
+        //    go.GetComponent<EnemyHealth>().enemyColor = (EnemyHealth.EnemyColor)randomNumberColor;
+        //    enemiesLeft++;
+        //    UpdateEnemyCounter();
+        //    yield return new WaitForSeconds(spawnTime);
+        //}
+
+        int randomNumberEnemy = Random.Range(0, enemyPrefabs.Length);
+        int randomNumberPosition = Random.Range(0, spawnPositions.Length);
+        int randomNumberColor = Random.Range(0, materials.Length);
+        //0 = AZUL
+        //1 = ROJO
+        //2 = VERDE
+        GameObject go = Instantiate(enemyPrefabs[randomNumberEnemy], spawnPositions[randomNumberPosition].position, Quaternion.identity);
+        go.GetComponent<MeshRenderer>().material = materials[randomNumberColor];
+        go.GetComponent<EnemyHealth>().enemyColor = (EnemyHealth.EnemyColor)randomNumberColor;
+        enemiesLeft++;
+        UpdateEnemyCounter();
+        yield return new WaitForSeconds(spawnTime);
+
+        isSpawning = false;
     }
+
+    //public void Spawn()
+    //{
+    //    for (int i = 0; i < enemyNumber; i++)
+    //    {
+    //        int randomNumberEnemy = Random.Range(0, enemyPrefabs.Length);
+    //        int randomNumberPosition = Random.Range(0, spawnPositions.Length);
+    //        int randomNumberColor = Random.Range(0, materials.Length);
+    //        //0 = AZUL
+    //        //1 = ROJO
+    //        //2 = VERDE
+    //        GameObject go = Instantiate(enemyPrefabs[randomNumberEnemy], spawnPositions[randomNumberPosition].position, Quaternion.identity);
+    //        go.GetComponent<MeshRenderer>().material = materials[randomNumberColor];
+    //        go.GetComponent<EnemyHealth>().enemyColor = (EnemyHealth.EnemyColor)randomNumberColor;
+    //        enemiesLeft++;
+    //        UpdateEnemyCounter();
+    //    }
+    //}
 
     public void UpdateEnemyCounter()
     {
         enemyCounterText.text = "Enemigos: " + enemiesLeft.ToString();
+    }
+
+    public void UpdateRoundCounter()
+    {
+        roundCounterText.text = "Ronda: " + GetComponent<ScenarioManager>().currentRound.ToString();
+    }
+
+    public void UpdateSpawnPositions()
+    {
+        spawnPositions = GetComponent<ScenarioManager>().currentRoom.GetComponent<RoomScript>().spawnPositions;
     }
 }
