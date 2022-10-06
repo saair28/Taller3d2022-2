@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1119,7 +1119,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh26166
+  m_Name: pb_Mesh28660
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -1732,7 +1732,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045200917}
   m_LocalRotation: {x: 0, y: 0.7089555, z: 0, w: 0.7052532}
-  m_LocalPosition: {x: 8.71, y: 1.27, z: -21.59}
+  m_LocalPosition: {x: 8.71, y: 1.2, z: -21.59}
   m_LocalScale: {x: 6.031938, y: 6.1221223, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1847,7 +1847,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c26dff91a8ce5e48b9c354125f5d1eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyNumber: 5
   enemyPrefabs:
   - {fileID: 4970653128200672383, guid: fae16139b9dabd640b0f102614b07404, type: 3}
   - {fileID: 6196869968844167345, guid: e03b30416fa85aa4c83632324d9c7491, type: 3}
@@ -1857,10 +1856,12 @@ MonoBehaviour:
   - {fileID: 2100000, guid: e10e8603be147d04d81f4651ec59a861, type: 2}
   - {fileID: 2100000, guid: a26bd2d7d51382946b451d8ed95aab9a, type: 2}
   - {fileID: 2100000, guid: 260457b91dc268a4795f58027b94981e, type: 2}
-  roundStarted: 0
+  spawnTime: 0
+  isSpawning: 0
   enemiesLeft: 0
   enemyCounterText: {fileID: 1686180366}
-  door: {fileID: 1045200917}
+  roundCounterText: {fileID: 0}
+  betweenRoundsCounterText: {fileID: 0}
 --- !u!4 &1243519372
 Transform:
   m_ObjectHideFlags: 0
@@ -10337,8 +10338,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9368658, y: 1, z: 1.8079636}
-  m_Center: {x: -0.08850813, y: 0, z: 0.020460486}
+  m_Size: {x: 1.2718577, y: 1.2718579, z: 1.2718579}
+  m_Center: {x: 0.13592897, y: 0, z: 0}
 --- !u!23 &2049163617
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10398,7 +10399,7 @@ Transform:
   m_GameObject: {fileID: 2049163614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -19.8, y: 0.61, z: -24.1}
-  m_LocalScale: {x: 2.44, y: 2.87, z: 13.91}
+  m_LocalScale: {x: 2.44, y: 2.4, z: 3.24}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

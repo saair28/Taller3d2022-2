@@ -5,8 +5,19 @@ using UnityEngine.SceneManagement;
 public class cscenaavictoria : MonoBehaviour
 {
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider col)
     {
-        SceneManager.LoadScene(2);
+        if (col.CompareTag("BalaVERDE"))
+        {
+            SceneManager.LoadScene(2);
+        }
+        if (col.CompareTag("BalaROJA"))
+        {
+            SceneManager.LoadScene(2);
+        }
+        if (col.CompareTag("BalaAZUL"))
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 }
