@@ -80,11 +80,24 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerStay(Collider col)
     {
-        if(col.CompareTag("Danger") && !hitReceived)
+        if (col.CompareTag("Danger") && !hitReceived)
         {
             // Aquí, en lugar de poner un valor como "1", habría que usar una variable que indique el daño del enemigo.
             // Eso se haría jalando la variable "damage" (o como se llame) del script del enemigo que colisiona contra el Player.
             StartCoroutine(GotHit(25));
         }
+        if (col.CompareTag("Enemy1") && !hitReceived)
+        {
+            // Aquí, en lugar de poner un valor como "1", habría que usar una variable que indique el daño del enemigo.
+            // Eso se haría jalando la variable "damage" (o como se llame) del script del enemigo que colisiona contra el Player.
+            StartCoroutine(GotHit(40));
+        }
+        if (col.CompareTag("Enemy2") && !hitReceived)
+        {
+            // Aquí, en lugar de poner un valor como "1", habría que usar una variable que indique el daño del enemigo.
+            // Eso se haría jalando la variable "damage" (o como se llame) del script del enemigo que colisiona contra el Player.
+            StartCoroutine(GotHit(28));
+        }
+
     }
 }

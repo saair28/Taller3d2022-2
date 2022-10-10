@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour
+public class FasterEnemy : MonoBehaviour
 {
     public Transform target;
     public Vector3 playerPosition;
@@ -10,8 +10,9 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        life = 80;
         agent = GetComponent<NavMeshAgent>();
+
+        life = 120;
     }
 
     void Update()
