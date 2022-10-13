@@ -19,9 +19,13 @@ public class PlayerShoot : MonoBehaviour
     Vector3 destination;
     public GameObject bulletPrefab;
 
+    AudioSource sfxSource;
+
     void Start()
     {
         fireRateCount = fireRate;
+
+        sfxSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -35,6 +39,8 @@ public class PlayerShoot : MonoBehaviour
 
     void Shoot()
     {
+        AudioManager.instance.PlaySFX(sfxSource, AudioManager.instance.shotSFX, 0.5f);
+
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
         if(Physics.Raycast(ray, out hit))
