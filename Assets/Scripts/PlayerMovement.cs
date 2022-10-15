@@ -39,6 +39,15 @@ public class PlayerMovement : MonoBehaviour
         CheckGround();
         PlayerInput();
         Jump();
+
+        if (!isGrounded)
+        {
+            JumpGravity();
+        }
+        else
+        {
+            NormalGravity();
+        }
     }
 
     void FixedUpdate()
@@ -88,6 +97,19 @@ public class PlayerMovement : MonoBehaviour
     void CheckGround()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundMask);
+    }
+
+    void JumpGravity()
+    {
+        if(rb.velocity.y <= -0.05f)
+        {
+            GetComponent<CustomGravity>().gravityScale = GetComponent<CustomGravity>().fallingGravityScale;
+        }
+    }
+
+    void NormalGravity()
+    {
+        GetComponent<CustomGravity>().gravityScale = GetComponent<CustomGravity>().normalGravityScale;
     }
 
 }

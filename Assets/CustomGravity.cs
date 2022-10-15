@@ -5,6 +5,8 @@ using UnityEngine;
 public class CustomGravity : MonoBehaviour
 {
     public float gravityScale = 1.0f;
+    public float normalGravityScale = 1.0f;
+    public float fallingGravityScale = 1.0f;
 
     // Global Gravity doesn't appear in the inspector. Modify it here in the code
     // (or via scripting) to define a different default gravity for all objects.
@@ -17,6 +19,12 @@ public class CustomGravity : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
+        gravityScale = normalGravityScale;
+    }
+
+    private void Update()
+    {
+        
     }
 
     void FixedUpdate()
