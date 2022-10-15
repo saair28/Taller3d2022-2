@@ -6,9 +6,9 @@ public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] Camera cam;
     //[SerializeField] GameObject bulletPrefab;
-    [SerializeField] Transform bulletOrigin;
+    [SerializeField] public Transform bulletOrigin;
     [SerializeField] public float bulletSpeed;
-    bool canShoot => (Input.GetMouseButton(0) && !shotBullet && GetComponent<PlayerWeapons>().weaponList.Count > 0);
+    bool canShoot => (Input.GetMouseButton(0) && !shotBullet && GetComponent<PlayerWeapons>().currentWeapon != null);
     public bool shotBullet = false;
     [SerializeField] public float damage;
     [SerializeField] public float fireRate;
@@ -68,13 +68,17 @@ public class PlayerShoot : MonoBehaviour
             float randomRotationY = Random.Range(-bulletRotation, bulletRotation);
             float randomRotationZ = Random.Range(-bulletRotation, bulletRotation);
 
-            Vector3 _bulletRotation = new Vector3(randomRotationX, randomRotationY, randomRotationZ) /100;
-            Vector3 finalRotation = (destination - bulletOrigin.position).normalized;
+            Vector3 _bulletRotation = new Vector3(randomRotationX, randomRotationY, randomRotationZ);
+            //Vector3 finalRotation = (destination - bulletOrigin.position).normalized;
+            Vector3 finalRotation = (destination - bulletOrigin.position);
 
-            var bullet = Instantiate(bulletPrefab, bulletOrigin.position, Quaternion.LookRotation(bulletOrigin.transform.forward));
+            //var bullet = Instantiate(bulletPrefab, bulletOrigin.position, Quaternion.LookRotation(bulletOrigin.transform.forward));
+            var bullet = Instantiate(bulletPrefab, bulletOrigin.position, Quaternion.LookRotation(finalRotation));
             bullet.transform.Rotate(_bulletRotation);
+            //bullet.transform.Rotate(finalRotation + _bulletRotation);
             // Con esta línea de abajo, haces que las balas vayan directas al centro de la pantalla, en lugar de solo ir hacia delante.
-            bullet.GetComponent<Rigidbody>().velocity = (finalRotation + _bulletRotation).normalized * bulletSpeed;
+            //bullet.GetComponent<Rigidbody>().velocity = (finalRotation + _bulletRotation).normalized * bulletSpeed;
+            bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward * bulletSpeed;
             //bullet.GetComponent<BulletScript>().bulletDamage = GetComponent<PlayerWeapons>().currentWeapon.GetComponent<PlayerWeapons>
             Destroy(bullet, bulletReach);
         }

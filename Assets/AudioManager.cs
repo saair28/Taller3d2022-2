@@ -8,7 +8,8 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
     AudioSource musicSource;
-    public AudioClip musicClip, shotSFX;
+    public AudioSource sfxSource;
+    public AudioClip musicClip, shotSFX, endRoundSFX;
 
     [Header("Audio Mixer")]
     public AudioMixerGroup masterGroup;
@@ -31,9 +32,13 @@ public class AudioManager : MonoBehaviour
         musicSource = GetComponent<AudioSource>();
         musicClip = (AudioClip)Resources.Load("Audio/Music/testAudio");
         shotSFX = (AudioClip)Resources.Load("Audio/SFX/billSound");
+        endRoundSFX = (AudioClip)Resources.Load("Audio/SFX/endRoundSFX");
 
         ChangeMusic(musicClip);
         UpdateMixerVolume();
+
+        // PARA BAJAR EL VOLUMEN PORQUE ESTÁ MU ALTO.
+        masterVolumeSlider.value = 0.05f;
     }
 
     public void PlaySFX(AudioSource source, AudioClip clip, float volume)

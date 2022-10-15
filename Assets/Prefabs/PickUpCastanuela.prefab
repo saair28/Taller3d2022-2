@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4474918714513747357}
   - component: {fileID: 2106305598655217455}
   - component: {fileID: 6531404791448941420}
+  - component: {fileID: 6557024743549391787}
   m_Layer: 0
   m_Name: PickUpCastanuela
   m_TagString: Untagged
@@ -95,5 +96,29 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 0.75
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6557024743549391787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661583985040085275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 503f300b5ea706c4b93bd062d70bd23e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: Pistol
+  bulletSpeed: 20
+  fireRate: 0.6
+  damage: 20
+  key: 1
+  bulletsPerShot: 1
+  bulletRotation: 1
+  bulletReach: 3
+  weaponPrefab: {fileID: 979367961584319844, guid: b93999ae08673b74d8327de48c0f42e3, type: 3}
+  bulletPrefab: {fileID: 6332320722821652308, guid: 5219a83d517c30b4984677daca58dafc, type: 3}
+  bulletOrigin: {fileID: 0}
+  bulletColor: 0

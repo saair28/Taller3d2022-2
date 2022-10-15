@@ -5,8 +5,10 @@ public class Enemy : MonoBehaviour
 {
     public Transform target;
     public Vector3 playerPosition;
-    NavMeshAgent agent;
+    public NavMeshAgent agent;
     public int life;
+
+    public int valor;
 
     void Start()
     {
@@ -17,7 +19,8 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
-        agent.SetDestination(playerPosition);
+        if(agent.isActiveAndEnabled)
+            agent.SetDestination(playerPosition);
     }
 
     void FaceTarget()

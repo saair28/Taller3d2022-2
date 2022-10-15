@@ -86,18 +86,18 @@ public class PlayerHealth : MonoBehaviour
             // Eso se haría jalando la variable "damage" (o como se llame) del script del enemigo que colisiona contra el Player.
             StartCoroutine(GotHit(25));
         }
-        if (col.CompareTag("Enemy1") && !hitReceived)
-        {
-            // Aquí, en lugar de poner un valor como "1", habría que usar una variable que indique el daño del enemigo.
-            // Eso se haría jalando la variable "damage" (o como se llame) del script del enemigo que colisiona contra el Player.
-            StartCoroutine(GotHit(40));
-        }
-        if (col.CompareTag("Enemy2") && !hitReceived)
-        {
-            // Aquí, en lugar de poner un valor como "1", habría que usar una variable que indique el daño del enemigo.
-            // Eso se haría jalando la variable "damage" (o como se llame) del script del enemigo que colisiona contra el Player.
-            StartCoroutine(GotHit(28));
-        }
+        //if (col.CompareTag("Enemy1") && !hitReceived)
+        //{
+        //    // Aquí, en lugar de poner un valor como "1", habría que usar una variable que indique el daño del enemigo.
+        //    // Eso se haría jalando la variable "damage" (o como se llame) del script del enemigo que colisiona contra el Player.
+        //    StartCoroutine(GotHit(40));
+        //}
+        //if (col.CompareTag("Enemy2") && !hitReceived)
+        //{
+        //    // Aquí, en lugar de poner un valor como "1", habría que usar una variable que indique el daño del enemigo.
+        //    // Eso se haría jalando la variable "damage" (o como se llame) del script del enemigo que colisiona contra el Player.
+        //    StartCoroutine(GotHit(28));
+        //}
 
     }
 }

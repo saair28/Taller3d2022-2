@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using TMPro;
 
 public class EnemyHealth : MonoBehaviour
@@ -10,6 +11,12 @@ public class EnemyHealth : MonoBehaviour
 
     public float damage;
     public int points;
+
+    public GameObject damageTextPrefab;
+
+    Color _blue = new Color(45, 126, 255, 255);
+    Color _red = new Color(255, 64, 40, 255);
+    Color _purple = new Color(165, 69, 255, 255);
 
     public enum EnemyColor
     {
@@ -36,6 +43,10 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = maxHealth;
         invulTimeCounter = invulTime;
 
+        _blue = new Color(45, 126, 255, 255)/255;
+        _red = new Color(255, 64, 40, 255)/255;
+        _purple = new Color(165, 69, 255, 255)/255;
+
         //criticoText = GameObject.FindGameObjectWithTag("CriticoText").GetComponent<TextMeshProUGUI>();
     }
 
@@ -53,7 +64,7 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    public void LoseHealth(float amount)
+    public void LoseHealth(float amount, Color _color)
     {
         if(currentHealth <= 0)
         {
@@ -61,6 +72,10 @@ public class EnemyHealth : MonoBehaviour
         }
         currentHealth -= amount;
         isInvulnerable = true;
+
+        var text = Instantiate(damageTextPrefab, transform.position, Quaternion.identity, transform);
+        text.GetComponent<TextMesh>().text = amount.ToString();
+        text.GetComponent<TextMesh>().color = _color;
         //Debug.Log(amount);
         //criticoText.text = amount.ToString();
     }
@@ -70,6 +85,14 @@ public class EnemyHealth : MonoBehaviour
         FindObjectOfType<SpawnEnemies>().enemiesLeft--;
         FindObjectOfType<SpawnEnemies>().UpdateEnemyCounter();
         FindObjectOfType<GameManager>().AddPoints(points);
+        StartCoroutine(DeathCoroutine());
+    }
+
+    public IEnumerator DeathCoroutine()
+    {
+        GetComponent<Collider>().enabled = false;
+        GetComponent<NavMeshAgent>().enabled = false;
+        yield return new WaitForSeconds(0.1f);
         Destroy(gameObject);
     }
 
@@ -84,15 +107,15 @@ public class EnemyHealth : MonoBehaviour
                 switch (enemyColor)
                 {
                     case EnemyColor.azul: //ESTE ES CRITICO
-                        LoseHealth(criticalDamage);
+                        LoseHealth(criticalDamage, _blue);
                         Debug.Log("CRITICO");
                         break;
                     case EnemyColor.rojo:
-                        LoseHealth(normalDamage);
+                        LoseHealth(normalDamage, Color.white);
                         Debug.Log("NORMAL");
                         break;
                     case EnemyColor.verde:
-                        LoseHealth(normalDamage);
+                        LoseHealth(normalDamage, Color.white);
                         Debug.Log("NORMAL");
                         break;
                 }
@@ -109,15 +132,15 @@ public class EnemyHealth : MonoBehaviour
                 switch (enemyColor)
                 {
                     case EnemyColor.azul:
-                        LoseHealth(normalDamage);
+                        LoseHealth(normalDamage, Color.white);
                         Debug.Log("NORMAL");
                         break;
                     case EnemyColor.rojo: //ESTE ES CRITICO
-                        LoseHealth(criticalDamage);
+                        LoseHealth(criticalDamage, _red);
                         Debug.Log("CRITICO");
                         break;
                     case EnemyColor.verde:
-                        LoseHealth(normalDamage);
+                        LoseHealth(normalDamage, Color.white);
                         Debug.Log("NORMAL");
                         break;
                 }
@@ -134,15 +157,15 @@ public class EnemyHealth : MonoBehaviour
                 switch (enemyColor)
                 {
                     case EnemyColor.azul:
-                        LoseHealth(normalDamage);
+                        LoseHealth(normalDamage, Color.white);
                         Debug.Log("NORMAL");
                         break;
                     case EnemyColor.rojo:
-                        LoseHealth(normalDamage);
+                        LoseHealth(normalDamage, Color.white);
                         Debug.Log("NORMAL");
                         break;
                     case EnemyColor.verde: //ESTE ES CRITICO
-                        LoseHealth(criticalDamage);
+                        LoseHealth(criticalDamage, _purple);
                         Debug.Log("CRITICO");
                         break;
                 }

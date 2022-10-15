@@ -7,11 +7,13 @@ public class PlayerWeapons : MonoBehaviour
     PlayerShoot pShoot;
     public int weaponIndex = 0;
     public GameObject currentWeapon;
+    public GameObject currentWeaponPrefab;
     [SerializeField] public List<GameObject> weaponList = new List<GameObject>();
     public bool isChangingWeapon = false;
 
     GameObject weaponPickedUp;
     int weaponNumberSearchIndex = 0;
+    public Transform weaponPosition;
 
     void Start()
     {
@@ -35,6 +37,8 @@ public class PlayerWeapons : MonoBehaviour
             isChangingWeapon = true;
             weaponPickedUp = col.gameObject;
             CheckGun(weaponPickedUp);
+            Destroy(col);
+            col.gameObject.GetComponent<MeshRenderer>().enabled = false;
         }
     }
 
@@ -51,6 +55,8 @@ public class PlayerWeapons : MonoBehaviour
 
                     //Debug.Log("YA TIENES ESTA ARMA");
                     currentWeapon = weaponList[i];
+                    UpdateWeaponModel();
+
                     //weaponList[i].bulletsInMagazineActual = weapon.bulletsInMagazineActual;
                     //weaponList[i].bulletsInTotal = weapon.bulletsInTotal;
                     weaponIndex = i + 1;
@@ -63,6 +69,7 @@ public class PlayerWeapons : MonoBehaviour
                 weaponList.Add(weaponPickedUp);
                 weaponIndex++;
                 currentWeapon = weaponPickedUp;
+                UpdateWeaponModel();
             }
         }
         else
@@ -70,9 +77,20 @@ public class PlayerWeapons : MonoBehaviour
             weaponList.Add(weaponPickedUp);
             weaponIndex++;
             currentWeapon = weaponPickedUp;
+            UpdateWeaponModel();
         }
 
         isChangingWeapon = true;
+    }
+
+    public void UpdateWeaponModel()
+    {
+        if(currentWeaponPrefab != null)
+            Destroy(currentWeaponPrefab);
+
+        GetComponent<PlayerShoot>().bulletOrigin = null;
+        currentWeaponPrefab = Instantiate(currentWeapon.GetComponent<WeaponScript>().weaponPrefab, weaponPosition);
+        GetComponent<PlayerShoot>().bulletOrigin = currentWeaponPrefab.GetComponentInChildren<Transform>();
     }
 
     void ChangeWeaponUp()
@@ -111,11 +129,13 @@ public class PlayerWeapons : MonoBehaviour
             {
                 isChangingWeapon = true;
                 ChangeWeaponUp();
+                UpdateWeaponModel();
             }
             if (Input.GetAxisRaw("Mouse ScrollWheel") > 0)
             {
                 isChangingWeapon = true;
                 ChangeWeaponDown();
+                UpdateWeaponModel();
             }
         }
 
@@ -148,6 +168,7 @@ public class PlayerWeapons : MonoBehaviour
                     {
                         isChangingWeapon = true;
                         currentWeapon = weaponList[i];
+                        UpdateWeaponModel();
                     }
                     break;
 

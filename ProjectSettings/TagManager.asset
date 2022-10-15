@@ -17,6 +17,10 @@ TagManager:
   - BalaROJA
   - BalaVERDE
   - CriticoText
+  - Room1
+  - Room2
+  - BulletOrigin
+  - Enemy1
   layers:
   - Default
   - TransparentFX
@@ -25,8 +29,8 @@ TagManager:
   - Water
   - UI
   - Grounded
-  - 
-  - 
+  - Player
+  - Weapon
   - 
   - 
   - 

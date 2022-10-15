@@ -5,9 +5,13 @@ using UnityEngine;
 public class RoomScript : MonoBehaviour
 {
     public GameObject[] roomDoors;
+    //public MeshRenderer[] roomMesh;
     public Transform[] spawnPositions;
     public BoxCollider boxCol;
     public bool unlocked = false;
+
+    public GameObject[] enemyPool;
+
     void Start()
     {
         boxCol = GetComponent<BoxCollider>();

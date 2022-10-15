@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 1958290743004735777}
   - component: {fileID: 1103238134729541621}
   - component: {fileID: 8187436179488489568}
-  - component: {fileID: 9207014304874841368}
   - component: {fileID: 3602077393488737489}
   - component: {fileID: 1062231991495564141}
   - component: {fileID: -3021456332331746787}
   - component: {fileID: -2661622585774687994}
   - component: {fileID: -3978483699767298998}
+  - component: {fileID: 8559415461357350404}
   m_Layer: 0
   m_Name: EnemigoRAPIDO
   m_TagString: enemigo1
@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 6196869968844167345}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.78, y: 0.93, z: 0.19388008}
-  m_LocalScale: {x: 0.67296, y: 0.67296, z: 0.67296}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9052457520289987866}
@@ -47,7 +47,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6196869968844167345}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &8187436179488489568
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -90,19 +90,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &9207014304874841368
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6196869968844167345}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3602077393488737489
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -115,10 +102,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &1062231991495564141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +120,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 2719147486464002297, guid: 4bc6c93799d1ba847afd3baf69bca0cc, type: 3}
   playerPosition: {x: 0, y: 0, z: 0}
+  agent: {fileID: 0}
+  life: 0
+  valor: 70
 --- !u!195 &-3021456332331746787
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -183,11 +173,26 @@ MonoBehaviour:
   currentHealth: 0
   damage: 0
   points: 25
+  damageTextPrefab: {fileID: 3291457415106553876, guid: 30b942a91ec1d89458bb5a157b0c02c9, type: 3}
   enemyColor: 0
   normalDamage: 0
   criticalDamage: 0
   invulTime: 0.05
   invulTimeCounter: 0
+--- !u!136 &8559415461357350404
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6196869968844167345}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &7408957919318743009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -202,7 +207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1977412143737023225, guid: 797742755a307c9458ab17d7d24b5f7e, type: 3}
       propertyPath: m_Size.y
-      value: 1.0792611
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1977412143737023225, guid: 797742755a307c9458ab17d7d24b5f7e, type: 3}
       propertyPath: m_Size.z
@@ -210,7 +215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1977412143737023225, guid: 797742755a307c9458ab17d7d24b5f7e, type: 3}
       propertyPath: m_Center.x
-      value: -0.03963207
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1977412143737023227, guid: 797742755a307c9458ab17d7d24b5f7e, type: 3}
       propertyPath: m_RootOrder

@@ -13,6 +13,8 @@ public class WeaponScript : MonoBehaviour
     [SerializeField] public int bulletsPerShot;
     [SerializeField] public float bulletRotation;
     [SerializeField] public float bulletReach;
+    [SerializeField] public GameObject weaponPrefab;
     [SerializeField] public GameObject bulletPrefab;
+    [SerializeField] public Transform bulletOrigin;
     [SerializeField] public int bulletColor;
 }
