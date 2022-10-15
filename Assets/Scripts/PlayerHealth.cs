@@ -69,7 +69,7 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("derrota");
             Debug.Log("MORISTE");
         }
         yield return new WaitForSeconds(invulnerabilityTime);
