@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/EscenaPrototipo_v2.unity
-    guid: 3f3f14e7a0eb63846a653963bcdd9a86
+    path: Assets/Scenes/Prototipo_Promedio2.unity
+    guid: f0020b11495f01743be82aae0c128529
   - enabled: 1
     path: Assets/Scenes/derrota.unity
     guid: 2913231620eee4b42863aea96eb2b855
