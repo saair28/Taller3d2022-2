@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -7891140492007006778}
   - component: {fileID: 7201883141269779212}
   m_Layer: 0
-  m_Name: EnemigoLENTO
+  m_Name: EnemigoLENTO_AZUL
   m_TagString: enemigo1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e3b27799cecbc1f4faad55da31603bcc, type: 2}
+  - {fileID: 2100000, guid: e10e8603be147d04d81f4651ec59a861, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -175,6 +175,7 @@ MonoBehaviour:
   points: 50
   damageTextPrefab: {fileID: 3291457415106553876, guid: 30b942a91ec1d89458bb5a157b0c02c9, type: 3}
   enemyColor: 0
+  enemyColorINT: 1
   normalDamage: 0
   criticalDamage: 0
   invulTime: 0.05

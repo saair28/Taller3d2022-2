@@ -36,8 +36,8 @@ public class RoomScript : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             Debug.Log("ROOM");
-            FindObjectOfType<ScenarioManager>().currentRoom = gameObject;
-            FindObjectOfType<SpawnEnemies>().UpdateSpawnPositions();
+            //FindObjectOfType<ScenarioManager>().currentRoom = gameObject;
+            //FindObjectOfType<SpawnEnemies>().UpdateSpawnPositions();
         }
     }
 }

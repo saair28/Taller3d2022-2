@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
     AudioSource musicSource;
     public AudioSource sfxSource;
-    public AudioClip musicClip, shotSFX, endRoundSFX;
+    public AudioClip musicClip, shotSFX, endRoundSFX, satanVoice;
 
     [Header("Audio Mixer")]
     public AudioMixerGroup masterGroup;
@@ -33,6 +33,7 @@ public class AudioManager : MonoBehaviour
         musicClip = (AudioClip)Resources.Load("Audio/Music/testAudio");
         shotSFX = (AudioClip)Resources.Load("Audio/SFX/billSound");
         endRoundSFX = (AudioClip)Resources.Load("Audio/SFX/endRoundSFX");
+        satanVoice = (AudioClip)Resources.Load("Audio/SFX/satanVoice");
 
         ChangeMusic(musicClip);
         UpdateMixerVolume();

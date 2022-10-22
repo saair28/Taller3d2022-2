@@ -29,6 +29,11 @@ public class CustomGravity : MonoBehaviour
 
     void FixedUpdate()
     {
+        ApplyGravity();
+    }
+
+    public void ApplyGravity()
+    {
         Vector3 gravity = globalGravity * gravityScale * Vector3.up;
         rb.AddForce(gravity, ForceMode.Acceleration);
     }

@@ -734,6 +734,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   walkSpeed: 50
+  speedMultiplier: 1
   shootSpeed: 40
   airMultiplier: 0
   horizontalMovement: 0
@@ -742,6 +743,7 @@ MonoBehaviour:
   groundDrag: 6
   airDrag: 4
   jumpForce: 20
+  maxSlopeAngle: 40
   groundCheck: {fileID: 8956547510165681737}
   groundMask:
     serializedVersion: 2
@@ -776,6 +778,7 @@ MonoBehaviour:
   bulletSpeed: 0
   shotBullet: 0
   damage: 0
+  damageMultiplier: 1
   fireRate: 0
   fireRateCount: 0
   bulletsPerShot: 0

@@ -8,9 +8,10 @@ public class PlayerShoot : MonoBehaviour
     //[SerializeField] GameObject bulletPrefab;
     [SerializeField] public Transform bulletOrigin;
     [SerializeField] public float bulletSpeed;
-    bool canShoot => (Input.GetMouseButton(0) && !shotBullet && GetComponent<PlayerWeapons>().currentWeapon != null);
+    bool canShoot => (Input.GetMouseButton(0) && !shotBullet && GetComponent<PlayerWeapons>().currentWeapon != null && bulletOrigin != null);
     public bool shotBullet = false;
     [SerializeField] public float damage;
+    public float damageMultiplier = 1;
     [SerializeField] public float fireRate;
     [HideInInspector] public float fireRateCount;
     [HideInInspector] public int bulletsPerShot;

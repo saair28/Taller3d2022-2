@@ -8,22 +8,25 @@ public class ScenarioManager : MonoBehaviour
     public static ScenarioManager instance;
     public NavMeshSurface navMeshSurface;
     public int currentRound = 0;
-    public int numberOfEnemies;
+    //public int numberOfEnemies;
     public GameObject currentRoom;
     public List<GameObject> rooms = new List<GameObject>();
+
+    [Header("Enemy values")]
+    public int enemiesOnScreen = 0;
+    public int maxEnemiesOnScreen = 5;
+    public int enemiesThisRound = 0;
+    public int totalEnemiesForTheRound = 0;
+    public bool allEnemiesSpawned = false;
 
     public bool roundStarting = false;
     public bool roundInProgress = false;
 
     public float timeBetweenRounds;
-    float timeBetweenRoundsCounter;
+    [HideInInspector] public float timeBetweenRoundsCounter;
 
     public int[] milestones;
 
-    //[Header("Tutorial Things")]
-    //public bool tutorial = true;
-    //public Transform[] tutorialSpawn;
-    //public int numberOfEnemiesTutorial;
 
     private void Awake()
     {
@@ -32,60 +35,94 @@ public class ScenarioManager : MonoBehaviour
     private void Start()
     {
         navMeshSurface = GetComponent<NavMeshSurface>();
-        //rooms[0].GetComponent<RoomScript>().boxCol.enabled = true;
-        //rooms[0].GetComponent<RoomScript>().unlocked = true;
-        timeBetweenRoundsCounter = timeBetweenRounds;
-        //currentRound++;
+        ResetTimer();
         currentRoom = rooms[0];
         StartCoroutine(UpdateNavMesh(1));
+        GetComponent<SpawnEnemies>().UpdateRoundCounter();
     }
 
     private void Update()
     {
-        if (!roundStarting && !roundInProgress && FindObjectOfType<PlayerWeapons>().currentWeapon != null)
-        {
-            timeBetweenRoundsCounter -= Time.deltaTime;
-            GetComponent<SpawnEnemies>().betweenRoundsCounterText.gameObject.SetActive(true);
-            GetComponent<SpawnEnemies>().betweenRoundsCounterText.text = timeBetweenRoundsCounter.ToString("F2");
+        enemiesOnScreen = GetComponent<SpawnEnemies>().enemiesLeft;
 
-            if (timeBetweenRoundsCounter <= 0)
+        if (!GetComponent<TutorialScript>().isActiveAndEnabled)
+        {
+            if (!roundStarting && !roundInProgress)
             {
-                roundStarting = true;
-                GetComponent<SpawnEnemies>().UpdateRoundCounter();
-                timeBetweenRoundsCounter = timeBetweenRounds;
+                UpdateTotalEnemies();
+                if (timeBetweenRoundsCounter <= 0)
+                {
+                    NextRound();
+                    roundStarting = true;
+                }
+                GoTimer();
+            }
+            else
+            {
+                HideTimer();
+                GetComponent<BuffMenu>().buffMenuActivated = false;
+            }
+
+
+            if (roundStarting)
+            {                
+                if(!allEnemiesSpawned)
+                {
+                    if (enemiesThisRound < totalEnemiesForTheRound)
+                    {
+                        allEnemiesSpawned = false;
+                        if (enemiesOnScreen < maxEnemiesOnScreen)
+                            StartCoroutine(GetComponent<SpawnEnemies>().SpawnE());
+                    }
+                    else
+                    {
+                        allEnemiesSpawned = true;
+
+                        roundStarting = false;
+                        roundInProgress = true;
+                    }
+                }
+            }
+
+            if (roundInProgress && allEnemiesSpawned && GetComponent<SpawnEnemies>().enemiesLeft <= 0)
+            {
+                //NextRound();
+                if ((currentRound) % 3 == 0 && !GetComponent<BuffMenu>().buffMenuActivated)
+                {
+                    StartCoroutine(GetComponent<BuffMenu>()._BuffMenuActivate());
+                }
+                roundInProgress = false;
+                allEnemiesSpawned = false;
             }
         }
-        else
-        {
-            GetComponent<SpawnEnemies>().betweenRoundsCounterText.gameObject.SetActive(false);
-        }
+    }
 
-        if (roundStarting)
+    void UpdateTotalEnemies()
+    {
+        if(currentRound > 3 && currentRound <= 6)
         {
-            if (GetComponent<SpawnEnemies>().enemiesLeft < numberOfEnemies && !GetComponent<SpawnEnemies>().isSpawning)
-                StartCoroutine(GetComponent<SpawnEnemies>().SpawnE());
-
-            if (GetComponent<SpawnEnemies>().enemiesLeft >= numberOfEnemies)
-            {
-                roundStarting = false;
-                roundInProgress = true;
-            }
+            totalEnemiesForTheRound = 16;
         }
-
-        if (roundInProgress && GetComponent<SpawnEnemies>().enemiesLeft <= 0)
+        else if (currentRound > 7 && currentRound <= 9)
         {
-            NextRound();
-            LevelProgressionCheck();
+            totalEnemiesForTheRound = 20;
         }
-        //if(Input.GetKeyDown(KeyCode.R))
-        //{
-        //    if (!roundStarting && !roundInProgress)
-        //    {
-        //        currentRound++;
-        //        roundStarting = true;
-        //        GetComponent<SpawnEnemies>().UpdateRoundCounter();
-        //    }
-        //}
+        else if (currentRound > 10 && currentRound <= 12)
+        {
+            totalEnemiesForTheRound = 24;
+        }
+        else totalEnemiesForTheRound = 28;
+    }
+
+    public void ResetTimer()
+    {
+        timeBetweenRoundsCounter = timeBetweenRounds;
+    }
+
+    public void GoTimer()
+    {
+        timeBetweenRoundsCounter -= Time.deltaTime;
+        ShowTimer();
     }
 
     public IEnumerator UpdateNavMesh(float time)
@@ -93,50 +130,39 @@ public class ScenarioManager : MonoBehaviour
         yield return new WaitForSeconds(time);
         navMeshSurface.BuildNavMesh();
     }
+
     public void LevelProgressionCheck()
     {
-        if (currentRound >= milestones[0])
+        if ((currentRound) % 3 == 0)
         {
             AudioManager.instance.PlaySFX(AudioManager.instance.sfxSource, AudioManager.instance.endRoundSFX, 0.5f);
-            //if (rooms[1].GetComponent<RoomScript>().unlocked)
-            //{
-            //    //for (int i = 0; i < GetComponent<ScenarioManager>().rooms[1].GetComponent<RoomScript>().roomDoors.Length; i++)
-            //    //{
-            //    //    GetComponent<ScenarioManager>().rooms[1].GetComponent<RoomScript>().roomDoors[i].SetActive(false);
-            //    //}
-            //    //GetComponent<ScenarioManager>().navMeshSurface.BuildNavMesh(); // ESTO VUELVE A BAKEAR EL NAVMESH PARA QUE SE ACTUALICE EL PATHFINDING.
-            //    //GetComponent<ScenarioManager>().rooms[1].GetComponent<RoomScript>().unlocked = true;
-            //    rooms[1].GetComponent<RoomScript>().OpenRoom();
-            //    StartCoroutine(UpdateNavMesh(1));
-            //    //navMeshSurface.BuildNavMesh(); // ESTO VUELVE A BAKEAR EL NAVMESH PARA QUE SE ACTUALICE EL PATHFINDING.
-            //}
-
         }
+        //if (currentRound >= milestones[0])
+        //{
+        //    AudioManager.instance.PlaySFX(AudioManager.instance.sfxSource, AudioManager.instance.endRoundSFX, 0.5f);
+        //}
     }
 
-    //public void UpdateNavMesh()
-    //{
-    //    //for(int i = 0; i < currentRoom.GetComponent<RoomScript>().roomMesh.Length; i++)
-    //    //{
-    //    //    currentRoom.GetComponent<RoomScript>().roomMesh[i].enabled = true;
-    //    //}
-        
-    //    navMeshSurface.BuildNavMesh();
+    public void ShowTimer()
+    {
+        GetComponent<SpawnEnemies>().betweenRoundsCounterText.gameObject.SetActive(true);
+        GetComponent<SpawnEnemies>().betweenRoundsCounterText.text = timeBetweenRoundsCounter.ToString("F2");
+    }
 
-    //    //for (int i = 0; i < currentRoom.GetComponent<RoomScript>().roomMesh.Length; i++)
-    //    //{
-    //    //    currentRoom.GetComponent<RoomScript>().roomMesh[i].enabled = false;
-    //    //}
-    //}
+    public void HideTimer()
+    {
+        GetComponent<SpawnEnemies>().betweenRoundsCounterText.gameObject.SetActive(false);
+    }
 
     public void NextRound()
     {
         roundInProgress = false;
+        enemiesThisRound = 0;
+        UpdateTotalEnemies();
         currentRound++;
-    }
-
-    public void EndRound()
-    {
-
+        GetComponent<SpawnEnemies>().UpdateRoundCounter();
+        LevelProgressionCheck();
+        ResetTimer();
+        GetComponent<BuffMenu>().FillBar();
     }
 }

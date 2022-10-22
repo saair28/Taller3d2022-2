@@ -6,6 +6,7 @@ using UnityEngine.AI;
 
 public class SpawnEnemies : MonoBehaviour
 {
+    public static SpawnEnemies instance;
     //public int enemyNumber;
     public GameObject[] enemyPrefabs;
     public Transform[] spawnPositions;
@@ -20,11 +21,14 @@ public class SpawnEnemies : MonoBehaviour
     public TextMeshProUGUI betweenRoundsCounterText;
 
     public int valorTotal;
-    
 
+    private void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
-        spawnPositions = GetComponent<ScenarioManager>().rooms[0].GetComponent<RoomScript>().spawnPositions;
+        //spawnPositions = GetComponent<ScenarioManager>().rooms[0].GetComponent<RoomScript>().spawnPositions;
 
         for (int i = 0; i < FindObjectOfType<RoomScript>().enemyPool.Length; i++)
         {
@@ -63,9 +67,12 @@ public class SpawnEnemies : MonoBehaviour
 
     public IEnumerator SpawnE()
     {
+        //if (GetComponent<ScenarioManager>().enemiesOnScreen < GetComponent<ScenarioManager>().maxEnemiesOnScreen)
+        //{ 
+        //}
         isSpawning = true;
 
-        int randomNumberEnemy = Random.Range(0, enemyPrefabs.Length);
+        //int randomNumberEnemy = Random.Range(0, enemyPrefabs.Length);
         //int randomNumberPosition = Random.Range(0, spawnPositions.Length);
         //int randomNumberColor = Random.Range(0, materials.Length);
 
@@ -78,35 +85,36 @@ public class SpawnEnemies : MonoBehaviour
         //go.GetComponent<MeshRenderer>().material = materials[randomNumberColor];
         //go.GetComponent<EnemyHealth>().enemyColor = (EnemyHealth.EnemyColor)randomNumberColor;
         enemiesLeft++;
+        GetComponent<ScenarioManager>().enemiesThisRound++;
         UpdateEnemyCounter();
         yield return new WaitForSeconds(spawnTime);
 
         isSpawning = false;
     }
 
-    public void SpawnETutorial()
-    {
-        isSpawning = true;
+    //public void SpawnETutorial()
+    //{
+    //    isSpawning = true;
 
-        //0 = AZUL
-        //1 = ROJO
-        //2 = VERDE
-        GameObject go1 = Instantiate(FindObjectOfType<TutorialScript>().enemyPrefabTUTORIAL, FindObjectOfType<TutorialScript>().spawnPositionsTUTORIAL[0].position, Quaternion.identity);
-        go1.GetComponent<MeshRenderer>().material = materials[0];
-        go1.GetComponent<EnemyHealth>().enemyColor = (EnemyHealth.EnemyColor)0;
-        go1.GetComponent<Enemy>().agent = go1.GetComponent<NavMeshAgent>();
-        go1.GetComponent<Enemy>().agent.speed = 0;
-        enemiesLeft++;
-        GameObject go2 = Instantiate(FindObjectOfType<TutorialScript>().enemyPrefabTUTORIAL, FindObjectOfType<TutorialScript>().spawnPositionsTUTORIAL[1].position, Quaternion.identity);
-        go2.GetComponent<MeshRenderer>().material = materials[1];
-        go2.GetComponent<EnemyHealth>().enemyColor = (EnemyHealth.EnemyColor)1;
-        go2.GetComponent<Enemy>().agent = go2.GetComponent<NavMeshAgent>();
-        go2.GetComponent<Enemy>().agent.speed = 0;
-        enemiesLeft++;
-        UpdateEnemyCounter();
+    //    //0 = AZUL
+    //    //1 = ROJO
+    //    //2 = VERDE
+    //    GameObject go1 = Instantiate(FindObjectOfType<TutorialScript>().enemyPrefabTUTORIAL, FindObjectOfType<TutorialScript>().spawnPositionsTUTORIAL[0].position, Quaternion.identity);
+    //    go1.GetComponent<MeshRenderer>().material = materials[0];
+    //    go1.GetComponent<EnemyHealth>().enemyColor = (EnemyHealth.EnemyColor)0;
+    //    go1.GetComponent<Enemy>().agent = go1.GetComponent<NavMeshAgent>();
+    //    go1.GetComponent<Enemy>().agent.speed = 0;
+    //    enemiesLeft++;
+    //    GameObject go2 = Instantiate(FindObjectOfType<TutorialScript>().enemyPrefabTUTORIAL, FindObjectOfType<TutorialScript>().spawnPositionsTUTORIAL[1].position, Quaternion.identity);
+    //    go2.GetComponent<MeshRenderer>().material = materials[1];
+    //    go2.GetComponent<EnemyHealth>().enemyColor = (EnemyHealth.EnemyColor)1;
+    //    go2.GetComponent<Enemy>().agent = go2.GetComponent<NavMeshAgent>();
+    //    go2.GetComponent<Enemy>().agent.speed = 0;
+    //    enemiesLeft++;
+    //    UpdateEnemyCounter();
 
-        isSpawning = false;
-    }
+    //    isSpawning = false;
+    //}
 
     public void UpdateEnemyCounter()
     {

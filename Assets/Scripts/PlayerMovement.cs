@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     float movementSpeed;
     [SerializeField] float walkSpeed;
+    public float speedMultiplier = 1;
     [SerializeField] float shootSpeed;
     [SerializeField] float airMultiplier;
     Vector3 moveDirection;
@@ -21,6 +22,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpForce = 5f;
     bool canJump => (isGrounded && Input.GetKeyDown(KeyCode.Space));
 
+    [Header("Slope")]
+    [SerializeField] float maxSlopeAngle;
+    RaycastHit slopeHit;
+
+    //[Header("Custom Gravity")]
+    //public float gravityScale = 1.0f;
+    //public float normalGravityScale = 1.0f;
+    //public float fallingGravityScale = 1.0f;
+
+    public static float globalGravity = -9.81f;
+
     [Header("Ground Detection")]
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask groundMask;
@@ -31,6 +43,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        //rb.useGravity = false;
+        //gravityScale = normalGravityScale;
     }
 
     
@@ -66,10 +80,34 @@ public class PlayerMovement : MonoBehaviour
 
     void MovePlayer()
     {
+
         ControlDrag();
-        movementSpeed = walkSpeed;
-        rb.AddForce(moveDirection.normalized * movementSpeed, ForceMode.Acceleration);
+        movementSpeed = walkSpeed * speedMultiplier;
+        if (OnSlope())
+        {
+            rb.AddForce(GetSlopeMoveDir() * movementSpeed * 1.2f, ForceMode.Acceleration);
+        }
+        else
+        {
+            rb.AddForce(moveDirection.normalized * movementSpeed, ForceMode.Acceleration);
+        }
+            
         //rb.velocity = moveDirection.normalized * movementSpeed;
+    }
+
+    bool OnSlope()
+    {
+        if(Physics.Raycast(transform.position, Vector3.down, out slopeHit, 2))
+        {
+            float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
+            return angle < maxSlopeAngle && angle != 0;
+        }
+        return false;
+    }
+
+    Vector3 GetSlopeMoveDir()
+    {
+        return Vector3.ProjectOnPlane(moveDirection,slopeHit.normal).normalized;
     }
 
     void ControlDrag()
