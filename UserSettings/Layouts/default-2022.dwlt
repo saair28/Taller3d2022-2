@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 55
+  controlID: 43
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -189,8 +189,8 @@ MonoBehaviour:
     y: 0
     width: 384
     height: 664
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -1483,9 +1483,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -110.21226, y: 15.011884, z: 18.361938}
+    m_Target: {x: -90.61573, y: -13.329285, z: 4.151505}
     speed: 2
-    m_Value: {x: -110.21226, y: 15.011884, z: 18.361938}
+    m_Value: {x: -90.61573, y: -13.329285, z: 4.151505}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1531,17 +1531,17 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.5300082, y: 0.27834967, z: -0.18957587, w: 0.7782141}
+    m_Target: {x: 0.3018471, y: -0.65325195, z: 0.31987828, w: 0.6162633}
     speed: 2
-    m_Value: {x: 0.5300232, y: 0.27835754, z: -0.18958123, w: 0.77823615}
+    m_Value: {x: 0.30370185, y: -0.65230495, z: 0.32184416, w: 0.61536956}
   m_Size:
-    m_Target: 32.07799
+    m_Target: 24.758944
     speed: 2
-    m_Value: 32.07799
+    m_Value: 24.758944
   m_Ortho:
-    m_Target: 1
+    m_Target: 0
     speed: 2
-    m_Value: 1
+    m_Value: 0
   m_CameraSettings:
     m_Speed: 1
     m_SpeedNormalized: 0.5
@@ -1596,18 +1596,18 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 5edbfcffd8dbfcff62defcff7cdefcff42dffcff62dffcff28e0fcff02e1fcff66e8fcffc0e8fcff54ebfcff5cebfcff10ecfcff1eecfcffd2ecfcff9aedfcffce6bfdff286cfdffbc6efdffc46efdff786ffdff866ffdff3a70fdff0271fdff4286fdffae8dfdff74b9fdffbeb9fdff38bcfdff40bcfdfff4bcfdff02bdfdffb6bdfdff7ebefdffe2c4fdff2cc5fdffa6c7fdffaec7fdff62c8fdff70c8fdff24c9fdffecc9fdff76d1fdffc0d1fdff3ad4fdff42d4fdfff6d4fdff04d5fdffb8d5fdff80d6fdfffaddfdff44defdffbee0fdffc6e0fdff7ae1fdff88e1fdff3ce2fdff04e3fdff36f4fdff82f4fdff00f7fdff0cf7fdffc4f7fdffd6f7fdff8ef8fdff5af9fdffe8fafdff401bfeff0223feff5e28feffa828feff3e2bfeff462bfefffe2bfeffb22cfeffc02cfeff842dfeff1c51feff3051feff9672feff9cb5ffff68f9ffffdcf9ffffe8f9ffff465f00000e6100004e610000e062000022640000fc6600001068000018a505003aa50500640e0600040f0600480f06000c1106001611060042140600fcab06009cac0600e0ac0600a4ae0600aeae0600dab10600c2fb060062fc0600a6fc06006afe060074fe0600a001070040ad0700c8ad07004cae07007ab2070088b207001ab3070098b5070088b80700feb8070056b907006abd0700c4b30800
+      m_ExpandedIDs: 22a8ffffe2a9fffffcbd0000e8c000005ec10000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Zona2
-        m_OriginalName: Zona2
+        m_Name: Escalera 2 (3)
+        m_OriginalName: Escalera 2 (3)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 507088
+        m_UserData: 48176
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -1762,22 +1762,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Materials
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Materials
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\dafer\Desktop\Clases_4toCiclo\Taller 3D\Proyecto\Taller3d2022-2
+  m_LastProjectPath: D:\Unity\Editor\Taller4\Taller3d2022-2
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 43}
-    m_SelectedIDs: c8770000
-    m_LastClickedID: 30664
-    m_ExpandedIDs: 000000009e770000c8770000ce77000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 86b80000
+    m_LastClickedID: 47238
+    m_ExpandedIDs: 0000000080b8000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1805,7 +1805,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000009e770000
+    m_ExpandedIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
