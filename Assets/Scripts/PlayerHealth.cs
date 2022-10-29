@@ -32,7 +32,7 @@ public class PlayerHealth : MonoBehaviour
     { 
         if(Input.GetMouseButtonDown(0))
         {
-            a += 0.03f;
+            a += 1f;
         }
         a -= 0.001f;
         a = Mathf.Clamp(a, 0, 1f);
