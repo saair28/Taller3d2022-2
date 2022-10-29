@@ -15,19 +15,32 @@ public class PlayerHealth : MonoBehaviour
     public int lifeRecovery;
     public float invulnerabilityTime;
     public Image lifeHearth;
+    private float r, g, b, a;
 
     void Start()
     {
+        
         actualLife = totalLife;
         timeToRecoverCount = timeToRecover;
+        r = lifeHearth.color.r;
+        g = lifeHearth.color.g;
+        b = lifeHearth.color.b;
+        a = lifeHearth.color.a;
     }
 
     void Update()
-    {
-        // Lo hice a boleo y funcionó.
-        // Lo que hace es algo parecido a COD Zombies, donde si te pegan una vez, comienza un contador para que tu vida se recupere.
-        // Una vez recuperas una vida, si te falta otra, el tiempo que tardas en recuperar esta 2da vida es menor.
-        if(!startRecoveryTimer)
+    { 
+        if(Input.GetMouseButtonDown(0))
+        {
+            a += 0.03f;
+        }
+        a -= 0.001f;
+        a = Mathf.Clamp(a, 0, 1f);
+        ChangeColor();
+            // Lo hice a boleo y funcionó.
+            // Lo que hace es algo parecido a COD Zombies, donde si te pegan una vez, comienza un contador para que tu vida se recupere.
+            // Una vez recuperas una vida, si te falta otra, el tiempo que tardas en recuperar esta 2da vida es menor.
+            if (!startRecoveryTimer)
         {
             timeToRecoverCount = timeToRecover;
         }
@@ -82,9 +95,11 @@ public class PlayerHealth : MonoBehaviour
     {
         if (col.CompareTag("Danger") && !hitReceived)
         {
+
             // Aquí, en lugar de poner un valor como "1", habría que usar una variable que indique el daño del enemigo.
             // Eso se haría jalando la variable "damage" (o como se llame) del script del enemigo que colisiona contra el Player.
             StartCoroutine(GotHit(25));
+            
         }
         //if (col.CompareTag("Enemy1") && !hitReceived)
         //{
@@ -99,5 +114,12 @@ public class PlayerHealth : MonoBehaviour
         //    StartCoroutine(GotHit(28));
         //}
 
+    }
+    
+    
+    private void ChangeColor()
+    {
+        Color c = new Color(r, g, b, a);
+        lifeHearth.color = c;
     }
 }
