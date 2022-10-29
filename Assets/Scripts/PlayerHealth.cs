@@ -14,33 +14,32 @@ public class PlayerHealth : MonoBehaviour
     public float timeToRecoverCount;
     public int lifeRecovery;
     public float invulnerabilityTime;
-    public Image lifeHearth;
-    private float r, g, b, a;
+
+    public Image pentagram;
+    public Image bloodSplatter;
+    float splatterAlpha = 0;
 
     void Start()
     {
-        
         actualLife = totalLife;
         timeToRecoverCount = timeToRecover;
-        r = lifeHearth.color.r;
-        g = lifeHearth.color.g;
-        b = lifeHearth.color.b;
-        a = lifeHearth.color.a;
+
+        pentagram.gameObject.SetActive(false);
     }
 
     void Update()
-    { 
-        if(Input.GetMouseButtonDown(0))
-        {
-            a += 1f;
-        }
-        a -= 0.001f;
-        a = Mathf.Clamp(a, 0, 1f);
-        ChangeColor();
-            // Lo hice a boleo y funcionó.
-            // Lo que hace es algo parecido a COD Zombies, donde si te pegan una vez, comienza un contador para que tu vida se recupere.
-            // Una vez recuperas una vida, si te falta otra, el tiempo que tardas en recuperar esta 2da vida es menor.
-            if (!startRecoveryTimer)
+    {
+        //if(Input.GetMouseButtonDown(0))
+        //{
+        //    a += 1f;
+        //}
+        //a -= 0.001f;
+        //a = Mathf.Clamp(a, 0, 1f);
+        //ChangeColor();
+        // Lo hice a boleo y funcionó.
+        // Lo que hace es algo parecido a COD Zombies, donde si te pegan una vez, comienza un contador para que tu vida se recupere.
+        // Una vez recuperas una vida, si te falta otra, el tiempo que tardas en recuperar esta 2da vida es menor.
+        if (!startRecoveryTimer)
         {
             timeToRecoverCount = timeToRecover;
         }
@@ -70,15 +69,21 @@ public class PlayerHealth : MonoBehaviour
     public void RecoverLife(int amount)
     {
         actualLife += amount;
+
+        splatterAlpha = (float)(totalLife - actualLife) / totalLife; //Así está normalizado;
+        Color c = new Color(bloodSplatter.color.r, bloodSplatter.color.g, bloodSplatter.color.b, splatterAlpha);
+        bloodSplatter.color = c;
     }
 
     public IEnumerator GotHit(int damage)
     {
         hitReceived = true;
+        pentagram.gameObject.SetActive(true);
         startRecoveryTimer = false;
         if (actualLife > 1)
         {
             actualLife -= damage;
+            AddSplatter();
         }
         else
         {
@@ -89,6 +94,7 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("HOLA");
         startRecoveryTimer = true;
         hitReceived = false;
+        pentagram.gameObject.SetActive(false);
     }
 
     private void OnTriggerStay(Collider col)
@@ -117,9 +123,10 @@ public class PlayerHealth : MonoBehaviour
     }
     
     
-    private void ChangeColor()
+    private void AddSplatter()
     {
-        Color c = new Color(r, g, b, a);
-        lifeHearth.color = c;
+        splatterAlpha = (float)(totalLife - actualLife)/totalLife; //Así está normalizado;
+        Color c = new Color(bloodSplatter.color.r, bloodSplatter.color.g, bloodSplatter.color.b, splatterAlpha);
+        bloodSplatter.color = c;
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MouseLook : MonoBehaviour
 {
@@ -9,7 +10,11 @@ public class MouseLook : MonoBehaviour
     public Transform playerBody;
     float xRotation = 0f;
     public bool TRYNGTHINGS = true; // BORRAR O PONER EN FALSE CUANDO EXPORTEMOS EL FINAL!!!
-    public int sens;
+    public float sens;
+
+
+    public Slider sensSlider;
+
     private void Awake()
     {
         instance = this;
@@ -18,6 +23,8 @@ public class MouseLook : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        sensSlider.value = sens;
     }
 
     void Update()
@@ -40,5 +47,10 @@ public class MouseLook : MonoBehaviour
         
         playerBody.Rotate(Vector3.up * mouseX);
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+    }
+
+    public void AdjustSensibility(float value)
+    {
+        sens = value;
     }
 }

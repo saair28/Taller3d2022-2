@@ -30,9 +30,9 @@ public class SpawnEnemies : MonoBehaviour
     {
         //spawnPositions = GetComponent<ScenarioManager>().rooms[0].GetComponent<RoomScript>().spawnPositions;
 
-        for (int i = 0; i < FindObjectOfType<RoomScript>().enemyPool.Length; i++)
+        for (int i = 0; i < ScenarioManager.instance.currentRoom.GetComponent<RoomScript>().enemyPool.Length; i++)
         {
-            valorTotal += FindObjectOfType<RoomScript>().enemyPool[i].GetComponent<Enemy>().valor;
+            valorTotal += ScenarioManager.instance.currentRoom.GetComponent<RoomScript>().enemyPool[i].GetComponent<Enemy>().valor;
         }
         
     }
@@ -52,16 +52,16 @@ public class SpawnEnemies : MonoBehaviour
         int randomNumberPosition = Random.Range(0, spawnPositions.Length);
         int randomNumberColor = Random.Range(0, materials.Length);
 
-        for (int i = 0; i < FindObjectOfType<RoomScript>().enemyPool.Length; i++)
+        for (int i = 0; i < ScenarioManager.instance.currentRoom.GetComponent<RoomScript>().enemyPool.Length; i++)
         {
-            if (randomValor < FindObjectOfType<RoomScript>().enemyPool[i].GetComponent<Enemy>().valor)
+            if (randomValor < ScenarioManager.instance.currentRoom.GetComponent<RoomScript>().enemyPool[i].GetComponent<Enemy>().valor)
             {
-                GameObject go = Instantiate(FindObjectOfType<RoomScript>().enemyPool[i], spawnPositions[randomNumberPosition].position, Quaternion.identity);
+                GameObject go = Instantiate(ScenarioManager.instance.currentRoom.GetComponent<RoomScript>().enemyPool[i], spawnPositions[randomNumberPosition].position, Quaternion.identity);
                 go.GetComponent<MeshRenderer>().material = materials[randomNumberColor];
                 go.GetComponent<EnemyHealth>().enemyColor = (EnemyHealth.EnemyColor)randomNumberColor;
                 return;
             }
-            randomValor -= FindObjectOfType<RoomScript>().enemyPool[i].GetComponent<Enemy>().valor;
+            randomValor -= ScenarioManager.instance.currentRoom.GetComponent<RoomScript>().enemyPool[i].GetComponent<Enemy>().valor;
         }
     }     
 

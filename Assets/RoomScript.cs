@@ -15,7 +15,7 @@ public class RoomScript : MonoBehaviour
     void Start()
     {
         boxCol = GetComponent<BoxCollider>();
-        boxCol.enabled = false;
+        boxCol.enabled = true;
     }
 
     public void OpenRoom()
@@ -36,6 +36,20 @@ public class RoomScript : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             Debug.Log("ROOM");
+            ScenarioManager.instance.currentRoom = this.gameObject;
+            SpawnEnemies.instance.UpdateSpawnPositions();
+            //FindObjectOfType<ScenarioManager>().currentRoom = gameObject;
+            //FindObjectOfType<SpawnEnemies>().UpdateSpawnPositions();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            ScenarioManager.instance.currentRoom = this.gameObject;
+            SpawnEnemies.instance.UpdateSpawnPositions();
+            Debug.Log("FUNCIONA");
             //FindObjectOfType<ScenarioManager>().currentRoom = gameObject;
             //FindObjectOfType<SpawnEnemies>().UpdateSpawnPositions();
         }

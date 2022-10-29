@@ -31,12 +31,12 @@ public class ScenarioManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        currentRoom = rooms[0];
     }
     private void Start()
     {
         navMeshSurface = GetComponent<NavMeshSurface>();
         ResetTimer();
-        currentRoom = rooms[0];
         StartCoroutine(UpdateNavMesh(1));
         GetComponent<SpawnEnemies>().UpdateRoundCounter();
     }
@@ -137,10 +137,21 @@ public class ScenarioManager : MonoBehaviour
         {
             AudioManager.instance.PlaySFX(AudioManager.instance.sfxSource, AudioManager.instance.endRoundSFX, 0.5f);
         }
-        //if (currentRound >= milestones[0])
-        //{
-        //    AudioManager.instance.PlaySFX(AudioManager.instance.sfxSource, AudioManager.instance.endRoundSFX, 0.5f);
-        //}
+
+        if(currentRoom.GetComponent<RoomScript>().roomDoors[0] != null)
+        {
+            if ((currentRound >= milestones[0]) && currentRoom.GetComponent<RoomScript>().roomDoors[0].activeSelf)
+            {
+                for (int i = 0; i < currentRoom.GetComponent<RoomScript>().roomDoors.Length; i++)
+                {
+                    //currentRoom.GetComponent<RoomScript>().roomDoors[i].SetActive(false);
+                    //currentRoom.GetComponent<RoomScript>().roomDoors[i].layer = LayerMask.NameToLayer("Ignore Raycast");
+                    Destroy(currentRoom.GetComponent<RoomScript>().roomDoors[i]);
+                }
+                StartCoroutine(UpdateNavMesh(1));
+            }
+        }
+       
     }
 
     public void ShowTimer()

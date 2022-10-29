@@ -4,16 +4,9 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    public int bulletDamage;
-    public int bulletColor;
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if(other.CompareTag("Ground"))
+            Destroy(gameObject);
     }
 }

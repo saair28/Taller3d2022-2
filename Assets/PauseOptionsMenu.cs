@@ -6,7 +6,7 @@ public class PauseOptionsMenu : MonoBehaviour
 {
     public static PauseOptionsMenu instance;
     GameObject player;
-    public GameObject pauseUI, pauseButtons, audioSliders;
+    public GameObject pauseUI, pauseButtons, audioSliders, gameSliders;
     public bool isPaused = false;
 
     void Awake()
@@ -39,6 +39,7 @@ public class PauseOptionsMenu : MonoBehaviour
     {
         if (audioSliders.activeSelf)
         {
+            gameSliders.SetActive(false);
             audioSliders.SetActive(false);
             pauseButtons.SetActive(true);
             return;

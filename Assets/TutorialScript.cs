@@ -243,6 +243,7 @@ public class TutorialScript : MonoBehaviour
         GetComponent<ScenarioManager>().ResetTimer();
         GetComponent<SpawnEnemies>().UpdateRoundCounter();
         GetComponent<BuffMenu>().FillBar();
+        GetComponent<ScenarioManager>().LevelProgressionCheck();
         roundStarted = false;
     }
 

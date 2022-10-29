@@ -22,8 +22,12 @@ public class PlayerWeapons : MonoBehaviour
 
     private void Update()
     {
-        ScrollToSwitchWeapon();
-        NumbersToSwitchWeapon();
+        if(!PauseOptionsMenu.instance.isPaused)
+        {
+            ScrollToSwitchWeapon();
+            NumbersToSwitchWeapon();
+        }
+
         if (isChangingWeapon)
         {
             UpdateWeaponStats();
