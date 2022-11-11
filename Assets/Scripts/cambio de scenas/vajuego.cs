@@ -7,7 +7,7 @@ public class vajuego : MonoBehaviour
 {
    public void EscenaJuego()
     {
-        SceneManager.LoadScene("brady_scene");
+        SceneManager.LoadScene("Prototipo_Promedio2");
     }
     public void CargarNivel(string nombredescena)
     {
