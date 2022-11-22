@@ -12,14 +12,17 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        life = 80;
+        //life = 80;
         agent = GetComponent<NavMeshAgent>();
+        //if(GetComponent<E3_Movement2>() != null)
+        //    agent.speed = GetComponent<E3_Movement2>().moveSpeed;
+        GetComponent<Enemy>().agent.enabled = true;
     }
 
     void Update()
     {
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
-        if(agent.isActiveAndEnabled)
+        if(agent != null && agent.isActiveAndEnabled)
             agent.SetDestination(playerPosition);
     }
 

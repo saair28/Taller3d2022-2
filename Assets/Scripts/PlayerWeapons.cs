@@ -22,7 +22,7 @@ public class PlayerWeapons : MonoBehaviour
 
     private void Update()
     {
-        if(!PauseOptionsMenu.instance.isPaused)
+        if(FindObjectOfType<PauseOptionsMenu>() != null && !PauseOptionsMenu.instance.isPaused)
         {
             ScrollToSwitchWeapon();
             NumbersToSwitchWeapon();

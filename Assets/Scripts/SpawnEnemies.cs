@@ -64,8 +64,11 @@ public class SpawnEnemies : MonoBehaviour
             if (randomValor < enemyPrefabs[i].GetComponent<Enemy>().valor)
             {
                 GameObject go = Instantiate(enemyPrefabs[i], spawnPositions[randomNumberPosition].position, Quaternion.identity);
-                go.GetComponent<MeshRenderer>().material = materials[randomNumberColor];
+                go.GetComponent<Enemy>().agent = GetComponent<NavMeshAgent>();
+                go.GetComponentInChildren<MeshRenderer>().material = materials[randomNumberColor];
+                //go.GetComponent<MeshRenderer>().material = materials[randomNumberColor];
                 go.GetComponent<EnemyHealth>().enemyColor = (EnemyHealth.EnemyColor)randomNumberColor;
+                
                 return;
             }
             randomValor -= enemyPrefabs[i].GetComponent<Enemy>().valor;

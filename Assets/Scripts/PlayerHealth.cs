@@ -24,7 +24,8 @@ public class PlayerHealth : MonoBehaviour
         actualLife = totalLife;
         timeToRecoverCount = timeToRecover;
 
-        pentagram.gameObject.SetActive(false);
+        if(pentagram != null)
+            pentagram.gameObject.SetActive(false);
     }
 
     void Update()

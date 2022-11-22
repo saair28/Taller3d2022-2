@@ -24,7 +24,8 @@ public class MouseLook : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        sensSlider.value = sens;
+        if(sensSlider != null)
+            sensSlider.value = sens;
     }
 
     void Update()

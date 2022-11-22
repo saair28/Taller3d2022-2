@@ -98,7 +98,7 @@ public class EnemyHealth : MonoBehaviour
 
     public IEnumerator DeathCoroutine()
     {
-        GetComponent<Collider>().enabled = false;
+        GetComponentInChildren<Collider>().enabled = false;
         GetComponent<NavMeshAgent>().enabled = false;
         yield return new WaitForSeconds(0.1f);
         FindObjectOfType<SpawnEnemies>().enemiesLeft--;
