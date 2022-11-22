@@ -134,6 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1704667}
   - component: {fileID: 1704666}
+  - component: {fileID: 1704668}
   m_Layer: 0
   m_Name: Parrillera
   m_TagString: Untagged
@@ -196,6 +197,24 @@ Transform:
   m_Father: {fileID: 521049749}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0.753, y: -158.803, z: -0.442}
+--- !u!114 &1704668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &4594569
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,6 +279,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.031500235, y: 0.4430842, z: 0.03560589}
   m_Center: {x: 0.0004678297, y: 0.14479649, z: 0.11749939}
+--- !u!114 &15153366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15153364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &15554064 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: be54d8a1ab5822546bda0f469f603bd2,
@@ -285,6 +322,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.060302272, y: 0.10912382, z: 0.03281106}
   m_Center: {x: -0.0076858965, y: 0.04773454, z: -0.0051657963}
+--- !u!114 &15554067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15554064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &20800814
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,6 +352,7 @@ GameObject:
   - component: {fileID: 20800818}
   - component: {fileID: 20800817}
   - component: {fileID: 20800816}
+  - component: {fileID: 20800819}
   m_Layer: 0
   m_Name: polySurface51 (2)
   m_TagString: Untagged
@@ -382,6 +438,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20800814}
   m_Mesh: {fileID: 1712101860552982092, guid: 26b2a5fedaa327a468200fd6153dad68, type: 3}
+--- !u!114 &20800819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20800814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!65 &24130339
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -407,6 +481,7 @@ GameObject:
   - component: {fileID: 27943203}
   - component: {fileID: 27943202}
   - component: {fileID: 27943201}
+  - component: {fileID: 27943204}
   m_Layer: 0
   m_Name: Silla (4)
   m_TagString: Ground
@@ -492,6 +567,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27943199}
   m_Mesh: {fileID: -9085179732658399188, guid: 26b2a5fedaa327a468200fd6153dad68, type: 3}
+--- !u!114 &27943204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27943199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!65 &35872648
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -517,6 +610,7 @@ GameObject:
   - component: {fileID: 49555724}
   - component: {fileID: 49555723}
   - component: {fileID: 49555725}
+  - component: {fileID: 49555726}
   m_Layer: 9
   m_Name: Altavoz1 (4)
   m_TagString: Ground
@@ -602,6 +696,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.053980596, y: 0.08536817, z: 0.032610625}
   m_Center: {x: 0.0000002333096, y: 0.01832437, z: 0.0030760749}
+--- !u!114 &49555726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49555721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &50804985
 GameObject:
   m_ObjectHideFlags: 0
@@ -1185,6 +1297,7 @@ GameObject:
   - component: {fileID: 120971175}
   - component: {fileID: 120971174}
   - component: {fileID: 120971173}
+  - component: {fileID: 120971176}
   m_Layer: 0
   m_Name: Silla (2)
   m_TagString: Ground
@@ -1270,6 +1383,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 120971171}
   m_Mesh: {fileID: -9085179732658399188, guid: 26b2a5fedaa327a468200fd6153dad68, type: 3}
+--- !u!114 &120971176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120971171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &129335625
 GameObject:
   m_ObjectHideFlags: 0
@@ -1320,6 +1451,7 @@ GameObject:
   - component: {fileID: 131414215}
   - component: {fileID: 131414217}
   - component: {fileID: 131414216}
+  - component: {fileID: 131414218}
   m_Layer: 0
   m_Name: polySurface34 (1)
   m_TagString: Untagged
@@ -1392,6 +1524,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131414214}
   m_Mesh: {fileID: -4990829700342139071, guid: 26b2a5fedaa327a468200fd6153dad68, type: 3}
+--- !u!114 &131414218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131414214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &133050409
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1479,6 +1629,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 586c766de7887e643b8c4167131ee442, type: 3}
+--- !u!1 &133050410 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 661583985040085275, guid: 586c766de7887e643b8c4167131ee442,
+    type: 3}
+  m_PrefabInstance: {fileID: 133050409}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &133050411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133050410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &133449024
 GameObject:
   m_ObjectHideFlags: 0
@@ -2028,6 +2202,7 @@ GameObject:
   - component: {fileID: 217388942}
   - component: {fileID: 217388941}
   - component: {fileID: 217388940}
+  - component: {fileID: 217388943}
   m_Layer: 0
   m_Name: Mesa2 (1)
   m_TagString: Untagged
@@ -2113,6 +2288,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 217388938}
   m_Mesh: {fileID: 1770277440869571106, guid: 822176e8b2503c54e8efd816efed7ffd, type: 3}
+--- !u!114 &217388943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217388938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &223198036 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6a2cd1c1b1ba2cf43a3fb83af051d293,
@@ -2139,6 +2332,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 866261112}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &223198041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223198036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &224049758 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f27b45cdde0f3d941a502c83209ff87a,
@@ -2159,6 +2370,24 @@ CapsuleCollider:
   m_Height: 0.18973231
   m_Direction: 1
   m_Center: {x: 0, y: 0.010955302, z: 0}
+--- !u!114 &224049764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224049758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!65 &225471885
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2574,6 +2803,7 @@ GameObject:
   - component: {fileID: 291700448}
   - component: {fileID: 291700447}
   - component: {fileID: 291700446}
+  - component: {fileID: 291700449}
   m_Layer: 9
   m_Name: Consola (2)
   m_TagString: Ground
@@ -2659,6 +2889,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291700444}
   m_Mesh: {fileID: -4209633447506878354, guid: 822176e8b2503c54e8efd816efed7ffd, type: 3}
+--- !u!114 &291700449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291700444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &292941690
 GameObject:
   m_ObjectHideFlags: 0
@@ -2899,6 +3147,7 @@ GameObject:
   - component: {fileID: 302897252}
   - component: {fileID: 302897251}
   - component: {fileID: 302897250}
+  - component: {fileID: 302897253}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -2984,6 +3233,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 302897248}
   m_Mesh: {fileID: 7644588449821707622, guid: 3bb9c3afdf573c343ac2f9dddd7b1ce9, type: 3}
+--- !u!114 &302897253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302897248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &308286443
 GameObject:
   m_ObjectHideFlags: 0
@@ -4574,6 +4841,7 @@ GameObject:
   - component: {fileID: 528580520}
   - component: {fileID: 528580522}
   - component: {fileID: 528580521}
+  - component: {fileID: 528580523}
   m_Layer: 0
   m_Name: polySurface30 (1)
   m_TagString: Untagged
@@ -4646,6 +4914,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528580519}
   m_Mesh: {fileID: -485743578430441126, guid: 26b2a5fedaa327a468200fd6153dad68, type: 3}
+--- !u!114 &528580523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528580519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &577295775
 GameObject:
   m_ObjectHideFlags: 0
@@ -4658,6 +4944,7 @@ GameObject:
   - component: {fileID: 577295779}
   - component: {fileID: 577295778}
   - component: {fileID: 577295777}
+  - component: {fileID: 577295780}
   m_Layer: 9
   m_Name: Consola (3)
   m_TagString: Ground
@@ -4743,6 +5030,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 577295775}
   m_Mesh: {fileID: -4209633447506878354, guid: 822176e8b2503c54e8efd816efed7ffd, type: 3}
+--- !u!114 &577295780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577295775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &582807387
 GameObject:
   m_ObjectHideFlags: 0
@@ -4755,6 +5060,7 @@ GameObject:
   - component: {fileID: 582807391}
   - component: {fileID: 582807390}
   - component: {fileID: 582807389}
+  - component: {fileID: 582807392}
   m_Layer: 9
   m_Name: Silla (5)
   m_TagString: Ground
@@ -4840,6 +5146,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 582807387}
   m_Mesh: {fileID: -9085179732658399188, guid: 26b2a5fedaa327a468200fd6153dad68, type: 3}
+--- !u!114 &582807392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582807387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &590400126
 GameObject:
   m_ObjectHideFlags: 0
@@ -5116,6 +5440,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 440015468}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &595703990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595703985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &596959299
 GameObject:
   m_ObjectHideFlags: 0
@@ -5313,6 +5655,7 @@ GameObject:
   - component: {fileID: 608282727}
   - component: {fileID: 608282729}
   - component: {fileID: 608282728}
+  - component: {fileID: 608282730}
   m_Layer: 0
   m_Name: Cube (5)
   m_TagString: Untagged
@@ -5385,6 +5728,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608282726}
   m_Mesh: {fileID: 7644588449821707622, guid: 3bb9c3afdf573c343ac2f9dddd7b1ce9, type: 3}
+--- !u!114 &608282730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608282726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &619544686
 GameObject:
   m_ObjectHideFlags: 0
@@ -5729,7 +6090,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.5756226, y: -1.2541199}
+  m_AnchoredPosition: {x: 4.5756226, y: -1.2541504}
   m_SizeDelta: {x: 36.381714, y: 26.095764}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &643770706
@@ -6184,6 +6545,7 @@ GameObject:
   - component: {fileID: 695870419}
   - component: {fileID: 695870418}
   - component: {fileID: 695870417}
+  - component: {fileID: 695870420}
   m_Layer: 9
   m_Name: Mesa2 (1)
   m_TagString: Ground
@@ -6269,6 +6631,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 695870415}
   m_Mesh: {fileID: 1770277440869571106, guid: 822176e8b2503c54e8efd816efed7ffd, type: 3}
+--- !u!114 &695870420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695870415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &697578008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6913,6 +7293,7 @@ GameObject:
   - component: {fileID: 802117020}
   - component: {fileID: 802117019}
   - component: {fileID: 802117018}
+  - component: {fileID: 802117021}
   m_Layer: 0
   m_Name: Mesa1 (1)
   m_TagString: Untagged
@@ -6998,6 +7379,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802117016}
   m_Mesh: {fileID: 8538979355734900471, guid: 822176e8b2503c54e8efd816efed7ffd, type: 3}
+--- !u!114 &802117021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802117016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &805982613
 GameObject:
   m_ObjectHideFlags: 0
@@ -7167,6 +7566,7 @@ GameObject:
   - component: {fileID: 816101407}
   - component: {fileID: 816101409}
   - component: {fileID: 816101408}
+  - component: {fileID: 816101410}
   m_Layer: 0
   m_Name: Album1 (1)
   m_TagString: Untagged
@@ -7239,6 +7639,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 816101406}
   m_Mesh: {fileID: 5702523616867694521, guid: 2f037f93301f1964ca9d949c75caebd7, type: 3}
+--- !u!114 &816101410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816101406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!4 &816328985 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 26b2a5fedaa327a468200fd6153dad68,
@@ -7499,6 +7917,7 @@ GameObject:
   - component: {fileID: 824921750}
   - component: {fileID: 824921752}
   - component: {fileID: 824921751}
+  - component: {fileID: 824921753}
   m_Layer: 0
   m_Name: polySurface33 (1)
   m_TagString: Untagged
@@ -7571,6 +7990,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824921749}
   m_Mesh: {fileID: 8128075262371223473, guid: 26b2a5fedaa327a468200fd6153dad68, type: 3}
+--- !u!114 &824921753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824921749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &826045006
 GameObject:
   m_ObjectHideFlags: 0
@@ -7582,6 +8019,7 @@ GameObject:
   - component: {fileID: 826045007}
   - component: {fileID: 826045009}
   - component: {fileID: 826045008}
+  - component: {fileID: 826045010}
   m_Layer: 0
   m_Name: polySurface31 (1)
   m_TagString: Untagged
@@ -7654,6 +8092,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826045006}
   m_Mesh: {fileID: -7613332433117009229, guid: 26b2a5fedaa327a468200fd6153dad68, type: 3}
+--- !u!114 &826045010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826045006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &838735382
 GameObject:
   m_ObjectHideFlags: 0
@@ -7788,6 +8244,7 @@ GameObject:
   - component: {fileID: 855717595}
   - component: {fileID: 855717597}
   - component: {fileID: 855717596}
+  - component: {fileID: 855717598}
   m_Layer: 0
   m_Name: AislanteAcustico (5)
   m_TagString: Untagged
@@ -7860,6 +8317,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 855717594}
   m_Mesh: {fileID: 6009697538773081034, guid: 822176e8b2503c54e8efd816efed7ffd, type: 3}
+--- !u!114 &855717598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855717594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &858609603
 GameObject:
   m_ObjectHideFlags: 0
@@ -7871,6 +8346,7 @@ GameObject:
   - component: {fileID: 858609604}
   - component: {fileID: 858609606}
   - component: {fileID: 858609605}
+  - component: {fileID: 858609607}
   m_Layer: 0
   m_Name: polySurface28 (1)
   m_TagString: Untagged
@@ -7943,6 +8419,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858609603}
   m_Mesh: {fileID: 5537914760762738905, guid: 26b2a5fedaa327a468200fd6153dad68, type: 3}
+--- !u!114 &858609607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858609603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &864308475
 GameObject:
   m_ObjectHideFlags: 0
@@ -8085,6 +8579,24 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 429900313}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &864489109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864489108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &866261112
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8584,6 +9096,7 @@ GameObject:
   - component: {fileID: 890481273}
   - component: {fileID: 890481275}
   - component: {fileID: 890481274}
+  - component: {fileID: 890481276}
   m_Layer: 0
   m_Name: AislanteAcustico (4)
   m_TagString: Untagged
@@ -8656,6 +9169,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890481272}
   m_Mesh: {fileID: 6009697538773081034, guid: 822176e8b2503c54e8efd816efed7ffd, type: 3}
+--- !u!114 &890481276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890481272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &894954264
 GameObject:
   m_ObjectHideFlags: 0
@@ -8668,6 +9199,7 @@ GameObject:
   - component: {fileID: 894954268}
   - component: {fileID: 894954267}
   - component: {fileID: 894954266}
+  - component: {fileID: 894954269}
   m_Layer: 9
   m_Name: Consola (1)
   m_TagString: Ground
@@ -8753,6 +9285,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 894954264}
   m_Mesh: {fileID: -4209633447506878354, guid: 822176e8b2503c54e8efd816efed7ffd, type: 3}
+--- !u!114 &894954269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894954264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &915115144
 GameObject:
   m_ObjectHideFlags: 0
@@ -8999,6 +9549,7 @@ GameObject:
   - component: {fileID: 931294382}
   - component: {fileID: 931294381}
   - component: {fileID: 931294380}
+  - component: {fileID: 931294384}
   m_Layer: 9
   m_Name: Sillon2 (4)
   m_TagString: Ground
@@ -9097,6 +9648,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 931294378}
   m_Mesh: {fileID: 2339967484547556074, guid: 822176e8b2503c54e8efd816efed7ffd, type: 3}
+--- !u!114 &931294384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931294378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &933389950
 GameObject:
   m_ObjectHideFlags: 0
@@ -9108,6 +9677,7 @@ GameObject:
   - component: {fileID: 933389951}
   - component: {fileID: 933389953}
   - component: {fileID: 933389952}
+  - component: {fileID: 933389954}
   m_Layer: 0
   m_Name: Parlante2 (2)
   m_TagString: Untagged
@@ -9180,6 +9750,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 933389950}
   m_Mesh: {fileID: 4467391298187444202, guid: 822176e8b2503c54e8efd816efed7ffd, type: 3}
+--- !u!114 &933389954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933389950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &935836537
 GameObject:
   m_ObjectHideFlags: 0
@@ -9427,6 +10015,7 @@ GameObject:
   - component: {fileID: 952146090}
   - component: {fileID: 952146089}
   - component: {fileID: 952146088}
+  - component: {fileID: 952146091}
   m_Layer: 0
   m_Name: polySurface51 (1)
   m_TagString: Untagged
@@ -9512,6 +10101,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952146086}
   m_Mesh: {fileID: 1712101860552982092, guid: 26b2a5fedaa327a468200fd6153dad68, type: 3}
+--- !u!114 &952146091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952146086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!65 &954612832
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10437,6 +11044,7 @@ GameObject:
   - component: {fileID: 1066830058}
   - component: {fileID: 1066830060}
   - component: {fileID: 1066830059}
+  - component: {fileID: 1066830061}
   m_Layer: 0
   m_Name: AislanteAcustico (3)
   m_TagString: Untagged
@@ -10509,6 +11117,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066830057}
   m_Mesh: {fileID: 6009697538773081034, guid: 822176e8b2503c54e8efd816efed7ffd, type: 3}
+--- !u!114 &1066830061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066830057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &1076679309
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10586,6 +11212,24 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1076679309}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1076679311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1076679310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!65 &1081390264
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11775,6 +12419,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.060302272, y: 0.10661478, z: 0.03281106}
   m_Center: {x: -0.0076858965, y: 0.046480022, z: -0.0051657963}
+--- !u!114 &1172451838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172451835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1198844830
 GameObject:
   m_ObjectHideFlags: 0
@@ -11910,6 +12572,7 @@ GameObject:
   - component: {fileID: 1207221267}
   - component: {fileID: 1207221269}
   - component: {fileID: 1207221268}
+  - component: {fileID: 1207221270}
   m_Layer: 0
   m_Name: Parlante2 (1)
   m_TagString: Untagged
@@ -11982,6 +12645,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207221266}
   m_Mesh: {fileID: 4467391298187444202, guid: 822176e8b2503c54e8efd816efed7ffd, type: 3}
+--- !u!114 &1207221270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207221266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!65 &1208808236
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12200,6 +12881,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.031500235, y: 0.41082335, z: 0.03560589}
   m_Center: {x: 0.0004678297, y: 0.12866612, z: 0.11749939}
+--- !u!114 &1228455965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228455962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1229560477
 GameObject:
   m_ObjectHideFlags: 0
@@ -12288,6 +12987,7 @@ GameObject:
   - component: {fileID: 1236578058}
   - component: {fileID: 1236578057}
   - component: {fileID: 1236578056}
+  - component: {fileID: 1236578059}
   m_Layer: 0
   m_Name: Silla (3)
   m_TagString: Ground
@@ -12373,6 +13073,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236578054}
   m_Mesh: {fileID: -9085179732658399188, guid: 26b2a5fedaa327a468200fd6153dad68, type: 3}
+--- !u!114 &1236578059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236578054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1237357178
 GameObject:
   m_ObjectHideFlags: 0
@@ -13300,6 +14018,7 @@ GameObject:
   - component: {fileID: 1332876316}
   - component: {fileID: 1332876315}
   - component: {fileID: 1332876317}
+  - component: {fileID: 1332876318}
   m_Layer: 9
   m_Name: Altavoz1 (1)
   m_TagString: Ground
@@ -13385,6 +14104,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.053980596, y: 0.0820438, z: 0.032610625}
   m_Center: {x: 0.0000002333096, y: 0.016662182, z: 0.0030760749}
+--- !u!114 &1332876318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332876313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1344220767
 GameObject:
   m_ObjectHideFlags: 0
@@ -13398,6 +14135,7 @@ GameObject:
   - component: {fileID: 1344220771}
   - component: {fileID: 1344220770}
   - component: {fileID: 1344220769}
+  - component: {fileID: 1344220773}
   m_Layer: 9
   m_Name: Sillon2 (2)
   m_TagString: Ground
@@ -13496,6 +14234,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344220767}
   m_Mesh: {fileID: 2339967484547556074, guid: 822176e8b2503c54e8efd816efed7ffd, type: 3}
+--- !u!114 &1344220773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344220767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1344438706
 GameObject:
   m_ObjectHideFlags: 0
@@ -13648,6 +14404,7 @@ GameObject:
   - component: {fileID: 1348927354}
   - component: {fileID: 1348927353}
   - component: {fileID: 1348927352}
+  - component: {fileID: 1348927355}
   m_Layer: 0
   m_Name: Sillon1 (1)
   m_TagString: Ground
@@ -13759,6 +14516,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.041536734, y: 0.034370475, z: 0.22000732}
   m_Center: {x: 0.036236107, y: -0.004395984, z: 0.00000006984969}
+--- !u!114 &1348927355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348927348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1349356641 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: be54d8a1ab5822546bda0f469f603bd2,
@@ -13784,6 +14559,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.060302265, y: 0.14221197, z: 0.03281106}
   m_Center: {x: -0.007685896, y: 0.0642786, z: -0.0051657953}
+--- !u!114 &1349356644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349356641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1374823929
 GameObject:
   m_ObjectHideFlags: 0
@@ -13944,6 +14737,7 @@ GameObject:
   - component: {fileID: 1420543908}
   - component: {fileID: 1420543907}
   - component: {fileID: 1420543906}
+  - component: {fileID: 1420543909}
   m_Layer: 0
   m_Name: ArmarioAncho2 (1)
   m_TagString: Untagged
@@ -14030,6 +14824,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1420543904}
   m_Mesh: {fileID: -3206481165418840444, guid: 2f037f93301f1964ca9d949c75caebd7, type: 3}
+--- !u!114 &1420543909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420543904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1424575598
 GameObject:
   m_ObjectHideFlags: 0
@@ -14550,6 +15362,7 @@ GameObject:
   - component: {fileID: 1438798774}
   - component: {fileID: 1438798773}
   - component: {fileID: 1438798772}
+  - component: {fileID: 1438798775}
   m_Layer: 0
   m_Name: polySurface32 (1)
   m_TagString: Ground
@@ -14635,6 +15448,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438798770}
   m_Mesh: {fileID: 1719797356835624926, guid: 26b2a5fedaa327a468200fd6153dad68, type: 3}
+--- !u!114 &1438798775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438798770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1454331454
 GameObject:
   m_ObjectHideFlags: 0
@@ -14879,6 +15710,7 @@ GameObject:
   - component: {fileID: 1461835149}
   - component: {fileID: 1461835151}
   - component: {fileID: 1461835150}
+  - component: {fileID: 1461835152}
   m_Layer: 0
   m_Name: AislanteAcustico (6)
   m_TagString: Untagged
@@ -14951,6 +15783,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1461835148}
   m_Mesh: {fileID: 6009697538773081034, guid: 822176e8b2503c54e8efd816efed7ffd, type: 3}
+--- !u!114 &1461835152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461835148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1484234308
 GameObject:
   m_ObjectHideFlags: 0
@@ -15480,6 +16330,7 @@ GameObject:
   - component: {fileID: 1548741335}
   - component: {fileID: 1548741337}
   - component: {fileID: 1548741336}
+  - component: {fileID: 1548741338}
   m_Layer: 0
   m_Name: PantallaGrande (1)
   m_TagString: Untagged
@@ -15552,6 +16403,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1548741334}
   m_Mesh: {fileID: -7766942568799085626, guid: 822176e8b2503c54e8efd816efed7ffd, type: 3}
+--- !u!114 &1548741338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548741334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!65 &1549861636
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15724,6 +16593,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.060302265, y: 0.13236071, z: 0.03281106}
   m_Center: {x: -0.007685896, y: 0.05935297, z: -0.0051657953}
+--- !u!114 &1589684572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589684569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1594805040
 GameObject:
   m_ObjectHideFlags: 0
@@ -16415,6 +17302,7 @@ GameObject:
   - component: {fileID: 1703869311}
   - component: {fileID: 1703869310}
   - component: {fileID: 1703869312}
+  - component: {fileID: 1703869313}
   m_Layer: 9
   m_Name: Altavoz1 (3)
   m_TagString: Ground
@@ -16500,6 +17388,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.053980596, y: 0.08941929, z: 0.032610625}
   m_Center: {x: -0.0000000051089697, y: 0.020349935, z: 0.0030760749}
+--- !u!114 &1703869313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703869308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1705461522
 GameObject:
   m_ObjectHideFlags: 0
@@ -16641,6 +17547,7 @@ GameObject:
   - component: {fileID: 1710958521}
   - component: {fileID: 1710958520}
   - component: {fileID: 1710958519}
+  - component: {fileID: 1710958523}
   m_Layer: 0
   m_Name: Sillon2 (5)
   m_TagString: Ground
@@ -16739,6 +17646,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710958517}
   m_Mesh: {fileID: 2339967484547556074, guid: 822176e8b2503c54e8efd816efed7ffd, type: 3}
+--- !u!114 &1710958523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710958517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1715644194
 GameObject:
   m_ObjectHideFlags: 0
@@ -16750,6 +17675,7 @@ GameObject:
   - component: {fileID: 1715644195}
   - component: {fileID: 1715644197}
   - component: {fileID: 1715644196}
+  - component: {fileID: 1715644198}
   m_Layer: 0
   m_Name: AislanteAcustico (2)
   m_TagString: Untagged
@@ -16822,6 +17748,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1715644194}
   m_Mesh: {fileID: 6009697538773081034, guid: 822176e8b2503c54e8efd816efed7ffd, type: 3}
+--- !u!114 &1715644198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715644194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &1715757792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16905,6 +17849,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemigoLENTO_AMARILLO
       objectReference: {fileID: 0}
+    - target: {fileID: 4970653128200672383, guid: 755b9b4ce948aca4b9720c0e0d6fcb47,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7726777054017172466, guid: 755b9b4ce948aca4b9720c0e0d6fcb47,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -16913,6 +17862,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 755b9b4ce948aca4b9720c0e0d6fcb47, type: 3}
+--- !u!1 &1715757793 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4970653128200672383, guid: 755b9b4ce948aca4b9720c0e0d6fcb47,
+    type: 3}
+  m_PrefabInstance: {fileID: 1715757792}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1715757794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715757793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1715893346
 GameObject:
   m_ObjectHideFlags: 0
@@ -17206,6 +18179,7 @@ GameObject:
   - component: {fileID: 1740217662}
   - component: {fileID: 1740217661}
   - component: {fileID: 1740217660}
+  - component: {fileID: 1740217663}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Untagged
@@ -17291,6 +18265,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740217658}
   m_Mesh: {fileID: 7644588449821707622, guid: 3bb9c3afdf573c343ac2f9dddd7b1ce9, type: 3}
+--- !u!114 &1740217663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740217658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!65 &1741925348
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17640,6 +18632,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1114951657}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1772238488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772238483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1778397486
 GameObject:
   m_ObjectHideFlags: 0
@@ -18959,6 +19969,7 @@ GameObject:
   - component: {fileID: 1945079467}
   - component: {fileID: 1945079466}
   - component: {fileID: 1945079465}
+  - component: {fileID: 1945079469}
   m_Layer: 9
   m_Name: Sillon2 (3)
   m_TagString: Ground
@@ -19057,6 +20068,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945079463}
   m_Mesh: {fileID: 2339967484547556074, guid: 822176e8b2503c54e8efd816efed7ffd, type: 3}
+--- !u!114 &1945079469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945079463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1958069540
 GameObject:
   m_ObjectHideFlags: 0
@@ -19068,6 +20097,7 @@ GameObject:
   - component: {fileID: 1958069541}
   - component: {fileID: 1958069543}
   - component: {fileID: 1958069542}
+  - component: {fileID: 1958069544}
   m_Layer: 0
   m_Name: polySurface29 (1)
   m_TagString: Untagged
@@ -19140,6 +20170,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958069540}
   m_Mesh: {fileID: -7321516171901871987, guid: 26b2a5fedaa327a468200fd6153dad68, type: 3}
+--- !u!114 &1958069544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958069540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1959664414
 GameObject:
   m_ObjectHideFlags: 0
@@ -19578,6 +20626,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 772736821}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1977689440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977689435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1979807287
 GameObject:
   m_ObjectHideFlags: 0
@@ -19589,6 +20655,7 @@ GameObject:
   - component: {fileID: 1979807288}
   - component: {fileID: 1979807290}
   - component: {fileID: 1979807289}
+  - component: {fileID: 1979807291}
   m_Layer: 0
   m_Name: AislanteAcustico (1)
   m_TagString: Untagged
@@ -19661,6 +20728,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979807287}
   m_Mesh: {fileID: 6009697538773081034, guid: 822176e8b2503c54e8efd816efed7ffd, type: 3}
+--- !u!114 &1979807291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979807287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1987119177
 GameObject:
   m_ObjectHideFlags: 0
@@ -19674,6 +20759,7 @@ GameObject:
   - component: {fileID: 1987119179}
   - component: {fileID: 1987119182}
   - component: {fileID: 1987119181}
+  - component: {fileID: 1987119183}
   m_Layer: 0
   m_Name: Sillon2 (2)
   m_TagString: Ground
@@ -19772,6 +20858,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.15018, y: 0.032987528, z: 0.043148484}
   m_Center: {x: 0.023774102, y: -0.0050723613, z: -0.03542988}
+--- !u!114 &1987119183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987119177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &1990853213
 GameObject:
   m_ObjectHideFlags: 0
@@ -19920,6 +21024,7 @@ GameObject:
   - component: {fileID: 1994657456}
   - component: {fileID: 1994657455}
   - component: {fileID: 1994657454}
+  - component: {fileID: 1994657457}
   m_Layer: 0
   m_Name: Silla (1)
   m_TagString: Ground
@@ -20005,6 +21110,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994657452}
   m_Mesh: {fileID: -9085179732658399188, guid: 26b2a5fedaa327a468200fd6153dad68, type: 3}
+--- !u!114 &1994657457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994657452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!65 &2012714982
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20200,6 +21323,7 @@ GameObject:
   - component: {fileID: 2043765580}
   - component: {fileID: 2043765579}
   - component: {fileID: 2043765581}
+  - component: {fileID: 2043765582}
   m_Layer: 9
   m_Name: Altavoz1 (2)
   m_TagString: Ground
@@ -20285,6 +21409,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.053980596, y: 0.08771265, z: 0.032610625}
   m_Center: {x: -0.0000000051089697, y: 0.01949661, z: 0.0030760749}
+--- !u!114 &2043765582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043765577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &2044984336
 GameObject:
   m_ObjectHideFlags: 0
@@ -20372,6 +21514,7 @@ GameObject:
   - component: {fileID: 2062803439}
   - component: {fileID: 2062803442}
   - component: {fileID: 2062803441}
+  - component: {fileID: 2062803443}
   m_Layer: 9
   m_Name: MesitaDeNoche (1)
   m_TagString: Untagged
@@ -20444,6 +21587,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2062803438}
   m_Mesh: {fileID: 7197207661730680509, guid: 2f037f93301f1964ca9d949c75caebd7, type: 3}
+--- !u!114 &2062803443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062803438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &2065004892
 GameObject:
   m_ObjectHideFlags: 0
@@ -21137,6 +22298,7 @@ GameObject:
   - component: {fileID: 2116212316}
   - component: {fileID: 2116212318}
   - component: {fileID: 2116212317}
+  - component: {fileID: 2116212319}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -21209,6 +22371,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2116212315}
   m_Mesh: {fileID: 7644588449821707622, guid: 3bb9c3afdf573c343ac2f9dddd7b1ce9, type: 3}
+--- !u!114 &2116212319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116212315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &2116918739
 GameObject:
   m_ObjectHideFlags: 0
@@ -28418,6 +29598,7 @@ GameObject:
   - component: {fileID: 7933886549644142736}
   - component: {fileID: 506913468653660488}
   - component: {fileID: 6830350055580430530}
+  - component: {fileID: 7933886549644142737}
   m_Layer: 9
   m_Name: Camapro
   m_TagString: Untagged
@@ -29722,6 +30903,7 @@ GameObject:
   - component: {fileID: 5510489874307719221}
   - component: {fileID: 1672679703466293690}
   - component: {fileID: 8978516192060215614}
+  - component: {fileID: 8978516192060215615}
   m_Layer: 0
   m_Name: Album1
   m_TagString: Untagged
@@ -30270,6 +31452,7 @@ GameObject:
   - component: {fileID: 7442104550837149640}
   - component: {fileID: 187902529124894629}
   - component: {fileID: 4538020536919339825}
+  - component: {fileID: 7442104550837149641}
   m_Layer: 9
   m_Name: MesitaDeNoche
   m_TagString: Untagged
@@ -38127,6 +39310,7 @@ GameObject:
   - component: {fileID: 7899259540550465923}
   - component: {fileID: 8829319467228421872}
   - component: {fileID: 225471885}
+  - component: {fileID: 8829319467228421873}
   m_Layer: 0
   m_Name: ArmarioAncho2
   m_TagString: Untagged
@@ -39153,6 +40337,7 @@ GameObject:
   - component: {fileID: 5963284502131204251}
   - component: {fileID: 8077006434874013236}
   - component: {fileID: 5765386022671359166}
+  - component: {fileID: 8077006434874013237}
   m_Layer: 0
   m_Name: PantallaGrande
   m_TagString: Untagged
@@ -39957,6 +41142,7 @@ GameObject:
   - component: {fileID: 928005902441986959}
   - component: {fileID: 1871041021165436507}
   - component: {fileID: 6198181883010441486}
+  - component: {fileID: 6198181883010441487}
   m_Layer: 9
   m_Name: Mesa1
   m_TagString: Untagged
@@ -40892,6 +42078,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6198181883010441487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5809610905153588885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &6200765133013310315
 GameObject:
   m_ObjectHideFlags: 0
@@ -44028,6 +45232,24 @@ Transform:
   m_Father: {fileID: 543450653324287843}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7442104550837149641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3329063521792942450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!23 &7445367778020541438
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45556,6 +46778,24 @@ Transform:
   m_Father: {fileID: 543450653324287843}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7933886549644142737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2735651255260590863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!33 &7934912755143045569
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -46125,6 +47365,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5463550686038032942}
   m_Mesh: {fileID: -7766942568799085626, guid: 1da8e61b6d9fd76428b87fddfa3556de, type: 3}
+--- !u!114 &8077006434874013237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5463550686038032942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!23 &8083573268303033174
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -48479,6 +49737,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8829319467228421873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5202063633381075775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8843489366032039284
 GameObject:
   m_ObjectHideFlags: 0
@@ -48819,6 +50095,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8978516192060215615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3147140655467420972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &8986370504602633810
 GameObject:
   m_ObjectHideFlags: 0
