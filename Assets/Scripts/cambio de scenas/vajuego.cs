@@ -13,4 +13,9 @@ public class vajuego : MonoBehaviour
     {
         SceneManager.LoadScene(nombredescena);
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

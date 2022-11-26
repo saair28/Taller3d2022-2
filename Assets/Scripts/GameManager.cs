@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public void AddPoints(int amount)
     {
         totalPoints += amount;
-        pointsText.text = "Puntos: " + totalPoints.ToString();
+        pointsText.text = "Points: " + totalPoints.ToString();
     }
 
     private void Update()

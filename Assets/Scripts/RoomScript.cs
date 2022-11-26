@@ -39,7 +39,7 @@ public class RoomScript : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            Debug.Log("ROOM");
+            //Debug.Log("ROOM");
             ScenarioManager.instance.currentRoom = this.gameObject;
             SpawnEnemies.instance.UpdateSpawnPositions();
             //FindObjectOfType<ScenarioManager>().currentRoom = gameObject;
@@ -53,7 +53,7 @@ public class RoomScript : MonoBehaviour
         {
             ScenarioManager.instance.currentRoom = this.gameObject;
             SpawnEnemies.instance.UpdateSpawnPositions();
-            Debug.Log("FUNCIONA");
+            //Debug.Log("FUNCIONA");
             //FindObjectOfType<ScenarioManager>().currentRoom = gameObject;
             //FindObjectOfType<SpawnEnemies>().UpdateSpawnPositions();
         }

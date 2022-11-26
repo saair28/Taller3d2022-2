@@ -123,6 +123,7 @@ MonoBehaviour:
   agent: {fileID: 0}
   life: 0
   valor: 50
+  enemyType: 0
 --- !u!195 &8806065889572799064
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -142,7 +143,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1
-  m_BaseOffset: 1
+  m_BaseOffset: 0.8
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &-8018929203622934110
@@ -175,7 +176,7 @@ MonoBehaviour:
   points: 50
   damageTextPrefab: {fileID: 3291457415106553876, guid: 30b942a91ec1d89458bb5a157b0c02c9,
     type: 3}
-  enemyColor: 0
+  enemyColor: 1
   enemyColorINT: 1
   normalDamage: 0
   criticalDamage: 0

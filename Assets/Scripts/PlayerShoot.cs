@@ -40,7 +40,7 @@ public class PlayerShoot : MonoBehaviour
 
     void Shoot()
     {
-        AudioManager.instance.PlaySFX(sfxSource, AudioManager.instance.shotSFX, 0.5f);
+        AudioManager.instance.PlaySFX(sfxSource, AudioManager.instance.shotSFX, 0.2f);
 
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
@@ -74,6 +74,7 @@ public class PlayerShoot : MonoBehaviour
             Vector3 finalRotation = (destination - bulletOrigin.position);
 
             //var bullet = Instantiate(bulletPrefab, bulletOrigin.position, Quaternion.LookRotation(bulletOrigin.transform.forward));
+            //var bullet = Instantiate(bulletPrefab, bulletOrigin.position, Quaternion.LookRotation(finalRotation));
             var bullet = Instantiate(bulletPrefab, bulletOrigin.position, Quaternion.LookRotation(finalRotation));
             bullet.transform.Rotate(_bulletRotation);
             //bullet.transform.Rotate(finalRotation + _bulletRotation);

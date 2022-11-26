@@ -40,6 +40,8 @@ public class ScenarioManager : MonoBehaviour
         StartCoroutine(UpdateNavMesh(1));
         GetComponent<SpawnEnemies>().UpdateRoundCounter();
 
+        AudioManager.instance.PlaySFXWithDelay(AudioManager.instance.sfxSource, AudioManager.instance.satanVoices[0], 1f);
+
         //Valores iniciales de los enemigos
         SpawnEnemies.instance.enemyPrefabs[0].GetComponent<Enemy>().valor = 70; //LENTO
         SpawnEnemies.instance.enemyPrefabs[1].GetComponent<Enemy>().valor = 30; //RÁPIDO
@@ -110,19 +112,26 @@ public class ScenarioManager : MonoBehaviour
 
     void UpdateTotalEnemies()
     {
-        if(currentRound > 3 && currentRound <= 6)
+        if (currentRound > 3 && currentRound <= 6)
         {
             totalEnemiesForTheRound = 16;
+            maxEnemiesOnScreen = 7;
         }
         else if (currentRound > 7 && currentRound <= 9)
         {
             totalEnemiesForTheRound = 20;
+            maxEnemiesOnScreen = 10;
         }
         else if (currentRound > 10 && currentRound <= 12)
         {
             totalEnemiesForTheRound = 24;
+            maxEnemiesOnScreen = 13;
         }
-        else totalEnemiesForTheRound = 28;
+        else if(currentRound > 13)
+        {
+            totalEnemiesForTheRound = 28;
+            maxEnemiesOnScreen = 15;
+        }
     }
 
     public void ResetTimer()
@@ -144,10 +153,10 @@ public class ScenarioManager : MonoBehaviour
 
     public void LevelProgressionCheck()
     {
-        if ((currentRound) % 3 == 0)
-        {
-            AudioManager.instance.PlaySFX(AudioManager.instance.sfxSource, AudioManager.instance.endRoundSFX, 0.5f);
-        }
+        //if ((currentRound) % 3 == 0)
+        //{
+        //    //AudioManager.instance.PlaySFX(AudioManager.instance.sfxSource, AudioManager.instance.endRoundSFX, 0.5f);
+        //}
 
         //if(currentRoom.GetComponent<RoomScript>().roomDoors[0] != null)
         //{
@@ -163,15 +172,26 @@ public class ScenarioManager : MonoBehaviour
         //    }
         //}
 
+        //if(currentRound == 2)
+        //{
+        //    AudioManager.instance.PlaySFXOnce(AudioManager.instance.sfxSource, AudioManager.instance.satanVoices[4], 1f);
+        //}
+        //else if(currentRound == 3)
+        //{
+        //    AudioManager.instance.PlaySFXOnce(AudioManager.instance.sfxSource, AudioManager.instance.satanVoices[5], 1f);
+        //}
+
         if (currentRound >= milestones[0] && rooms[0].GetComponent<RoomScript>().roomDoor != null) // Se abre la primera puerta
         {
             Destroy(rooms[0].GetComponent<RoomScript>().roomDoor);
+            AudioManager.instance.PlaySFXOnce(AudioManager.instance.sfxSource, AudioManager.instance.satanVoices[7], 1f);
             StartCoroutine(UpdateNavMesh(1));
             Debug.Log("Se destruyo 1");
         }
         else if (currentRound >= milestones[1] && rooms[1].GetComponent<RoomScript>().roomDoor != null) // Se abre la segunda puerta
         {
             Destroy(rooms[1].GetComponent<RoomScript>().roomDoor);
+            AudioManager.instance.PlaySFXOnce(AudioManager.instance.sfxSource, AudioManager.instance.satanVoices[7], 1f);
             StartCoroutine(UpdateNavMesh(1));
             Debug.Log("Se destruyo 2");
 
@@ -188,6 +208,7 @@ public class ScenarioManager : MonoBehaviour
         else if (currentRound >= milestones[2] && rooms[2].GetComponent<RoomScript>().roomDoor != null) // Se abre la tercera puerta
         {
             Destroy(rooms[2].GetComponent<RoomScript>().roomDoor);
+            AudioManager.instance.PlaySFXOnce(AudioManager.instance.sfxSource, AudioManager.instance.satanVoices[7], 1f);
             StartCoroutine(UpdateNavMesh(1));
             Debug.Log("Se destruyo 3");
 
@@ -204,6 +225,7 @@ public class ScenarioManager : MonoBehaviour
         else if (currentRound >= milestones[3] && rooms[3].GetComponent<RoomScript>().roomDoor != null) // Se abre la cuarta puerta
         {
             Destroy(rooms[3].GetComponent<RoomScript>().roomDoor);
+            AudioManager.instance.PlaySFXOnce(AudioManager.instance.sfxSource, AudioManager.instance.satanVoices[7], 1f);
             StartCoroutine(UpdateNavMesh(1));
             Debug.Log("Se destruyo 4");
         }
@@ -227,6 +249,11 @@ public class ScenarioManager : MonoBehaviour
         enemiesThisRound = 0;
         UpdateTotalEnemies();
         currentRound++;
+
+        int randomNumber = Random.Range(8, 12);
+        if(!AudioManager.instance.sfxSource.isPlaying && (currentRound != milestones[0] || currentRound != milestones[1] || currentRound != milestones[2] || currentRound != milestones[3]))
+            AudioManager.instance.PlaySFXOnce(AudioManager.instance.sfxSource, AudioManager.instance.satanVoices[randomNumber], 1f);
+
         GetComponent<SpawnEnemies>().UpdateRoundCounter();
         LevelProgressionCheck();
         ResetTimer();

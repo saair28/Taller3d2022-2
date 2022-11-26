@@ -10,6 +10,11 @@ public class Enemy : MonoBehaviour
 
     public int valor;
 
+    public int enemyType;
+    // 1 = Rápido
+    // 2 = Lento
+    // 3 = Volador
+
     void Start()
     {
         //life = 80;

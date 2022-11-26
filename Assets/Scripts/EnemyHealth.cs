@@ -20,16 +20,16 @@ public class EnemyHealth : MonoBehaviour
 
     public enum EnemyColor
     {
-        azul,
         amarillo,
+        azul,
         morado
     }
     public EnemyColor enemyColor;
     public int enemyColorINT;
     //public int enemyColor;
-    //0 = AZUL
-    //1 = ROJO
-    //2 = VERDE
+    //0 = amarillo
+    //1 = azul
+    //2 = morado
 
     public float normalDamage, criticalDamage;
 
@@ -103,6 +103,9 @@ public class EnemyHealth : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         FindObjectOfType<SpawnEnemies>().enemiesLeft--;
         FindObjectOfType<SpawnEnemies>().UpdateEnemyCounter();
+
+        FindObjectOfType<DestroyFarEnemies>().enemyList.Remove(gameObject);
+
         Destroy(gameObject);
     }
 

@@ -7,9 +7,12 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
-    AudioSource musicSource;
+    public AudioSource musicSource;
     public AudioSource sfxSource;
-    public AudioClip musicClip, shotSFX, endRoundSFX, satanVoice;
+    public AudioClip[] musicClips;
+    public List<AudioClip> musicClipsGame = new List<AudioClip>();
+    public AudioClip shotSFX; // endRoundSFX satanVoice;
+    public AudioClip[] satanVoices;
 
     [Header("Audio Mixer")]
     public AudioMixerGroup masterGroup;
@@ -30,16 +33,44 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         musicSource = GetComponent<AudioSource>();
-        musicClip = (AudioClip)Resources.Load("Audio/Music/testAudio");
+        //musicClip = (AudioClip)Resources.Load("Audio/Music/testAudio");
         shotSFX = (AudioClip)Resources.Load("Audio/SFX/billSound");
-        endRoundSFX = (AudioClip)Resources.Load("Audio/SFX/endRoundSFX");
-        satanVoice = (AudioClip)Resources.Load("Audio/SFX/satanVoice");
+        //endRoundSFX = (AudioClip)Resources.Load("Audio/SFX/endRoundSFX");
+        //satanVoice = (AudioClip)Resources.Load("Audio/SFX/satanVoice");
 
-        ChangeMusic(musicClip);
+        AddArrayToList(musicClipsGame, musicClips);
+
+        //ChangeMusic(musicClips);
         UpdateMixerVolume();
 
         // PARA BAJAR EL VOLUMEN PORQUE ESTÁ MU ALTO.
-        masterVolumeSlider.value = 0.05f;
+        masterVolumeSlider.value = 0.75f;
+    }
+
+    void AddArrayToList(List<AudioClip> clipsGame, AudioClip[] clips)
+    {
+        for (int i = 0; i< clips.Length; i++)
+        {
+            clipsGame.Add(clips[i]);
+        }
+    }
+
+    private void Update()
+    {
+        if(!musicSource.isPlaying)
+        {
+            if(musicClipsGame.Count <= 0)
+            {
+                AddArrayToList(musicClipsGame, musicClips);
+            }
+            ChangeMusic(musicClipsGame);
+
+        }
+
+        if(Input.GetKeyDown(KeyCode.J))
+        {
+            musicSource.Stop();
+        }
     }
 
     public void PlaySFX(AudioSource source, AudioClip clip, float volume)
@@ -49,10 +80,30 @@ public class AudioManager : MonoBehaviour
         source.Play();
     }
 
-    public void ChangeMusic(AudioClip clip)
+    public void PlaySFXWithDelay(AudioSource source, AudioClip clip, float volume)
     {
-        musicSource.clip = clip;
+        source.clip = clip;
+        source.volume = volume;
+        source.PlayDelayed(0.5f);
+    }
+
+    public void PlaySFXOnce(AudioSource source, AudioClip clip, float volume)
+    {
+        if(source.isPlaying)
+        {
+            source.Stop();
+        }
+        source.clip = clip;
+        source.volume = volume;
+        source.PlayOneShot(clip);
+    }
+
+    public void ChangeMusic(List<AudioClip> clips)
+    {
+        int randomNumber = Random.Range(0, clips.Count);
+        musicSource.clip = clips[randomNumber];
         musicSource.Play();
+        clips.RemoveAt(randomNumber);
     }
 
     public void UpdateMixerVolume()

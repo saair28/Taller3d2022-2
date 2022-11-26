@@ -33,6 +33,11 @@ public class TutorialScript : MonoBehaviour
     public Transform[] spawnPositions;
 
     public GameObject navMeshObject;
+    bool pickedWeaponVoice = false;
+    bool barricadesOffVoice = false;
+    bool finishedRound1Voice = false;
+    bool finishedRound2Voice = false;
+    bool finishedRound3Voice = false;
 
     private void Awake()
     {
@@ -81,16 +86,24 @@ public class TutorialScript : MonoBehaviour
             }
         }
 
-        if(GetComponent<ScenarioManager>().currentRound >= 1)
+        if(GetComponent<ScenarioManager>().currentRound >= 1 && !barricadesOffVoice)
         {
             barricades.SetActive(false);
+            AudioManager.instance.PlaySFXOnce(AudioManager.instance.sfxSource, AudioManager.instance.satanVoices[3], 1f);
+            barricadesOffVoice = true;
+        }
+
+        if(FindObjectOfType<PlayerWeapons>().currentWeapon != null && !pickedWeaponVoice)
+        {
+            AudioManager.instance.PlaySFXOnce(AudioManager.instance.sfxSource, AudioManager.instance.satanVoices[1], 1f);
+            pickedWeaponVoice = true;
         }
 
         if(!roundStarted || !GetComponent<ScenarioManager>().allEnemiesSpawned)
         {
             if (FindObjectOfType<PlayerWeapons>().currentWeapon != null && GetComponent<ScenarioManager>().currentRound == -1)
             {
-                AudioManager.instance.PlaySFX(AudioManager.instance.sfxSource, AudioManager.instance.satanVoice, 0.3f);
+                //AudioManager.instance.PlaySFX(AudioManager.instance.sfxSource, AudioManager.instance.satanVoice, 0.3f);
                 GetComponent<ScenarioManager>().GoTimer();
                 if (GetComponent<ScenarioManager>().timeBetweenRoundsCounter <= 0)
                 {
@@ -147,6 +160,12 @@ public class TutorialScript : MonoBehaviour
             }
             else if (GetComponent<ScenarioManager>().currentRound == 2)
             {
+                if(!finishedRound1Voice)
+                {
+                    AudioManager.instance.PlaySFXOnce(AudioManager.instance.sfxSource, AudioManager.instance.satanVoices[4], 1f);
+                    finishedRound1Voice = true;
+                }
+
                 GetComponent<ScenarioManager>().totalEnemiesForTheRound = 12;
                 GetComponent<ScenarioManager>().GoTimer();
                 if (GetComponent<ScenarioManager>().timeBetweenRoundsCounter <= 0)
@@ -169,7 +188,11 @@ public class TutorialScript : MonoBehaviour
             }
             else if (GetComponent<ScenarioManager>().currentRound == 3)
             {
-                AudioManager.instance.PlaySFX(AudioManager.instance.sfxSource, AudioManager.instance.endRoundSFX, 0.5f);
+                if (!finishedRound2Voice)
+                {
+                    AudioManager.instance.PlaySFXOnce(AudioManager.instance.sfxSource, AudioManager.instance.satanVoices[5], 1f);
+                    finishedRound2Voice = true;
+                }
 
                 GetComponent<ScenarioManager>().totalEnemiesForTheRound = 16;
                 GetComponent<ScenarioManager>().GoTimer();
@@ -193,6 +216,11 @@ public class TutorialScript : MonoBehaviour
             }
             else if(GetComponent<ScenarioManager>().currentRound >= 4)
             {
+                if (!finishedRound3Voice)
+                {
+                    AudioManager.instance.PlaySFXOnce(AudioManager.instance.sfxSource, AudioManager.instance.satanVoices[6], 1f);
+                    finishedRound3Voice = true;
+                }
                 this.enabled = false;
             }
         }
@@ -210,6 +238,8 @@ public class TutorialScript : MonoBehaviour
             {
                 trumpetWeapon.SetActive(true);
                 triangleWeapon.SetActive(true);
+
+                AudioManager.instance.PlaySFXOnce(AudioManager.instance.sfxSource, AudioManager.instance.satanVoices[2], 1f);
 
                 showedOtherWeapons = true;
             }
@@ -271,12 +301,12 @@ public class TutorialScript : MonoBehaviour
 
     public void SpawnEnemies_Tutorial()
     {
-        GameObject enemy1 = Instantiate(enemyPrefabTUTORIAL[0], spawnPositionsTUTORIAL[0].position, Quaternion.identity);
+        GameObject enemy1 = Instantiate(enemyPrefabTUTORIAL[0], spawnPositionsTUTORIAL[0].position, spawnPositionsTUTORIAL[0].rotation);
         enemy1.GetComponent<Enemy>().agent = enemy1.GetComponent<NavMeshAgent>();
         enemy1.GetComponent<Enemy>().agent.speed = 0;
         GetComponent<SpawnEnemies>().enemiesLeft++;
 
-        GameObject enemy2 = Instantiate(enemyPrefabTUTORIAL[1], spawnPositionsTUTORIAL[1].position, Quaternion.identity);
+        GameObject enemy2 = Instantiate(enemyPrefabTUTORIAL[1], spawnPositionsTUTORIAL[1].position, spawnPositionsTUTORIAL[1].rotation);
         enemy2.GetComponent<Enemy>().agent = enemy2.GetComponent<NavMeshAgent>();
         enemy2.GetComponent<Enemy>().agent.speed = 0;
         GetComponent<SpawnEnemies>().enemiesLeft++;

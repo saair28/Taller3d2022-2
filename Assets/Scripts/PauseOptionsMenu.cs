@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseOptionsMenu : MonoBehaviour
 {
@@ -61,6 +62,12 @@ public class PauseOptionsMenu : MonoBehaviour
         Time.timeScale = 0;
         isPaused = true;
         player.GetComponent<PlayerShoot>().enabled = false;
+
+        AudioManager.instance.musicSource.volume = 0.1f;
+        if (AudioManager.instance.sfxSource.isPlaying)
+        {
+            AudioManager.instance.sfxSource.Pause();
+        }
     }
 
     public void ResumeGame()
@@ -69,10 +76,15 @@ public class PauseOptionsMenu : MonoBehaviour
         Time.timeScale = 1;
         isPaused = false;
         player.GetComponent<PlayerShoot>().enabled = true;
+
+        AudioManager.instance.musicSource.volume = 0.15f;
+        AudioManager.instance.sfxSource.UnPause();
     }
 
     public void ExitGame()
     {
-        Application.Quit();
+        //Application.Quit();
+        Time.timeScale = 1;
+        SceneManager.LoadScene("MainMenu");
     }
 }

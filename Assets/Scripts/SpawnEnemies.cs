@@ -46,7 +46,6 @@ public class SpawnEnemies : MonoBehaviour
     {
         int randomValor = Random.Range(0, valorTotal);
         int randomNumberPosition = Random.Range(0, spawnPositions.Length);
-        int randomNumberColor = Random.Range(0, materials.Length);
 
         //for (int i = 0; i < ScenarioManager.instance.currentRoom.GetComponent<RoomScript>().enemyPool.Length; i++)
         //{
@@ -65,9 +64,34 @@ public class SpawnEnemies : MonoBehaviour
             {
                 GameObject go = Instantiate(enemyPrefabs[i], spawnPositions[randomNumberPosition].position, Quaternion.identity);
                 go.GetComponent<Enemy>().agent = GetComponent<NavMeshAgent>();
-                go.GetComponentInChildren<MeshRenderer>().material = materials[randomNumberColor];
+                FindObjectOfType<DestroyFarEnemies>().enemyList.Add(go);
+
+                int randomNumberColor = 0;
+
+                if (go.GetComponent<Enemy>().enemyType == 1) // RÁPIDO
+                {
+                    randomNumberColor = Random.Range(0, 3);
+                    go.GetComponentInChildren<MeshRenderer>().material = materials[randomNumberColor];
+                   // go.GetComponent<MeshRenderer>().material = materials[randomNumberColor];
+                    go.GetComponent<EnemyHealth>().enemyColor = (EnemyHealth.EnemyColor)randomNumberColor;
+                }
+                else if(go.GetComponent<Enemy>().enemyType == 2) // LENTO
+                {
+                    randomNumberColor = Random.Range(3, 6);
+                    go.GetComponentInChildren<MeshRenderer>().material = materials[randomNumberColor];
+                    //go.GetComponent<MeshRenderer>().material = materials[randomNumberColor];
+                    go.GetComponent<EnemyHealth>().enemyColor = (EnemyHealth.EnemyColor)randomNumberColor - 3;
+                }
+                else // VOLADOR
+                {
+                    randomNumberColor = Random.Range(6, 9);
+                    go.GetComponentInChildren<MeshRenderer>().material = materials[randomNumberColor];
+                    //go.GetComponent<MeshRenderer>().material = materials[randomNumberColor];
+                    go.GetComponent<EnemyHealth>().enemyColor = (EnemyHealth.EnemyColor)randomNumberColor - 6;
+                }
+                
                 //go.GetComponent<MeshRenderer>().material = materials[randomNumberColor];
-                go.GetComponent<EnemyHealth>().enemyColor = (EnemyHealth.EnemyColor)randomNumberColor;
+                //go.GetComponent<EnemyHealth>().enemyColor = (EnemyHealth.EnemyColor)randomNumberColor;
                 
                 return;
             }
@@ -128,12 +152,12 @@ public class SpawnEnemies : MonoBehaviour
 
     public void UpdateEnemyCounter()
     {
-        enemyCounterText.text = "Enemigos: " + enemiesLeft.ToString();
+        enemyCounterText.text = "Enemies: " + enemiesLeft.ToString();
     }
 
     public void UpdateRoundCounter()
     {
-        roundCounterText.text = "Ronda: " + GetComponent<ScenarioManager>().currentRound.ToString();
+        roundCounterText.text = "Round: " + GetComponent<ScenarioManager>().currentRound.ToString();
     }
 
     public void UpdateSpawnPositions()

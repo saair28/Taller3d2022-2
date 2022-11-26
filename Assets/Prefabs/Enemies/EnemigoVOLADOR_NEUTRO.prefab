@@ -158,6 +158,7 @@ GameObject:
   - component: {fileID: 7347189163032034552}
   - component: {fileID: 7347189163032034553}
   - component: {fileID: 727075594897958421}
+  - component: {fileID: -8394379223074288443}
   m_Layer: 0
   m_Name: EnemigoVOLADOR_NEUTRO
   m_TagString: Untagged
@@ -235,7 +236,8 @@ MonoBehaviour:
   playerPosition: {x: 0, y: 0, z: 0}
   agent: {fileID: 0}
   life: 0
-  valor: 0
+  valor: 15
+  enemyType: 3
 --- !u!114 &7347189163032034552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,3 +310,15 @@ MonoBehaviour:
   criticalDamage: 0
   invulTime: 0.05
   invulTimeCounter: 0
+--- !u!114 &-8394379223074288443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7347189163032034546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81022518a8287a0449c4a4fc73e34b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

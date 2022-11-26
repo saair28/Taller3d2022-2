@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -3021456332331746787}
   - component: {fileID: -3978483699767298998}
   - component: {fileID: 8559415461357350404}
+  - component: {fileID: 7302087906916841962}
   m_Layer: 0
   m_Name: EnemigoRAPIDO_NEUTRO
   m_TagString: enemigo1
@@ -122,6 +123,7 @@ MonoBehaviour:
   agent: {fileID: 0}
   life: 0
   valor: 30
+  enemyType: 1
 --- !u!195 &-3021456332331746787
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -141,7 +143,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1
-  m_BaseOffset: 1
+  m_BaseOffset: 0.8
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &-3978483699767298998
@@ -182,6 +184,18 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7302087906916841962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6196869968844167345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81022518a8287a0449c4a4fc73e34b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7408957919318743009
 PrefabInstance:
   m_ObjectHideFlags: 0
