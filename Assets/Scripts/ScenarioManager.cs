@@ -115,22 +115,22 @@ public class ScenarioManager : MonoBehaviour
         if (currentRound > 3 && currentRound <= 6)
         {
             totalEnemiesForTheRound = 16;
-            maxEnemiesOnScreen = 7;
+            maxEnemiesOnScreen = 6;
         }
         else if (currentRound > 7 && currentRound <= 9)
         {
             totalEnemiesForTheRound = 20;
-            maxEnemiesOnScreen = 10;
+            maxEnemiesOnScreen = 8;
         }
         else if (currentRound > 10 && currentRound <= 12)
         {
             totalEnemiesForTheRound = 24;
-            maxEnemiesOnScreen = 13;
+            maxEnemiesOnScreen = 10;
         }
         else if(currentRound > 13)
         {
             totalEnemiesForTheRound = 28;
-            maxEnemiesOnScreen = 15;
+            maxEnemiesOnScreen = 12;
         }
     }
 

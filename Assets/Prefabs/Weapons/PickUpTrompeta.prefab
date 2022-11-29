@@ -117,8 +117,10 @@ MonoBehaviour:
   key: 3
   bulletsPerShot: 1
   bulletRotation: 3
-  bulletReach: 3
-  weaponPrefab: {fileID: 1359871101993160473, guid: 9f8d08463cdae7d48afb3236869dff3e, type: 3}
-  bulletPrefab: {fileID: 6332320722821652308, guid: 6b06f158248b49b48a513972213697fd, type: 3}
+  bulletReach: 2
+  weaponPrefab: {fileID: 1359871101993160473, guid: 9f8d08463cdae7d48afb3236869dff3e,
+    type: 3}
+  bulletPrefab: {fileID: 6332320722821652308, guid: 6b06f158248b49b48a513972213697fd,
+    type: 3}
   bulletOrigin: {fileID: 0}
   bulletColor: 0

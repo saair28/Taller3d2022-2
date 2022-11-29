@@ -445,6 +445,7 @@ MonoBehaviour:
   playerBody: {fileID: 8956547511344149536}
   TRYNGTHINGS: 1
   sens: 100
+  sensSlider: {fileID: 0}
 --- !u!1 &8956547511052993778
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,6 +680,7 @@ GameObject:
   - component: {fileID: 8956547511344149547}
   - component: {fileID: 8956547511344149538}
   - component: {fileID: 1885944027275503342}
+  - component: {fileID: 2130566919182517991}
   m_Layer: 7
   m_Name: Player_funcional
   m_TagString: Player
@@ -803,6 +805,7 @@ MonoBehaviour:
   weaponList: []
   isChangingWeapon: 0
   weaponPosition: {fileID: 4198948478077225572}
+  timeBetweenWeapons: 0.3
 --- !u!114 &8956547511344149546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -822,7 +825,8 @@ MonoBehaviour:
   timeToRecoverCount: 0
   lifeRecovery: 10
   invulnerabilityTime: 1
-  lifeHearth: {fileID: 0}
+  pentagram: {fileID: 0}
+  bloodSplatter: {fileID: 0}
 --- !u!136 &8956547511344149547
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -948,3 +952,22 @@ MonoBehaviour:
   gravityScale: 1
   normalGravityScale: 3
   fallingGravityScale: 7
+--- !u!114 &2130566919182517991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8956547511344149544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f3fa5b9b3050fd4590b931b1ca3dd6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyList: []
+  furthestEnemy: {fileID: 0}
+  spawnPoints: []
+  closestSpawn: {fileID: 0}
+  distance: 25
+  timeToCheck: 1
+  timerCount: 0

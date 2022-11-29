@@ -15,14 +15,19 @@ public class PlayerWeapons : MonoBehaviour
     int weaponNumberSearchIndex = 0;
     public Transform weaponPosition;
 
+    public float timeBetweenWeapons;
+    float timerWeaponsCount;
+    bool canSwitchWeapon = true;
+
     void Start()
     {
         pShoot = GetComponent<PlayerShoot>();
+        timerWeaponsCount = timeBetweenWeapons;
     }
 
     private void Update()
     {
-        if(FindObjectOfType<PauseOptionsMenu>() != null && !PauseOptionsMenu.instance.isPaused)
+        if(FindObjectOfType<PauseOptionsMenu>() != null && !PauseOptionsMenu.instance.isPaused && canSwitchWeapon)
         {
             ScrollToSwitchWeapon();
             NumbersToSwitchWeapon();
@@ -31,6 +36,17 @@ public class PlayerWeapons : MonoBehaviour
         if (isChangingWeapon)
         {
             UpdateWeaponStats();
+        }
+
+        if(!canSwitchWeapon)
+        {
+            timerWeaponsCount -= Time.deltaTime;
+
+            if(timerWeaponsCount <= 0)
+            {
+                timerWeaponsCount = timeBetweenWeapons;
+                canSwitchWeapon = true;
+            }
         }
     }
 
@@ -134,12 +150,16 @@ public class PlayerWeapons : MonoBehaviour
                 isChangingWeapon = true;
                 ChangeWeaponUp();
                 UpdateWeaponModel();
+
+                canSwitchWeapon = false;
             }
             if (Input.GetAxisRaw("Mouse ScrollWheel") > 0)
             {
                 isChangingWeapon = true;
                 ChangeWeaponDown();
                 UpdateWeaponModel();
+
+                canSwitchWeapon = false;
             }
         }
 
@@ -173,7 +193,10 @@ public class PlayerWeapons : MonoBehaviour
                         isChangingWeapon = true;
                         currentWeapon = weaponList[i];
                         UpdateWeaponModel();
+
                     }
+
+                    canSwitchWeapon = false;
                     break;
 
                 }
