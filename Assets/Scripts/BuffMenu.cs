@@ -68,7 +68,7 @@ public class BuffMenu : MonoBehaviour
     }
     public void BuffSpeed()
     {
-        player.GetComponent<PlayerMovement>().speedMultiplier += 0.12f;
+        player.GetComponent<PlayerMovement>().speedMultiplier += 0.15f;
     }
     public void BuffDamage()
     {
