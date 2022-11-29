@@ -14280,7 +14280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navMeshSurface: {fileID: 0}
-  currentRound: 1
+  currentRound: -1
   currentRoom: {fileID: 0}
   rooms:
   - {fileID: 8669635226541546548}
