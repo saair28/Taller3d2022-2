@@ -1,0 +1,28 @@
+{
+  "004171b8e58104c46b5934a222f348e7": {
+    "sceneGuid": "f0020b11495f01743be82aae0c128529",
+    "uniqueCameraId": "004171b8e58104c46b5934a222f348e7",
+    "name": "sala",
+    "pointX": -74.5895844,
+    "pointY": 8.282738,
+    "pointZ": 0.7020092,
+    "directionX": -0.364072263,
+    "directionY": 0.431369722,
+    "directionZ": -0.199781284,
+    "directionW": -0.800485,
+    "zoom": 12.61869
+  },
+  "953a92406f3f18b4da3275b140f89987": {
+    "sceneGuid": "f0020b11495f01743be82aae0c128529",
+    "uniqueCameraId": "953a92406f3f18b4da3275b140f89987",
+    "name": "estudio",
+    "pointX": -82.35843,
+    "pointY": 4.19962835,
+    "pointZ": -27.2675915,
+    "directionX": -0.13999036,
+    "directionY": -0.68555516,
+    "directionZ": 0.133053139,
+    "directionW": -0.701451063,
+    "zoom": 18.5634727
+  }
+}
