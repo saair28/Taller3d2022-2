@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class SpawnEnemies : MonoBehaviour
 {
@@ -158,6 +159,7 @@ public class SpawnEnemies : MonoBehaviour
     public void UpdateRoundCounter()
     {
         roundCounterText.text = "Round: " + GetComponent<ScenarioManager>().currentRound.ToString();
+      
     }
 
     public void UpdateSpawnPositions()

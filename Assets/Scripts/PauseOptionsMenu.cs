@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseOptionsMenu : MonoBehaviour
 {
+    
     public static PauseOptionsMenu instance;
     GameObject player;
     public GameObject pauseUI, pauseButtons, audioSliders, gameSliders;
@@ -23,6 +24,7 @@ public class PauseOptionsMenu : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            
         }
         else
         {
@@ -59,8 +61,9 @@ public class PauseOptionsMenu : MonoBehaviour
     public void PauseGame()
     {
         pauseUI.SetActive(true);
-        Time.timeScale = 0;
+        Time.timeScale = 0f;
         isPaused = true;
+       
         player.GetComponent<PlayerShoot>().enabled = false;
 
         AudioManager.instance.musicSource.volume = 0.1f;

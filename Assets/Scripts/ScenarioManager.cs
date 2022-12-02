@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class ScenarioManager : MonoBehaviour
 {
@@ -108,6 +109,7 @@ public class ScenarioManager : MonoBehaviour
                 allEnemiesSpawned = false;
             }
         }
+        FinalRound();
     }
 
     void UpdateTotalEnemies()
@@ -132,8 +134,16 @@ public class ScenarioManager : MonoBehaviour
             totalEnemiesForTheRound = 28;
             maxEnemiesOnScreen = 12;
         }
+        
     }
-
+    void FinalRound()
+    {
+        if (currentRound > 19)
+        {
+            SceneManager.LoadScene("victoria");
+        }
+    }
+   
     public void ResetTimer()
     {
         timeBetweenRoundsCounter = timeBetweenRounds;
