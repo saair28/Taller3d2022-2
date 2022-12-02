@@ -63,7 +63,6 @@ public class PauseOptionsMenu : MonoBehaviour
         pauseUI.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
-       
         player.GetComponent<PlayerShoot>().enabled = false;
 
         AudioManager.instance.musicSource.volume = 0.1f;
@@ -77,6 +76,8 @@ public class PauseOptionsMenu : MonoBehaviour
     {
         pauseUI.SetActive(false);
         Time.timeScale = 1;
+      //player.GetComponent<PlayerController>().enabled = true;
+
         isPaused = false;
         player.GetComponent<PlayerShoot>().enabled = true;
 
