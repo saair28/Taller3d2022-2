@@ -69,6 +69,12 @@ public class TutorialScript : MonoBehaviour
         if(GetComponent<ScenarioManager>().currentRound < 1)
         {
             GetComponent<SpawnEnemies>().roundCounterText.text = "Tutorial";
+            if(Input.GetKeyDown(KeyCode.K))
+            {
+                GetComponent<ScenarioManager>().currentRound = 1;
+                this.enabled = false;
+
+            }
         }
         Tutorial();
     }
