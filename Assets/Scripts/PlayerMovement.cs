@@ -124,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
-        if (canJump)
+        if (canJump && Time.timeScale > 0)
         {
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
