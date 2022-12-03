@@ -140,7 +140,7 @@ public class ScenarioManager : MonoBehaviour
     {
         if (currentRound > 19)
         {
-            SceneManager.LoadScene("victoria");
+            SceneManager.LoadScene("Victory");
         }
     }
    

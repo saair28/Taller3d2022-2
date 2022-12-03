@@ -39,6 +39,7 @@ public class BuffMenu : MonoBehaviour
         buffMenuObject.SetActive(true);
         GetComponent<PauseOptionsMenu>().isPaused = true;
         player.GetComponent<PlayerShoot>().enabled = false;
+        player.GetComponent<PlayerMovement>().enabled = false;
         buffMenuActivated = true;
         Time.timeScale = 0;
     }
