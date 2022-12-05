@@ -28,6 +28,8 @@ public class ScenarioManager : MonoBehaviour
 
     public int[] milestones;
 
+    public int buffMenuRounds;
+    public int buffMenuRoundsLast = 0;
 
     private void Awake()
     {
@@ -40,6 +42,8 @@ public class ScenarioManager : MonoBehaviour
         ResetTimer();
         StartCoroutine(UpdateNavMesh(1));
         GetComponent<SpawnEnemies>().UpdateRoundCounter();
+
+        //buffMenuRounds = 1;
 
         AudioManager.instance.PlaySFXWithDelay(AudioManager.instance.sfxSource, AudioManager.instance.satanVoices[0], 1f);
 
@@ -101,9 +105,15 @@ public class ScenarioManager : MonoBehaviour
             if (roundInProgress && allEnemiesSpawned && GetComponent<SpawnEnemies>().enemiesLeft <= 0)
             {
                 //NextRound();
-                if ((currentRound) % 3 == 0 && !GetComponent<BuffMenu>().buffMenuActivated)
+                //if ((currentRound) % 3 == 0 && !GetComponent<BuffMenu>().buffMenuActivated)
+                //{
+                //    StartCoroutine(GetComponent<BuffMenu>()._BuffMenuActivate());
+                //}
+                if(GetComponent<BuffMenu>().counter >= buffMenuRounds && !GetComponent<BuffMenu>().buffMenuActivated)
                 {
+                    Debug.Log("BUFFFFFFFFFFFFFF");
                     StartCoroutine(GetComponent<BuffMenu>()._BuffMenuActivate());
+                    //buffMenuRounds += buffMenuRounds;
                 }
                 roundInProgress = false;
                 allEnemiesSpawned = false;
@@ -151,6 +161,8 @@ public class ScenarioManager : MonoBehaviour
 
     public void GoTimer()
     {
+        GetComponent<BuffMenu>().FillBar();
+
         timeBetweenRoundsCounter -= Time.deltaTime;
         ShowTimer();
     }
@@ -163,34 +175,6 @@ public class ScenarioManager : MonoBehaviour
 
     public void LevelProgressionCheck()
     {
-        //if ((currentRound) % 3 == 0)
-        //{
-        //    //AudioManager.instance.PlaySFX(AudioManager.instance.sfxSource, AudioManager.instance.endRoundSFX, 0.5f);
-        //}
-
-        //if(currentRoom.GetComponent<RoomScript>().roomDoors[0] != null)
-        //{
-        //    if ((currentRound >= milestones[0]) && currentRoom.GetComponent<RoomScript>().roomDoors[0].activeSelf)
-        //    {
-        //        for (int i = 0; i < currentRoom.GetComponent<RoomScript>().roomDoors.Length; i++)
-        //        {
-        //            //currentRoom.GetComponent<RoomScript>().roomDoors[i].SetActive(false);
-        //            //currentRoom.GetComponent<RoomScript>().roomDoors[i].layer = LayerMask.NameToLayer("Ignore Raycast");
-        //            Destroy(currentRoom.GetComponent<RoomScript>().roomDoors[i]);
-        //        }
-        //        StartCoroutine(UpdateNavMesh(1));
-        //    }
-        //}
-
-        //if(currentRound == 2)
-        //{
-        //    AudioManager.instance.PlaySFXOnce(AudioManager.instance.sfxSource, AudioManager.instance.satanVoices[4], 1f);
-        //}
-        //else if(currentRound == 3)
-        //{
-        //    AudioManager.instance.PlaySFXOnce(AudioManager.instance.sfxSource, AudioManager.instance.satanVoices[5], 1f);
-        //}
-
         if (currentRound >= milestones[0] && rooms[0].GetComponent<RoomScript>().roomDoor != null) // Se abre la primera puerta
         {
             Destroy(rooms[0].GetComponent<RoomScript>().roomDoor);
@@ -266,7 +250,8 @@ public class ScenarioManager : MonoBehaviour
 
         GetComponent<SpawnEnemies>().UpdateRoundCounter();
         LevelProgressionCheck();
+        //GetComponent<BuffMenu>().FillBar();
+        GetComponent<BuffMenu>().counter++;
         ResetTimer();
-        GetComponent<BuffMenu>().FillBar();
     }
 }

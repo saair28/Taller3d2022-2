@@ -10,6 +10,7 @@ public class TutorialScript : MonoBehaviour
     public ScenarioManager scenarioManager;
     public GameObject barricades;
     public bool roundStarted = false;
+    public bool buffDone = false;
     //public int currentRound = -1;
     //public bool allEnemiesSpawned = false;
 
@@ -49,6 +50,8 @@ public class TutorialScript : MonoBehaviour
         //GetComponent<ScenarioManager>().ResetTimer();
         trumpetWeapon.SetActive(false);
         triangleWeapon.SetActive(false);
+
+        GetComponent<BuffMenu>().buffBarObject.SetActive(false);
     }
 
     //void ResetTimer()
@@ -137,9 +140,10 @@ public class TutorialScript : MonoBehaviour
             {
                 barricades.SetActive(false);
 
-
                 if (!barricades.activeSelf && !updatingNavMesh)
                 {
+                    GetComponent<BuffMenu>().buffBarObject.SetActive(true);
+                    GetComponent<BuffMenu>().counter = 1;
                     UpdateNavMesh();
                 }
 
@@ -197,6 +201,7 @@ public class TutorialScript : MonoBehaviour
                 if (!finishedRound2Voice)
                 {
                     AudioManager.instance.PlaySFXOnce(AudioManager.instance.sfxSource, AudioManager.instance.satanVoices[5], 1f);
+                    GetComponent<BuffMenu>().counter = 1;
                     finishedRound2Voice = true;
                 }
 
@@ -230,10 +235,22 @@ public class TutorialScript : MonoBehaviour
                 this.enabled = false;
             }
         }
+        else
+        {
+            GetComponent<BuffMenu>().buffMenuActivated = false;
+        }
 
 
         if (roundStarted && GetComponent<ScenarioManager>().allEnemiesSpawned && FindObjectOfType<SpawnEnemies>().enemiesLeft <= 0)
         {
+            if (GetComponent<ScenarioManager>().currentRound == 1 && !GetComponent<BuffMenu>().buffMenuActivated)
+            {
+                StartCoroutine(GetComponent<BuffMenu>()._BuffMenuActivate());
+            }
+            //if (GetComponent<ScenarioManager>().currentRound == 2 && !GetComponent<BuffMenu>().buffMenuActivated)
+            //{
+            //    StartCoroutine(GetComponent<BuffMenu>()._BuffMenuActivate());
+            //}
             if (GetComponent<ScenarioManager>().currentRound == 3 && !GetComponent<BuffMenu>().buffMenuActivated)
             {
                 StartCoroutine(GetComponent<BuffMenu>()._BuffMenuActivate());
@@ -278,25 +295,12 @@ public class TutorialScript : MonoBehaviour
         SpawnEnemies_RestartIndex();
         GetComponent<ScenarioManager>().ResetTimer();
         GetComponent<SpawnEnemies>().UpdateRoundCounter();
-        GetComponent<BuffMenu>().FillBar();
+        //GetComponent<BuffMenu>().counter++;
+        //GetComponent<BuffMenu>().FillBar();
         GetComponent<ScenarioManager>().LevelProgressionCheck();
         roundStarted = false;
     }
 
-    bool coroutineRunning = false;
-    public IEnumerator NextRound()
-    {
-        coroutineRunning = true;
-
-        if (coroutineRunning)
-        {
-            yield return new WaitForSeconds(3);
-            GetComponent<ScenarioManager>().enemiesThisRound = 0;
-            SpawnEnemies_RestartIndex();
-            roundStarted = false;
-            coroutineRunning = false;
-        }
-    }
 
     bool updatingNavMesh = false;
     public void UpdateNavMesh()
@@ -376,67 +380,6 @@ public class TutorialScript : MonoBehaviour
             //Debug.Log(enemiesThisRound);
         }
     }
-
-    //bool coroutineRunning = false;
-    //public IEnumerator _SpawnEnemies_Round1()
-    //{
-    //    coroutineRunning = true;
-
-    //    if (coroutineRunning)
-    //    {
-    //        for (int i = 0; i < spawnPositions.Length; i++)
-    //        {
-    //            if (enemiesOnScreen < maxEnemiesOnScreen - 1)
-    //            {
-    //                spawnPositions[i].gameObject.GetComponent<SpawnTutorial>().Spawn_Round1();
-    //                Debug.Log(enemiesThisRound);
-    //                yield return new WaitForSeconds(0.1f);
-    //            }
-    //        }
-    //    }
-
-    //    coroutineRunning = false;
-    //}
-
-    //public IEnumerator _SpawnEnemies_Round2()
-    //{
-    //    coroutineRunning = true;
-
-    //    if (coroutineRunning)
-    //    {
-    //        for (int i = 0; i < spawnPositions.Length; i++)
-    //        {
-    //            if (enemiesOnScreen < maxEnemiesOnScreen)
-    //            {
-    //                spawnPositions[i].gameObject.GetComponent<SpawnTutorial>().Spawn_Round2();
-    //                Debug.Log(enemiesThisRound);
-    //                yield return new WaitForSeconds(0.1f);
-    //            }
-    //        }
-    //    }
-
-    //    coroutineRunning = false;
-    //}
-
-    //public IEnumerator _SpawnEnemies_Round3()
-    //{
-    //    coroutineRunning = true;
-
-    //    if (coroutineRunning)
-    //    {
-    //        for (int i = 0; i < spawnPositions.Length; i++)
-    //        {
-    //            if (enemiesOnScreen < maxEnemiesOnScreen)
-    //            {
-    //                spawnPositions[i].gameObject.GetComponent<SpawnTutorial>().Spawn_Round3();
-    //                Debug.Log(enemiesThisRound);
-    //                yield return new WaitForSeconds(0.1f);
-    //            }
-    //        }
-    //    }
-
-    //    coroutineRunning = false;
-    //}
 
     public void SpawnEnemies_RestartIndex()
     {

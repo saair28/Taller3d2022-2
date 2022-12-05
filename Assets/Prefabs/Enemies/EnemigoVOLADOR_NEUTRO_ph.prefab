@@ -135,6 +135,7 @@ MonoBehaviour:
   agent: {fileID: 0}
   life: 0
   valor: 10
+  enemyType: 0
 --- !u!195 &3007768884735276556
 NavMeshAgent:
   m_ObjectHideFlags: 0

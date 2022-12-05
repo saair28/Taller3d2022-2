@@ -236,7 +236,7 @@ MonoBehaviour:
   playerPosition: {x: 0, y: 0, z: 0}
   agent: {fileID: 0}
   life: 0
-  valor: 15
+  valor: 0
   enemyType: 3
 --- !u!114 &7347189163032034552
 MonoBehaviour:

@@ -144,6 +144,7 @@ MonoBehaviour:
   agent: {fileID: 0}
   life: 0
   valor: 0
+  enemyType: 0
 --- !u!114 &-3978483699767298998
 MonoBehaviour:
   m_ObjectHideFlags: 0
