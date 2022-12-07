@@ -351,6 +351,16 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8906861637483481834, guid: 6b61bdd900310f0419fce3a5a07029bd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 346a93a7e1576a34084a7b2a54a6f524, type: 2}
+    - target: {fileID: -8832187204107291488, guid: 6b61bdd900310f0419fce3a5a07029bd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b5a9da81d39dd5f4ebee037b407ea5c1, type: 2}
     - target: {fileID: -8679921383154817045, guid: 6b61bdd900310f0419fce3a5a07029bd,
         type: 3}
       propertyPath: m_RootOrder
@@ -421,11 +431,71 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8663454673709130470, guid: 6b61bdd900310f0419fce3a5a07029bd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 79c7c8250f0831f429cbff740cd71d3f, type: 2}
+    - target: {fileID: -5642002190937031591, guid: 6b61bdd900310f0419fce3a5a07029bd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.93348616
+      objectReference: {fileID: 0}
+    - target: {fileID: -5642002190937031591, guid: 6b61bdd900310f0419fce3a5a07029bd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5642002190937031591, guid: 6b61bdd900310f0419fce3a5a07029bd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.3586136
+      objectReference: {fileID: 0}
+    - target: {fileID: -5642002190937031591, guid: 6b61bdd900310f0419fce3a5a07029bd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 42.03
+      objectReference: {fileID: 0}
+    - target: {fileID: -5186128591562216743, guid: 6b61bdd900310f0419fce3a5a07029bd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b5a9da81d39dd5f4ebee037b407ea5c1, type: 2}
+    - target: {fileID: -35401197691491840, guid: 6b61bdd900310f0419fce3a5a07029bd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3ed618c708663d54daeba1c317eae52a, type: 2}
+    - target: {fileID: 714601762088368275, guid: 6b61bdd900310f0419fce3a5a07029bd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9547c1c895d237942a3d30bcffe35d37, type: 2}
     - target: {fileID: 919132149155446097, guid: 6b61bdd900310f0419fce3a5a07029bd,
         type: 3}
       propertyPath: m_Name
       value: Derrota
       objectReference: {fileID: 0}
+    - target: {fileID: 1800116117176691121, guid: 6b61bdd900310f0419fce3a5a07029bd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cedb1ed80aa648e45a8130719975a2a5, type: 2}
+    - target: {fileID: 2980577390619778442, guid: 6b61bdd900310f0419fce3a5a07029bd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c0f9d96a1f9e3e14a8555ed90947d31b, type: 2}
+    - target: {fileID: 4495414801083549842, guid: 6b61bdd900310f0419fce3a5a07029bd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d19adeef1b9db074ab5fc66f4675719e, type: 2}
+    - target: {fileID: 8782179362843566689, guid: 6b61bdd900310f0419fce3a5a07029bd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2cfce1abdf583fd41a2ec93635aa3e67, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6b61bdd900310f0419fce3a5a07029bd,
@@ -842,7 +912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -989,7 +1059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
