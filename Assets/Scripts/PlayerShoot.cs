@@ -21,6 +21,7 @@ public class PlayerShoot : MonoBehaviour
     public GameObject bulletPrefab;
 
     AudioSource sfxSource;
+    [SerializeField] public AudioClip shootSFX;
 
     void Start()
     {
@@ -40,7 +41,7 @@ public class PlayerShoot : MonoBehaviour
 
     void Shoot()
     {
-        AudioManager.instance.PlaySFX(sfxSource, AudioManager.instance.shotSFX, 0.2f);
+        AudioManager.instance.PlaySFX(sfxSource, shootSFX, 0.2f);
 
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;

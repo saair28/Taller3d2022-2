@@ -19,6 +19,8 @@ public class PlayerHealth : MonoBehaviour
     public Image bloodSplatter;
     float splatterAlpha = 0;
 
+    public AudioSource hitSource;
+
     void Start()
     {
         actualLife = totalLife;
@@ -80,6 +82,9 @@ public class PlayerHealth : MonoBehaviour
     {
         hitReceived = true;
         pentagram.gameObject.SetActive(true);
+
+        AudioManager.instance.PlaySFX(hitSource, AudioManager.instance.playerHitSFX, 0.5f);
+
         startRecoveryTimer = false;
         if (actualLife > 1)
         {

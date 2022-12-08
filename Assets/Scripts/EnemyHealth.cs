@@ -82,7 +82,7 @@ public class EnemyHealth : MonoBehaviour
         isInvulnerable = true;
 
         var text = Instantiate(damageTextPrefab, transform.position, Quaternion.identity, transform);
-        text.GetComponent<TextMesh>().text = amount.ToString();
+        text.GetComponent<TextMesh>().text = amount.ToString("F1");
         text.GetComponent<TextMesh>().color = _color;
         //Debug.Log(amount);
         //criticoText.text = amount.ToString();

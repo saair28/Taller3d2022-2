@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
     public int totalPoints;
     public TextMeshProUGUI pointsText;
 
+    public static bool tutorial = true;
+    public bool tutorialInspector;
+
     public void AddPoints(int amount)
     {
         totalPoints += amount;
@@ -16,7 +19,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.L))
+        tutorialInspector = tutorial;
+
+        if (Input.GetKeyDown(KeyCode.L))
         {
             FindObjectOfType<PlayerHealth>().totalLife = 1000000;
             FindObjectOfType<PlayerHealth>().actualLife = 1000000;
@@ -26,5 +31,10 @@ public class GameManager : MonoBehaviour
         {
             FindObjectOfType<PlayerShoot>().damageMultiplier = 10;
         }
+    }
+
+    public void TutorialActive()
+    {
+        tutorial = !tutorial;
     }
 }

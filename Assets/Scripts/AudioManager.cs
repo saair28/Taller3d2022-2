@@ -11,7 +11,9 @@ public class AudioManager : MonoBehaviour
     public AudioSource sfxSource;
     public AudioClip[] musicClips;
     public List<AudioClip> musicClipsGame = new List<AudioClip>();
-    public AudioClip shotSFX; // endRoundSFX satanVoice;
+    public AudioClip bossMusic;
+    //public AudioClip shotSFX;
+    public AudioClip playerHitSFX;
     public AudioClip[] satanVoices;
 
     [Header("Audio Mixer")]
@@ -21,6 +23,9 @@ public class AudioManager : MonoBehaviour
     public AudioMixerGroup musicGroup;
     public Slider musicVolumeSlider;
     public float musicVolume;
+    public AudioMixerGroup voiceGroup;
+    public Slider voiceVolumeSlider;
+    public float voiceVolume;
     public AudioMixerGroup sfxGroup;
     public Slider sfxVolumeSlider;
     public float sfxVolume;
@@ -34,7 +39,7 @@ public class AudioManager : MonoBehaviour
     {
         musicSource = GetComponent<AudioSource>();
         //musicClip = (AudioClip)Resources.Load("Audio/Music/testAudio");
-        shotSFX = (AudioClip)Resources.Load("Audio/SFX/billSound");
+        //shotSFX = (AudioClip)Resources.Load("Audio/SFX/billSound");
         //endRoundSFX = (AudioClip)Resources.Load("Audio/SFX/endRoundSFX");
         //satanVoice = (AudioClip)Resources.Load("Audio/SFX/satanVoice");
 
@@ -106,13 +111,23 @@ public class AudioManager : MonoBehaviour
         clips.RemoveAt(randomNumber);
     }
 
+    public void ChangeMusicBoss()
+    {
+        musicSource.clip = bossMusic;
+        musicSource.Play();
+        musicSource.loop = true;
+    }
+
     public void UpdateMixerVolume()
     {
         masterVolume = masterVolumeSlider.value;
         musicVolume = musicVolumeSlider.value;
+        voiceVolume = voiceVolumeSlider.value;
         sfxVolume = sfxVolumeSlider.value;
+
         masterGroup.audioMixer.SetFloat("MasterVolume", Mathf.Log10(masterVolume) * 20);
         musicGroup.audioMixer.SetFloat("MusicVolume", Mathf.Log10(musicVolume) * 20);
+        voiceGroup.audioMixer.SetFloat("VoiceVolume", Mathf.Log10(voiceVolume) * 20);
         sfxGroup.audioMixer.SetFloat("SFXVolume", Mathf.Log10(sfxVolume) * 20);
     }
 
@@ -126,6 +141,13 @@ public class AudioManager : MonoBehaviour
     {
         musicVolume = value;
         musicGroup.audioMixer.SetFloat("MusicVolume", Mathf.Log10(musicVolume) * 20);
+    }
+
+    public void ChangeVoiceVolume(float value)
+    {
+        //voiceVolume = value;
+        voiceVolume = voiceVolumeSlider.value;
+        voiceGroup.audioMixer.SetFloat("VoiceVolume", Mathf.Log10(voiceVolume) * 20);
     }
 
     public void ChangeSFXVolume(float value)

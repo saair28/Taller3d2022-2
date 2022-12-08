@@ -52,6 +52,12 @@ public class TutorialScript : MonoBehaviour
         triangleWeapon.SetActive(false);
 
         GetComponent<BuffMenu>().buffBarObject.SetActive(false);
+
+        //if(!GameManager.tutorial)
+        //{
+        //    GetComponent<ScenarioManager>().currentRound = 1;
+        //    this.enabled = false;
+        //}
     }
 
     //void ResetTimer()
@@ -72,12 +78,6 @@ public class TutorialScript : MonoBehaviour
         if(GetComponent<ScenarioManager>().currentRound < 1)
         {
             GetComponent<SpawnEnemies>().roundCounterText.text = "Tutorial";
-            if(Input.GetKeyDown(KeyCode.K))
-            {
-                GetComponent<ScenarioManager>().currentRound = 1;
-                this.enabled = false;
-
-            }
         }
         Tutorial();
     }

@@ -31,6 +31,9 @@ public class ScenarioManager : MonoBehaviour
     public int buffMenuRounds;
     public int buffMenuRoundsLast = 0;
 
+    public Transform[] bossSpawns;
+    public GameObject[] bossPrefabs;
+
     private void Awake()
     {
         instance = this;
@@ -39,6 +42,11 @@ public class ScenarioManager : MonoBehaviour
     private void Start()
     {
         navMeshSurface = GetComponent<NavMeshSurface>();
+        if (!GameManager.tutorial)
+        {
+            currentRound = 1;
+            //GetComponent<TutorialScript>().enabled = false;
+        }
         ResetTimer();
         StartCoroutine(UpdateNavMesh(1));
         GetComponent<SpawnEnemies>().UpdateRoundCounter();
@@ -57,13 +65,15 @@ public class ScenarioManager : MonoBehaviour
         {
             SpawnEnemies.instance.valorTotal += SpawnEnemies.instance.enemyPrefabs[i].GetComponent<Enemy>().valor;
         }
+
+        
     }
 
     private void Update()
     {
         enemiesOnScreen = GetComponent<SpawnEnemies>().enemiesLeft;
 
-        if (!GetComponent<TutorialScript>().isActiveAndEnabled)
+        if (!GetComponent<TutorialScript>().isActiveAndEnabled) //&& currentRound <= 19)
         {
             if (!roundStarting && !roundInProgress)
             {
@@ -119,7 +129,13 @@ public class ScenarioManager : MonoBehaviour
                 allEnemiesSpawned = false;
             }
         }
-        FinalRound();
+
+        // RONDA FINAL
+        //else if (currentRound >= 20)
+        //{
+        //    FinalRound();
+        //}
+        
     }
 
     void UpdateTotalEnemies()
@@ -148,10 +164,7 @@ public class ScenarioManager : MonoBehaviour
     }
     void FinalRound()
     {
-        if (currentRound > 19)
-        {
-            SceneManager.LoadScene("Victory");
-        }
+        
     }
    
     public void ResetTimer()
@@ -222,6 +235,11 @@ public class ScenarioManager : MonoBehaviour
             AudioManager.instance.PlaySFXOnce(AudioManager.instance.sfxSource, AudioManager.instance.satanVoices[7], 1f);
             StartCoroutine(UpdateNavMesh(1));
             Debug.Log("Se destruyo 4");
+        }
+
+        else if(currentRound == 20)
+        {
+            AudioManager.instance.ChangeMusicBoss();
         }
 
     }

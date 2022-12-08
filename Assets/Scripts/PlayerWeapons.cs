@@ -215,6 +215,7 @@ public class PlayerWeapons : MonoBehaviour
         pShoot.bulletsPerShot = currentWeapon.GetComponent<WeaponScript>().bulletsPerShot;
         pShoot.bulletRotation = currentWeapon.GetComponent<WeaponScript>().bulletRotation;
         pShoot.bulletReach = currentWeapon.GetComponent<WeaponScript>().bulletReach;
+        pShoot.shootSFX = currentWeapon.GetComponent<WeaponScript>().weaponSound;
         //Debug.Log(currentWeapon.GetComponent<WeaponScript>().weaponName);
         isChangingWeapon = false;
     }

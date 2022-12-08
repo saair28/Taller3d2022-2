@@ -17,4 +17,5 @@ public class WeaponScript : MonoBehaviour
     [SerializeField] public GameObject bulletPrefab;
     [SerializeField] public Transform bulletOrigin;
     [SerializeField] public int bulletColor;
+    [SerializeField] public AudioClip weaponSound;
 }
