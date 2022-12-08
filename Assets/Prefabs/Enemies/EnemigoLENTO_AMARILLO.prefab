@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -8018929203622934110}
   - component: {fileID: -7891140492007006778}
   - component: {fileID: 7201883141269779212}
+  - component: {fileID: 7377022146184978634}
   m_Layer: 0
   m_Name: EnemigoLENTO_AMARILLO
   m_TagString: enemigo1
@@ -196,6 +197,26 @@ CapsuleCollider:
   m_Height: 1.5088518
   m_Direction: 1
   m_Center: {x: 0, y: -0.03877087, z: 0}
+--- !u!95 &7377022146184978634
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4970653128200672383}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 19bdba7388dd1f246ab3451f599a241d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &639135135475022613
 PrefabInstance:
   m_ObjectHideFlags: 0

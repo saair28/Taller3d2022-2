@@ -12,6 +12,8 @@ public class EnemyHealth : MonoBehaviour
     public float damage;
     public int points;
 
+    Animator anim;
+
     public GameObject damageTextPrefab;
 
     Color _blue = new Color(45, 126, 255, 255);
@@ -48,6 +50,8 @@ public class EnemyHealth : MonoBehaviour
         _red = new Color(255, 64, 40, 255)/255;
         _purple = new Color(165, 69, 255, 255)/255;
 
+        anim = GetComponent<Animator>();
+
         //criticoText = GameObject.FindGameObjectWithTag("CriticoText").GetComponent<TextMeshProUGUI>();
     }
 
@@ -76,6 +80,7 @@ public class EnemyHealth : MonoBehaviour
         if(currentHealth - amount <= 0)
         {
             Death();
+            anim.SetBool("Death", true);
         }
 
         currentHealth -= amount;
@@ -106,7 +111,7 @@ public class EnemyHealth : MonoBehaviour
 
         FindObjectOfType<DestroyFarEnemies>().enemyList.Remove(gameObject);
 
-        Destroy(gameObject);
+        Destroy(gameObject, 2f);
     }
 
     private void OnTriggerEnter(Collider other)
