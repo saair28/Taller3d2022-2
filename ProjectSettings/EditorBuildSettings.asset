@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 5eb74e9ef4172db478061efbe74882d0
   - enabled: 1
-    path: Assets/Scenes/Victory.unity
+    path: Assets/Animations/_animatioprueba/Victory/Victory.unity
     guid: 6d1ddbcfa3848bb44af145b63be4ef4d
   - enabled: 1
-    path: Assets/Scenes/Lose.unity
+    path: Assets/Animations/_animatioprueba/Lose/Lose.unity
     guid: 0f80b2096c473ff41a742feeb8062c0d
   - enabled: 1
     path: Assets/Scenes/Prototipo_Promedio2.unity
