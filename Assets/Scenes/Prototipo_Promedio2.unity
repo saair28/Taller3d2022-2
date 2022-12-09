@@ -53515,8 +53515,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8956547511344149537, guid: d3ae17b964f61fa4888e31ac30adff06,
         type: 3}
+      propertyPath: m_Mass
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8956547511344149537, guid: d3ae17b964f61fa4888e31ac30adff06,
+        type: 3}
       propertyPath: m_UseGravity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8956547511344149537, guid: d3ae17b964f61fa4888e31ac30adff06,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 8956547511344149538, guid: d3ae17b964f61fa4888e31ac30adff06,
         type: 3}
@@ -53569,6 +53579,12 @@ PrefabInstance:
       propertyPath: invulnerabilityTime
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8956547511344149547, guid: d3ae17b964f61fa4888e31ac30adff06,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: d9a32608057c4bc49850db33b20f2236,
+        type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: d3ae17b964f61fa4888e31ac30adff06, type: 3}
