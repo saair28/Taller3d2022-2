@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Lava : MonoBehaviour
 {
@@ -19,9 +20,13 @@ public class Lava : MonoBehaviour
     }
     void ActivacionLava()
     {
-        if(manager.currentRound > 14)
+        if (manager.currentRound > 14)
         {
             anim.SetTrigger("LavaActivacion");
+        }
+        if (manager.currentRound > 15)
+        {
+            SceneManager.LoadScene("Victory");
         }
     }
 }
