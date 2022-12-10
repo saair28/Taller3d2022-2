@@ -15,6 +15,9 @@ public class Enemy : MonoBehaviour
     // 2 = Lento
     // 3 = Volador
 
+    //public GameObject targetPlayer;
+    public Animator anim;
+
     void Start()
     {
         //life = 80;
@@ -29,13 +32,33 @@ public class Enemy : MonoBehaviour
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
         if(agent != null && agent.isActiveAndEnabled)
             agent.SetDestination(playerPosition);
-    }
+        anim.SetBool("Move", true);
 
-    void FaceTarget()
+        /*if (Vector3.Distance(transform.position, targetPlayer.transform.position) < 4)
+
+        {
+            Debug.Log("Activado");
+            anim.SetBool("Idle", true);
+            agent.enabled = false;
+            anim.SetBool("Move", false);
+        }
+        else
+        {
+            playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+            if (agent != null && agent.isActiveAndEnabled)
+                agent.SetDestination(playerPosition);
+            anim.SetBool("Idle", false);
+            agent.enabled = true;
+            anim.SetBool("Move", true);
+        }
+    }*/
+
+        void FaceTarget()
     {
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
-    // holis
+        // holis
+    }
 }
