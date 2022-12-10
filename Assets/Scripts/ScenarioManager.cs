@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ScenarioManager : MonoBehaviour
 {
-    public Animator anim;
+    
     public static ScenarioManager instance;
     public NavMeshSurface navMeshSurface;
     public int currentRound = 0;
@@ -42,7 +42,7 @@ public class ScenarioManager : MonoBehaviour
     }
     private void Start()
     {
-        anim = GetComponent<Animator>();
+        
         navMeshSurface = GetComponent<NavMeshSurface>();
         if (!GameManager.tutorial)
         {
@@ -74,7 +74,8 @@ public class ScenarioManager : MonoBehaviour
     private void Update()
     {
         enemiesOnScreen = GetComponent<SpawnEnemies>().enemiesLeft;
-        FinalRound();
+        
+        
 
         if (!GetComponent<TutorialScript>().isActiveAndEnabled) //&& currentRound <= 19)
         {
@@ -159,14 +160,9 @@ public class ScenarioManager : MonoBehaviour
         }
         
     }
-    void FinalRound()
-    {
-        if(currentRound > 14)
-        {
-            anim.SetTrigger("LavaActivacion");
-        }
-    }
-   
+    
+    
+
     public void ResetTimer()
     {
         timeBetweenRoundsCounter = timeBetweenRounds;
