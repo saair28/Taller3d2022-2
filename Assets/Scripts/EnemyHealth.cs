@@ -58,10 +58,12 @@ public class EnemyHealth : MonoBehaviour
     void Update()
     {
         //CHEAT PARA MATAR A TODOS LOS ENEMIGOS DE LA ZONA
-        if(Input.GetKeyDown(KeyCode.K))
+        /*if(Input.GetKeyDown(KeyCode.K))
         {
             Death();
         }
+        */
+        
 
         if(invulTimeCounter <= 0)
         {

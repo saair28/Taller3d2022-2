@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Game
   m_RootView: {fileID: 7}
   m_MinSize: {x: 875, y: 350}
   m_MaxSize: {x: 10000, y: 10000}
@@ -76,7 +76,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 81
+  controlID: 50
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   - {fileID: 20}
   - {fileID: 12}
   m_Selected: 0
-  m_LastSelected: 1
+  m_LastSelected: 2
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 82
+  controlID: 51
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 71
+  controlID: 52
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -310,7 +310,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -268626
+  m_LastSelectedObjectID: -40248
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -349,14 +349,14 @@ MonoBehaviour:
     - {fileID: -3611655603481341864, guid: dd93b5f29e600be4e8dbf65545766f06, type: 2}
     - {fileID: 7391540982446911340, guid: d78bc97f32ccbe44784dea3d4d89f787, type: 2}
     m_ValueSerializationHelper:
-    - e00: 0.99368423
+    - e00: 0.93025446
       e01: 0
       e02: 0
-      e03: -34.684204
+      e03: 73.82898
       e10: 0
-      e11: 0.99368423
+      e11: 0.93025446
       e12: 0
-      e13: 163.6
+      e13: 341.782
       e20: 0
       e21: 0
       e22: 1
@@ -446,10 +446,10 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: dd93b5f29e600be4e8dbf65545766f06,
+  m_AnimatorController: {fileID: 9100000, guid: 1bb2c28cce2f3174aaa438ea1477d995,
     type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -3611655603481341864, guid: dd93b5f29e600be4e8dbf65545766f06,
+  - m_Target: {fileID: -2660912954377239005, guid: 1bb2c28cce2f3174aaa438ea1477d995,
       type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
@@ -534,22 +534,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Enemies
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Prefabs/Enemies
+  - Assets/Scenes
   m_LastFoldersGridSize: 96
-  m_LastProjectPath: "G:\\Programaci\xF3n\\Taller 4to\\Taller3d2022-2"
+  m_LastProjectPath: D:\Unity\Editor\Taller4\Taller3d2022-2
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 614}
-    m_SelectedIDs: 06970000
-    m_LastClickedID: 38662
-    m_ExpandedIDs: 00000000dc950000de950000e0950000e2950000e4950000e6950000e8950000ea950000ec950000ee950000f29600002e97000000ca9a3b
+    scrollPos: {x: 0, y: 226}
+    m_SelectedIDs: d2720000
+    m_LastClickedID: 29394
+    m_ExpandedIDs: 000000006a72000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -577,7 +577,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000dc950000de950000e0950000e2950000e4950000e6950000e8950000ea950000ec950000ee950000
+    m_ExpandedIDs: 000000006a720000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -604,8 +604,8 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c6230000227f000088d0000044d40000f2d30000f6720100f88e0100dc450200e27d0000428200007c8500006680000076f5000000000000e69400000616010060880000ae92000058920000d4910000
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c6230000227f000088d0000044d40000f2d30000f6720100f88e0100dc450200e27d0000428200007c8500006680000076f5000000000000e69400000616010060880000ae92000058920000d49100005ac30000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -629,7 +629,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
+    m_ScrollPosition: {x: 0, y: 246}
     m_GridSize: 96
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 262
@@ -669,7 +669,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 864
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -706,24 +706,24 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 3666}
-      m_SelectedIDs: 2ef9ffff
-      m_LastClickedID: -1746
-      m_ExpandedIDs: 30f9ffff8cf9ffff9ef9ffff2c6a0000586d0000e47700001c8a0000
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 5a33feffb233feffc646feff3047feff8247feffbc4dfeff9cc7ffffc6d6ffff20d7ffff38eaffffa6eaffff00ebffff40f1ffffcaf9ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Rig 1
-        m_OriginalName: Rig 1
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -126546
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 5}
       m_SearchString: 
@@ -1036,9 +1036,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -83.19077, y: 14.21457, z: 10.03}
+    m_Target: {x: 17.402046, y: -0.5731826, z: 18.120739}
     speed: 2
-    m_Value: {x: -83.19077, y: 14.21457, z: 10.03}
+    m_Value: {x: 17.402046, y: -0.5731826, z: 18.120739}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1084,13 +1084,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.15166913, y: -0.14950083, z: 0.02244307, w: 0.9769878}
+    m_Target: {x: -0.28784505, y: -0.15958917, z: 0.0498913, w: -0.9431737}
     speed: 2
-    m_Value: {x: 0.15164162, y: -0.14947371, z: 0.022438997, w: 0.9768106}
+    m_Value: {x: -0.28778905, y: -0.15955813, z: 0.049881596, w: -0.94299024}
   m_Size:
-    m_Target: 11.215925
+    m_Target: 7.606005
     speed: 2
-    m_Value: 11.215925
+    m_Value: 7.606005
   m_Ortho:
     m_Target: 0
     speed: 2

@@ -27,10 +27,11 @@ public class GameManager : MonoBehaviour
             FindObjectOfType<PlayerHealth>().actualLife = 1000000;
         }
 
-        if (Input.GetKeyDown(KeyCode.M))
+        /*if (Input.GetKeyDown(KeyCode.M))
         {
             FindObjectOfType<PlayerShoot>().damageMultiplier = 10;
         }
+        */
     }
 
     public void TutorialActive()
