@@ -63,8 +63,6 @@ public class EnemyHealth : MonoBehaviour
             Death();
         }
         
-        
-
         if(invulTimeCounter <= 0)
         {
             invulTimeCounter = invulTime;
@@ -79,7 +77,8 @@ public class EnemyHealth : MonoBehaviour
 
     public void LoseHealth(float amount, Color _color)
     {
-        if(currentHealth - amount <= 0)
+        GetComponentInChildren<Animator>().SetBool("Damage",true);
+        if (currentHealth - amount <= 0)
         {
             Death();
         //    anim.SetBool("Death", true);
@@ -113,7 +112,7 @@ public class EnemyHealth : MonoBehaviour
             GetComponentInChildren<Collider>().enabled = false;
             GetComponent<NavMeshAgent>().enabled = false;
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(1.9f);
             FindObjectOfType<SpawnEnemies>().enemiesLeft--;
             FindObjectOfType<SpawnEnemies>().UpdateEnemyCounter();
 
