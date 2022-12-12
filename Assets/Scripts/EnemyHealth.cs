@@ -58,11 +58,11 @@ public class EnemyHealth : MonoBehaviour
     void Update()
     {
         //CHEAT PARA MATAR A TODOS LOS ENEMIGOS DE LA ZONA
-        /*if(Input.GetKeyDown(KeyCode.K))
+        if(Input.GetKeyDown(KeyCode.K))
         {
             Death();
         }
-        */
+        
         
 
         if(invulTimeCounter <= 0)
@@ -107,13 +107,14 @@ public class EnemyHealth : MonoBehaviour
     {
         GetComponentInChildren<Collider>().enabled = false;
         GetComponent<NavMeshAgent>().enabled = false;
+        GetComponent<Animator>().SetTrigger("Death");
         yield return new WaitForSeconds(0.1f);
         FindObjectOfType<SpawnEnemies>().enemiesLeft--;
         FindObjectOfType<SpawnEnemies>().UpdateEnemyCounter();
 
         FindObjectOfType<DestroyFarEnemies>().enemyList.Remove(gameObject);
 
-        Destroy(gameObject);
+        Destroy(gameObject,2f);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -55,14 +55,16 @@ public class SpawnEnemies : MonoBehaviour
                 if (go.GetComponent<Enemy>().enemyType == 1) // RÁPIDO
                 {
                     randomNumberColor = Random.Range(0, 3);
-                    go.GetComponentInChildren<MeshRenderer>().material = materials[randomNumberColor];
-                   // go.GetComponent<MeshRenderer>().material = materials[randomNumberColor];
+                    //go.GetComponentInChildren<MeshRenderer>().material = materials[randomNumberColor];
+                    go.GetComponentInChildren<SkinnedMeshRenderer>().material = materials[randomNumberColor];
+                    // go.GetComponent<MeshRenderer>().material = materials[randomNumberColor];
                     go.GetComponent<EnemyHealth>().enemyColor = (EnemyHealth.EnemyColor)randomNumberColor;
                 }
                 else if(go.GetComponent<Enemy>().enemyType == 2) // LENTO
                 {
                     randomNumberColor = Random.Range(3, 6);
-                    go.GetComponentInChildren<MeshRenderer>().material = materials[randomNumberColor];
+                    //go.GetComponentInChildren<MeshRenderer>().material = materials[randomNumberColor];
+                    go.GetComponentInChildren<SkinnedMeshRenderer>().material = materials[randomNumberColor];
                     //go.GetComponent<MeshRenderer>().material = materials[randomNumberColor];
                     go.GetComponent<EnemyHealth>().enemyColor = (EnemyHealth.EnemyColor)randomNumberColor - 3;
                 }
