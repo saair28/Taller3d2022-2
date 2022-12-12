@@ -101,20 +101,27 @@ public class EnemyHealth : MonoBehaviour
         //FindObjectOfType<SpawnEnemies>().UpdateEnemyCounter();
         FindObjectOfType<GameManager>().AddPoints(points);
         StartCoroutine(DeathCoroutine());
+        GetComponentInChildren<Animator>().SetTrigger("Death");
     }
 
+    bool running = false;
     public IEnumerator DeathCoroutine()
     {
-        GetComponentInChildren<Collider>().enabled = false;
-        GetComponent<NavMeshAgent>().enabled = false;
-        GetComponent<Animator>().SetTrigger("Death");
-        yield return new WaitForSeconds(0.1f);
-        FindObjectOfType<SpawnEnemies>().enemiesLeft--;
-        FindObjectOfType<SpawnEnemies>().UpdateEnemyCounter();
+        running = true;
+        if(running)
+        {
+            GetComponentInChildren<Collider>().enabled = false;
+            GetComponent<NavMeshAgent>().enabled = false;
 
-        FindObjectOfType<DestroyFarEnemies>().enemyList.Remove(gameObject);
+            yield return new WaitForSeconds(0.1f);
+            FindObjectOfType<SpawnEnemies>().enemiesLeft--;
+            FindObjectOfType<SpawnEnemies>().UpdateEnemyCounter();
 
-        Destroy(gameObject,2f);
+            FindObjectOfType<DestroyFarEnemies>().enemyList.Remove(gameObject);
+
+            Destroy(gameObject);
+            running = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
