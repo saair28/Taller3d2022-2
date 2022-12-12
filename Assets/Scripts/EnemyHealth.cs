@@ -78,13 +78,15 @@ public class EnemyHealth : MonoBehaviour
     public void LoseHealth(float amount, Color _color)
     {
         GetComponentInChildren<Animator>().SetBool("Damage",true);
+        //GetComponentInChildren<Animator>().SetBool("Damage", false);
+        //GetComponentInChildren<Animator>().SetBool("Move", true);
         if (currentHealth - amount <= 0)
         {
             Death();
-        //    anim.SetBool("Death", true);
         }
 
         currentHealth -= amount;
+
         isInvulnerable = true;
 
         var text = Instantiate(damageTextPrefab, transform.position, Quaternion.identity, transform);
