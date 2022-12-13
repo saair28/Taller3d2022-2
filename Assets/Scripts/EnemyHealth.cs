@@ -13,7 +13,7 @@ public class EnemyHealth : MonoBehaviour
     public float damage;
     public int points;
 
-    public CapsuleCollider boxenemy;
+    //public CapsuleCollider boxenemy;
 
   //  Animator anim;
 
@@ -80,7 +80,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void LoseHealth(float amount, Color _color)
     {
-        GetComponentInChildren<Animator>().SetBool("Damage",true);
+        GetComponentInChildren<Animator>().SetTrigger("Damage");
         //GetComponentInChildren<Animator>().SetBool("Damage", false);
         //GetComponentInChildren<Animator>().SetBool("Move", true);
         if (currentHealth - amount <= 0)
@@ -114,10 +114,10 @@ public class EnemyHealth : MonoBehaviour
         running = true;
         if(running)
         {
-            GetComponentInChildren<Collider>().enabled = false;
+            GetComponentInChildren<BoxCollider>().enabled = false;
             GetComponent<NavMeshAgent>().enabled = false;
 
-            Destroy(boxenemy);
+            //Destroy(boxenemy);
             yield return new WaitForSeconds(1.9f);
             //Destroy(boxenemy);
 
@@ -126,8 +126,8 @@ public class EnemyHealth : MonoBehaviour
 
             FindObjectOfType<DestroyFarEnemies>().enemyList.Remove(gameObject);
 
-            Destroy(gameObject);
             running = false;
+            Destroy(gameObject);
         }
     }
 
