@@ -9,8 +9,11 @@ public class EnemyHealth : MonoBehaviour
     public float maxHealth;
     public float currentHealth;
 
+
     public float damage;
     public int points;
+
+    public CapsuleCollider boxenemy;
 
   //  Animator anim;
 
@@ -58,11 +61,11 @@ public class EnemyHealth : MonoBehaviour
     void Update()
     {
         //CHEAT PARA MATAR A TODOS LOS ENEMIGOS DE LA ZONA
-        if(Input.GetKeyDown(KeyCode.K))
+        /*if(Input.GetKeyDown(KeyCode.K))
         {
             Death();
         }
-        
+        */
         if(invulTimeCounter <= 0)
         {
             invulTimeCounter = invulTime;
@@ -114,7 +117,10 @@ public class EnemyHealth : MonoBehaviour
             GetComponentInChildren<Collider>().enabled = false;
             GetComponent<NavMeshAgent>().enabled = false;
 
+            Destroy(boxenemy);
             yield return new WaitForSeconds(1.9f);
+            //Destroy(boxenemy);
+
             FindObjectOfType<SpawnEnemies>().enemiesLeft--;
             FindObjectOfType<SpawnEnemies>().UpdateEnemyCounter();
 

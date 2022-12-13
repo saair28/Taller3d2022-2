@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 6286901409465966385}
   - component: {fileID: 7726777054017172466}
   - component: {fileID: 8817170363908917153}
+  - component: {fileID: 7201883141269779212}
+  - component: {fileID: -7891140492007006778}
   - component: {fileID: -1799052641808111705}
   - component: {fileID: 8806065889572799064}
   - component: {fileID: -8018929203622934110}
-  - component: {fileID: -7891140492007006778}
-  - component: {fileID: 7201883141269779212}
   m_Layer: 0
   m_Name: EnemigoLENTO_AMARILLO
   m_TagString: enemigo1
@@ -107,6 +107,45 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!136 &7201883141269779212
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4970653128200672383}
+  m_Material: {fileID: 13400000, guid: a51daf9e44a41a3449d973cae58ecca8, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.50000006
+  m_Height: 1.5088518
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.03877087, z: 0}
+--- !u!114 &-7891140492007006778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4970653128200672383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f369b6f90ae22cf44b5b8684368ac955, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 120
+  currentHealth: 0
+  damage: 0
+  points: 50
+  boxenemy: {fileID: 7201883141269779212}
+  damageTextPrefab: {fileID: 3291457415106553876, guid: 30b942a91ec1d89458bb5a157b0c02c9,
+    type: 3}
+  enemyColor: 0
+  enemyColorINT: 0
+  normalDamage: 0
+  criticalDamage: 0
+  invulTime: 0.05
+  invulTimeCounter: 0
 --- !u!114 &-1799052641808111705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,44 +199,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81022518a8287a0449c4a4fc73e34b76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-7891140492007006778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4970653128200672383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f369b6f90ae22cf44b5b8684368ac955, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 120
-  currentHealth: 0
-  damage: 0
-  points: 50
-  damageTextPrefab: {fileID: 3291457415106553876, guid: 30b942a91ec1d89458bb5a157b0c02c9,
-    type: 3}
-  enemyColor: 0
-  enemyColorINT: 0
-  normalDamage: 0
-  criticalDamage: 0
-  invulTime: 0.05
-  invulTimeCounter: 0
---- !u!136 &7201883141269779212
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4970653128200672383}
-  m_Material: {fileID: 13400000, guid: a51daf9e44a41a3449d973cae58ecca8, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.50000006
-  m_Height: 1.5088518
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.03877087, z: 0}
 --- !u!1001 &639135135475022613
 PrefabInstance:
   m_ObjectHideFlags: 0
