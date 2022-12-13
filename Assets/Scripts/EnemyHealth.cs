@@ -60,12 +60,12 @@ public class EnemyHealth : MonoBehaviour
 
     void Update()
     {
-        //CHEAT PARA MATAR A TODOS LOS ENEMIGOS DE LA ZONA
-        /*if(Input.GetKeyDown(KeyCode.K))
+      //  CHEAT PARA MATAR A TODOS LOS ENEMIGOS DE LA ZONA
+        if(Input.GetKeyDown(KeyCode.K))
         {
             Death();
         }
-        */
+        
         if(invulTimeCounter <= 0)
         {
             invulTimeCounter = invulTime;
@@ -114,7 +114,8 @@ public class EnemyHealth : MonoBehaviour
         running = true;
         if(running)
         {
-            GetComponentInChildren<BoxCollider>().enabled = false;
+            GetComponentInChildren<Collider>().enabled = false;
+          //  GetComponentInChildren<BoxCollider>().enabled = false;
             GetComponent<NavMeshAgent>().enabled = false;
 
             //Destroy(boxenemy);
